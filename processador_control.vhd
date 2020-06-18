@@ -9,34 +9,76 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity mdc_control is 
+entity processador_control is 
 port ( i_CLK   : in std_logic;  -- input clock
        i_CLR_n : in std_logic;  -- input clear/reset
-		 i_OP    : in std_logic_vector(3 downto 0); -- input operacao
+		 i_DATA    : in std_logic_vector(15 downto 0); -- input operacao
 		 o_RD    : out std_logic;  -- output rd
-       o_R_ID  : out std_logic;  -- output r_ID
+       o_IR_ID  : out std_logic;  -- output r_ID
 		 o_PC_INC: out std_logic;  -- output r_ID
        o_PC_CLR: out std_logic;  -- output clear
-       o_D_ADDR: out std_logic;  -- output D endereco
+       o_D_ADDR: out std_logic_vector(7 downto 0);  -- output D endereco
        o_D_RD  : out std_logic;  -- output D leitura
 		 o_D_WR  : out std_logic;  -- output D escrita
 		 o_RF_S  : out std_logic;  -- output RD_S
-       o_RF_W_ADDR : out std_logic;  -- output RF_w endereco
+       o_RF_W_ADDR : out std_logic_vector(3 downto 0);  -- output RF_w endereco
        o_RF_W_WR   : out std_logic;  -- output RF_w escrita
-		 o_RF_RP_ADDR: out std_logic;  -- output RF_RP endereco
-		 o_RF_RP_WR  : out std_logic;  -- output RF_RP escrita
-		 o_RF_RQ_ADDR: out std_logic;  -- output RF_RQ endereco
-		 o_RF_RQ_WR  : out std_logic;  -- output RF_RQ escrita
+		 o_RF_RP_ADDR: out std_logic_vector(3 downto 0);  -- output RF_RP endereco
+		 o_RF_RP_RD  : out std_logic;  -- output RF_RP escrita
+		 o_RF_RQ_ADDR: out std_logic_vector(3 downto 0);  -- output RF_RQ endereco
+		 o_RF_RQ_RD  : out std_logic;  -- output RF_RQ escrita
 		 o_ALU_S0    : out std_logic   -- output soma ULA
        ); 
-end mdc_control;
+end processador_control;
 
-architecture rtl of mdc_control is
+architecture rtl of processador_control is
   type t_STATE is (s_0, s_1, s_2, s_3, s_4,s_5);
   signal r_STATE: t_STATE;  -- state register
   signal w_NEXT : t_STATE;  -- next state  
+  signal w_OP, w_RA, w_RB, w_RC: in std_logic_vector(3 downto 0);
+  signal w_D: in std_logic_vector(7 downto 0);
 
 begin
+
+   --atribuição do valor de OP a partir do valor de entrada
+	w_OP(3 to 0) <= i_DATA(15 downto 12);
+-- w_OP[0] <= i_DATA[12];
+--	w_OP[1] <= i_DATA[13];
+--	w_OP[2] <= i_DATA[14];
+--	w_OP[3] <= i_DATA[15];
+	
+	--atribuição do valor de RA a partir do valor de entrada
+	w_RA(3 to 0) <= i_DATA(11 downto 8);
+--	w_RA[0] <= i_DATA[8];
+--	w_RA[1] <= i_DATA[9];
+--	w_RA[2] <= i_DATA[10];
+--	w_RA[3] <= i_DATA[11];
+	
+	--atribuição do valor de RB a partir do valor de entrada
+	w_RB(3 to 0) <= i_DATA(7 downto 4);
+--	w_RB[0] <= i_DATA[4];
+--	w_RB[1] <= i_DATA[5];
+--	w_RB[2] <= i_DATA[6];
+--	w_RB[3] <= i_DATA[7];
+	
+	--atribuição do valor de RC a partir do valor de entrada
+	w_RC(3 to 0) <= i_DATA(3 downto 0);
+--	w_RC[0] <= i_DATA[0];
+--	w_RC[1] <= i_DATA[1];
+--	w_RC[2] <= i_DATA[2];
+--	w_RC[3] <= i_DATA[3];
+	
+	--atribuição do valor de D a partir do valor de entrada
+	w_D(7 to 0)  <= i_DATA(7 downot 0);
+--	w_D[0]  <= i_DATA[0];
+--	w_D[1]  <= i_DATA[1];
+--	w_D[2]  <= i_DATA[2];
+--	w_D[3]  <= i_DATA[3];
+--	w_D[4]  <= i_DATA[4];
+--	w_D[5]  <= i_DATA[5];
+--	w_D[6]  <= i_DATA[6];
+--	w_D[7]  <= i_DATA[7];
+
   
   p_STATE : process (i_CLK, i_CLR_n)
   begin
@@ -49,8 +91,8 @@ begin
   end process;
   
   
-  p_NEXT : process(r_STATE, i_OP)    
-  begin   	
+  p_NEXT : process(r_STATE, i_DATA)    
+  begin
     case (r_STATE) is
       when s_0 =>        					 
               w_NEXT  <= s_1; --vai para o proximo passando clear em 1  
@@ -59,9 +101,9 @@ begin
 				  w_NEXT  <= s_2;
 				  
       when s_2 => 
-					if (i_OP = "0000") then    -- caso op = 0000
+				  if   (i_OP = "0000") then    -- caso op = 0000
 					 w_NEXT <= s_3;
-				  elsif (i_OP = "0001") then  -- caso op = 0001
+				  elsif(i_OP = "0001") then  -- caso op = 0001
 					 w_NEXT <= s_4;
 				  elsif(i_OP = "0010") then   -- caso op = 0010
 					 w_NEXT <= s_5;
@@ -80,24 +122,36 @@ begin
                w_NEXT <= s_0;
     end case;   		
   end process;
+  o_RD     <= '1' when (r_STATE = s_1) else '0';  
   
-  -- SINALIZA QUE O RESULTADO FOI ENCONTRADO
-  o_RDY   <= '1' when (r_STATE = s_0 or r_STATE = s_4) else '0';  
-
-  -- SINALIZA QUE O VALOR DE X DEVE SER CARREGADO NO REGISTRADOR X
-  o_X_LD  <= '1' when (r_STATE = s_0 or r_STATE = s_2) else '0';
+  o_IR_ID  <= '1' when (r_STATE = s_1) else '0';  
   
-  -- SINALIZA QUE O VALOR DE Y DEVE SER CARREGADO NO REGISTRADOR Y
-  o_Y_LD  <= '1' when (r_STATE = s_0 or r_STATE = s_3) else '0';
+  o_PC_INC <= '1' when (r_STATE = s_1) else '0';  
   
-  -- SINALIZA QUE O VALOR DE Y DEVE SER CARREGADO NO REGISTRADOR DE RESULTADO
-  o_D_LD  <= '1' when (r_STATE = s_4) else '0';
+  o_PC_CLR <= '0' when (r_STATE = s_0) else '1';  
   
-  -- REALIZA SELEÇÃO ENTRE ENTRADA X E RESULTADO DA SUBTRAÇÃO	
-  o_X_SEL <= '1' when (r_STATE = s_2) else '0';
+  o_D_ADDR <=  w_D when ((r_STATE = s_3) or (r_STATE = s_4)) else "00000000"; 
   
-  -- REALIZA SELEÇÃO ENTRE ENTRADA Y E RESULTADO DA SUBTRAÇÃO
-  o_Y_SEL <= '1' when (r_STATE = s_3) else '0';
+  o_D_RD   <= '1' when (r_STATE = s_3) else '0';  
+  
+  o_D_WR   <= '1' when (r_STATE = s_4) else '0';  
+  
+  o_RF_S   <= '1' when (r_STATE = s_3) 'X' when (r_STATE = s_4) else '0';  
+  
+  o_RF_W_ADDR  <= w_RA when ((r_STATE = s_3) or (r_STATE = s_4) or (r_STATE = s_5)) else "0000";  
+  
+  o_RF_W_WR    <= '1' when ((r_STATE = s_3) or (r_STATE = s_5)) else '0'; 
+  
+  o_RF_RP_ADDR <= w_RA when (r_STATE = s_4) w_RB when (r_STATE = s_5) else "0000"; 
+  
+  o_RF_RP_RD   <= '1' when ((r_STATE = s_4) or (r_STATE = s_5)) else '0';
+  
+  o_RF_RQ_ADDR <= w_RC when (r_STATE = s_5) else "0000";
+  
+  o_RF_RQ_RD   <= 1 when (r_STATE = s_5) else '0';
+  
+  o_ALU_S0     <= 1 when (r_STATE = s_5) else '0';
+  
   
 end rtl;
 
