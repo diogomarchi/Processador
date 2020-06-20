@@ -9,7 +9,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity processador_control is 
+entity processador_bloco_controle is 
 port ( i_CLK   : in std_logic;  -- input clock
        i_CLR_n : in std_logic;  -- input clear/reset
 		 i_DATA  : in std_logic_vector(15 downto 0); -- input operacao
@@ -29,9 +29,9 @@ port ( i_CLK   : in std_logic;  -- input clock
 		 o_RF_RQ_RD  : out std_logic;  -- output RF_RQ leitura
 		 o_ALU_S0    : out std_logic   -- output soma ULA
        ); 
-end processador_control;
+end processador_bloco_controle;
 
-architecture rtl of processador_control is
+architecture rtl of processador_bloco_controle is
   -- s_0 inicio
   -- s_1 busca
   -- s_2 decodificação
@@ -148,7 +148,7 @@ begin
   
   o_RF_W_WR    <= '1' when ((r_STATE = s_3) or (r_STATE = s_5)) else '0'; 
   
-  o_D_WR   <= '1' when (r_STATE = s_4) else '0';  
+  o_D_WR       <= '1' when (r_STATE = s_4) else '0';  
   
   o_RF_RP_ADDR <= w_RA when (r_STATE = s_4);o_RF_RP_ADDR <= w_RB when (r_STATE = s_5) else "0000"; 
   
