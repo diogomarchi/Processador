@@ -14,7 +14,7 @@ entity mux2x1 is
 port ( i_SEL : in  std_logic;  -- selector
        i_A   : in  std_logic_Vector(15 downto 0);  -- data input
        i_B   : in  std_logic_Vector(15 downto 0);  -- data input
-       o_Q   : in  std_logic_Vector(15 downto 0));  -- data input-- data output
+       o_Q   : out  std_logic_Vector(15 downto 0));  -- data output
 end mux2x1;
 
 

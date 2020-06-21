@@ -8,6 +8,7 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.STD_LOGIC_UNSIGNED.all;
 
 entity ALU is
 port ( i_CLK   : in std_logic;
@@ -19,7 +20,7 @@ port ( i_CLK   : in std_logic;
 end ALU;
 
 
-architecture arch_1 of mux2x1 is
+architecture arch_1 of ALU is
   signal w_o_ADD : std_logic_Vector(15 downto 0);
 
 begin

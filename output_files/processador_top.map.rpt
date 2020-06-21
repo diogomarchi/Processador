@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador_top
-Fri Jun 19 13:43:41 2020
+Sun Jun 21 00:29:54 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -10,7 +10,16 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |processador_unidade_controle|processador_bloco_controle:u_CONTROLE|r_STATE
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "processador_bloco_controle:u_CONTROLE"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -34,109 +43,114 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Fri Jun 19 13:43:41 2020           ;
-; Quartus Prime Version       ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
-; Revision Name               ; processador_top                             ;
-; Top-level Entity Name       ; instruction_register                        ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun Jun 21 00:29:54 2020       ;
+; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                   ; processador_top                             ;
+; Top-level Entity Name           ; processador_unidade_controle                ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 38                                          ;
+; Total pins                      ; 62                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                               ;
-+---------------------------------------------------------------------------------+----------------------+--------------------+
-; Option                                                                          ; Setting              ; Default Value      ;
-+---------------------------------------------------------------------------------+----------------------+--------------------+
-; Device                                                                          ; 5CGXFC7C7F23C8       ;                    ;
-; Top-level entity name                                                           ; instruction_register ; processador_top    ;
-; Family name                                                                     ; Cyclone V            ; Cyclone V          ;
-; Use smart compilation                                                           ; Off                  ; Off                ;
-; Enable parallel Assembler and Timing Analyzer during compilation                ; On                   ; On                 ;
-; Enable compact report table                                                     ; Off                  ; Off                ;
-; Restructure Multiplexers                                                        ; Auto                 ; Auto               ;
-; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                  ; Off                ;
-; Create Debugging Nodes for IP Cores                                             ; Off                  ; Off                ;
-; Preserve fewer node names                                                       ; On                   ; On                 ;
-; Intel FPGA IP Evaluation Mode                                                   ; Enable               ; Enable             ;
-; Verilog Version                                                                 ; Verilog_2001         ; Verilog_2001       ;
-; VHDL Version                                                                    ; VHDL_1993            ; VHDL_1993          ;
-; State Machine Processing                                                        ; Auto                 ; Auto               ;
-; Safe State Machine                                                              ; Off                  ; Off                ;
-; Extract Verilog State Machines                                                  ; On                   ; On                 ;
-; Extract VHDL State Machines                                                     ; On                   ; On                 ;
-; Ignore Verilog initial constructs                                               ; Off                  ; Off                ;
-; Iteration limit for constant Verilog loops                                      ; 5000                 ; 5000               ;
-; Iteration limit for non-constant Verilog loops                                  ; 250                  ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                         ; On                   ; On                 ;
-; Infer RAMs from Raw Logic                                                       ; On                   ; On                 ;
-; Parallel Synthesis                                                              ; On                   ; On                 ;
-; DSP Block Balancing                                                             ; Auto                 ; Auto               ;
-; NOT Gate Push-Back                                                              ; On                   ; On                 ;
-; Power-Up Don't Care                                                             ; On                   ; On                 ;
-; Remove Redundant Logic Cells                                                    ; Off                  ; Off                ;
-; Remove Duplicate Registers                                                      ; On                   ; On                 ;
-; Ignore CARRY Buffers                                                            ; Off                  ; Off                ;
-; Ignore CASCADE Buffers                                                          ; Off                  ; Off                ;
-; Ignore GLOBAL Buffers                                                           ; Off                  ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                       ; Off                  ; Off                ;
-; Ignore LCELL Buffers                                                            ; Off                  ; Off                ;
-; Ignore SOFT Buffers                                                             ; On                   ; On                 ;
-; Limit AHDL Integers to 32 Bits                                                  ; Off                  ; Off                ;
-; Optimization Technique                                                          ; Balanced             ; Balanced           ;
-; Carry Chain Length                                                              ; 70                   ; 70                 ;
-; Auto Carry Chains                                                               ; On                   ; On                 ;
-; Auto Open-Drain Pins                                                            ; On                   ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                           ; Off                  ; Off                ;
-; Auto ROM Replacement                                                            ; On                   ; On                 ;
-; Auto RAM Replacement                                                            ; On                   ; On                 ;
-; Auto DSP Block Replacement                                                      ; On                   ; On                 ;
-; Auto Shift Register Replacement                                                 ; Auto                 ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                                 ; Auto                 ; Auto               ;
-; Auto Clock Enable Replacement                                                   ; On                   ; On                 ;
-; Strict RAM Replacement                                                          ; Off                  ; Off                ;
-; Allow Synchronous Control Signals                                               ; On                   ; On                 ;
-; Force Use of Synchronous Clear Signals                                          ; Off                  ; Off                ;
-; Auto Resource Sharing                                                           ; Off                  ; Off                ;
-; Allow Any RAM Size For Recognition                                              ; Off                  ; Off                ;
-; Allow Any ROM Size For Recognition                                              ; Off                  ; Off                ;
-; Allow Any Shift Register Size For Recognition                                   ; Off                  ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                             ; On                   ; On                 ;
-; Ignore translate_off and synthesis_off directives                               ; Off                  ; Off                ;
-; Timing-Driven Synthesis                                                         ; On                   ; On                 ;
-; Report Parameter Settings                                                       ; On                   ; On                 ;
-; Report Source Assignments                                                       ; On                   ; On                 ;
-; Report Connectivity Checks                                                      ; On                   ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                              ; Off                  ; Off                ;
-; Synchronization Register Chain Length                                           ; 3                    ; 3                  ;
-; Power Optimization During Synthesis                                             ; Normal compilation   ; Normal compilation ;
-; HDL message level                                                               ; Level2               ; Level2             ;
-; Suppress Register Optimization Related Messages                                 ; Off                  ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                        ; 5000                 ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                 ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                       ; 100                  ; 100                ;
-; Clock MUX Protection                                                            ; On                   ; On                 ;
-; Auto Gated Clock Conversion                                                     ; Off                  ; Off                ;
-; Block Design Naming                                                             ; Auto                 ; Auto               ;
-; SDC constraint protection                                                       ; Off                  ; Off                ;
-; Synthesis Effort                                                                ; Auto                 ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                   ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                            ; Off                  ; Off                ;
-; Analysis & Synthesis Message Level                                              ; Medium               ; Medium             ;
-; Disable Register Merging Across Hierarchies                                     ; Auto                 ; Auto               ;
-; Resource Aware Inference For Block RAM                                          ; On                   ; On                 ;
-; Automatic Parallel Synthesis                                                    ; On                   ; On                 ;
-; Partial Reconfiguration Bitstream ID                                            ; Off                  ; Off                ;
-+---------------------------------------------------------------------------------+----------------------+--------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                                       ;
++---------------------------------------------------------------------------------+------------------------------+--------------------+
+; Option                                                                          ; Setting                      ; Default Value      ;
++---------------------------------------------------------------------------------+------------------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8               ;                    ;
+; Top-level entity name                                                           ; processador_unidade_controle ; processador_top    ;
+; Family name                                                                     ; Cyclone V                    ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                          ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                           ; On                 ;
+; Enable compact report table                                                     ; Off                          ; Off                ;
+; Restructure Multiplexers                                                        ; Auto                         ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                          ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                          ; Off                ;
+; Preserve fewer node names                                                       ; On                           ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable                       ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001                 ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993                    ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto                         ; Auto               ;
+; Safe State Machine                                                              ; Off                          ; Off                ;
+; Extract Verilog State Machines                                                  ; On                           ; On                 ;
+; Extract VHDL State Machines                                                     ; On                           ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                          ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000                         ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                          ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                           ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                           ; On                 ;
+; Parallel Synthesis                                                              ; On                           ; On                 ;
+; DSP Block Balancing                                                             ; Auto                         ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                           ; On                 ;
+; Power-Up Don't Care                                                             ; On                           ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                          ; Off                ;
+; Remove Duplicate Registers                                                      ; On                           ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                          ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                          ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                          ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                          ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                          ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                           ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                          ; Off                ;
+; Optimization Technique                                                          ; Balanced                     ; Balanced           ;
+; Carry Chain Length                                                              ; 70                           ; 70                 ;
+; Auto Carry Chains                                                               ; On                           ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                           ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                          ; Off                ;
+; Auto ROM Replacement                                                            ; On                           ; On                 ;
+; Auto RAM Replacement                                                            ; On                           ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                           ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto                         ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                         ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                           ; On                 ;
+; Strict RAM Replacement                                                          ; Off                          ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                           ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                          ; Off                ;
+; Auto Resource Sharing                                                           ; Off                          ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                          ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                          ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                          ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                           ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                          ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                           ; On                 ;
+; Report Parameter Settings                                                       ; On                           ; On                 ;
+; Report Source Assignments                                                       ; On                           ; On                 ;
+; Report Connectivity Checks                                                      ; On                           ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                          ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                            ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation           ; Normal compilation ;
+; HDL message level                                                               ; Level2                       ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                          ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                         ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                         ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                          ; 100                ;
+; Clock MUX Protection                                                            ; On                           ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                          ; Off                ;
+; Block Design Naming                                                             ; Auto                         ; Auto               ;
+; SDC constraint protection                                                       ; Off                          ; Off                ;
+; Synthesis Effort                                                                ; Auto                         ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                           ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                          ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium                       ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                         ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                           ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                           ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                          ; Off                ;
++---------------------------------------------------------------------------------+------------------------------+--------------------+
 
 
 +------------------------------------------+
@@ -145,14 +159,152 @@ https://fpgasoftware.intel.com/eula.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                  ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
+; instruction_register.vhd         ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/instruction_register.vhd         ;         ;
+; processador_bloco_controle.vhd   ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/processador_bloco_controle.vhd   ;         ;
+; program_counter.vhd              ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/program_counter.vhd              ;         ;
+; processador_unidade_controle.vhd ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/processador_unidade_controle.vhd ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 25          ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 43          ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 1           ;
+;     -- 5 input functions                    ; 3           ;
+;     -- 4 input functions                    ; 8           ;
+;     -- <=3 input functions                  ; 31          ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 38          ;
+;                                             ;             ;
+; I/O pins                                    ; 62          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; i_CLK~input ;
+; Maximum fan-out                             ; 38          ;
+; Total fan-out                               ; 372         ;
+; Average fan-out                             ; 1.81        ;
++---------------------------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                     ;
++--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------+------------------------------+--------------+
+; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                 ; Entity Name                  ; Library Name ;
++--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------+------------------------------+--------------+
+; |processador_unidade_controle              ; 43 (0)              ; 38 (0)                    ; 0                 ; 0          ; 62   ; 0            ; |processador_unidade_controle                                       ; processador_unidade_controle ; work         ;
+;    |instruction_register:u_REG_IR|         ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_unidade_controle|instruction_register:u_REG_IR         ; instruction_register         ; work         ;
+;    |processador_bloco_controle:u_CONTROLE| ; 27 (27)             ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_unidade_controle|processador_bloco_controle:u_CONTROLE ; processador_bloco_controle   ; work         ;
+;    |reg_PC:u_REG_PC|                       ; 16 (16)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_unidade_controle|reg_PC:u_REG_PC                       ; reg_PC                       ; work         ;
++--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------+------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------+
+; State Machine - |processador_unidade_controle|processador_bloco_controle:u_CONTROLE|r_STATE     ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+; Name        ; r_STATE.s_5 ; r_STATE.s_4 ; r_STATE.s_3 ; r_STATE.s_2 ; r_STATE.s_1 ; r_STATE.s_0 ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+; r_STATE.s_0 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ;
+; r_STATE.s_1 ; 0           ; 0           ; 0           ; 0           ; 1           ; 1           ;
+; r_STATE.s_2 ; 0           ; 0           ; 0           ; 1           ; 0           ; 1           ;
+; r_STATE.s_3 ; 0           ; 0           ; 1           ; 0           ; 0           ; 1           ;
+; r_STATE.s_4 ; 0           ; 1           ; 0           ; 0           ; 0           ; 1           ;
+; r_STATE.s_5 ; 1           ; 0           ; 0           ; 0           ; 0           ; 1           ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 38    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 38    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |processador_unidade_controle|processador_bloco_controle:u_CONTROLE|o_RF_RP_ADDR[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processador_bloco_controle:u_CONTROLE"                                                ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_i_rd ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 38                          ;
+;     CLR               ; 6                           ;
+;     ENA CLR           ; 32                          ;
+; arriav_lcell_comb     ; 44                          ;
+;     arith             ; 15                          ;
+;         1 data inputs ; 14                          ;
+;         2 data inputs ; 1                           ;
+;     normal            ; 29                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 8                           ;
+;         5 data inputs ; 3                           ;
+;         6 data inputs ; 1                           ;
+; boundary_port         ; 62                          ;
+;                       ;                             ;
+; Max LUT depth         ; 2.40                        ;
+; Average LUT depth     ; 1.19                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -161,24 +313,65 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Fri Jun 19 13:43:11 2020
+    Info: Processing started: Sun Jun 21 00:29:46 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file register_16bit.vhd
+    Info (12022): Found design unit 1: register_16bit-arch1 File: C:/intelFPGA_lite/19.1/workspace/Processador/register_16bit.vhd Line: 22
+    Info (12023): Found entity 1: register_16bit File: C:/intelFPGA_lite/19.1/workspace/Processador/register_16bit.vhd Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file mux2x1.vhd
+    Info (12022): Found design unit 1: mux2x1-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/mux2x1.vhd Line: 21
+    Info (12023): Found entity 1: mux2x1 File: C:/intelFPGA_lite/19.1/workspace/Processador/mux2x1.vhd Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: ALU-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/ALU.vhd Line: 23
+    Info (12023): Found entity 1: ALU File: C:/intelFPGA_lite/19.1/workspace/Processador/ALU.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file instruction_register.vhd
-    Info (12022): Found design unit 1: reg_IR-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_register.vhd Line: 22
-    Info (12023): Found entity 1: reg_IR File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_register.vhd Line: 13
+    Info (12022): Found design unit 1: instruction_register-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_register.vhd Line: 22
+    Info (12023): Found entity 1: instruction_register File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_register.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file processador_bloco_controle.vhd
-    Info (12022): Found design unit 1: processador_control-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_bloco_controle.vhd Line: 34
-    Info (12023): Found entity 1: processador_control File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_bloco_controle.vhd Line: 12
+    Info (12022): Found design unit 1: processador_bloco_controle-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_bloco_controle.vhd Line: 34
+    Info (12023): Found entity 1: processador_bloco_controle File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_bloco_controle.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file program_counter.vhd
-    Info (12022): Found design unit 1: reg_PC-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/program_counter.vhd Line: 21
-    Info (12023): Found entity 1: reg_PC File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/program_counter.vhd Line: 13
-Error (12007): Top-level design entity "instruction_register" is undefined
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4844 megabytes
-    Error: Processing ended: Fri Jun 19 13:43:42 2020
-    Error: Elapsed time: 00:00:31
-    Error: Total CPU time (on all processors): 00:00:34
+    Info (12022): Found design unit 1: reg_PC-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/program_counter.vhd Line: 21
+    Info (12023): Found entity 1: reg_PC File: C:/intelFPGA_lite/19.1/workspace/Processador/program_counter.vhd Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file processador_unidade_controle.vhd
+    Info (12022): Found design unit 1: processador_unidade_controle-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_unidade_controle.vhd Line: 32
+    Info (12023): Found entity 1: processador_unidade_controle File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_unidade_controle.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file register_file.vhd
+    Info (12022): Found design unit 1: register_file-arch1 File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 29
+    Info (12023): Found entity 1: register_file File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file demux1x16.vhd
+    Info (12022): Found design unit 1: demux1x16-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/demux1x16.vhd Line: 36
+    Info (12023): Found entity 1: demux1x16 File: C:/intelFPGA_lite/19.1/workspace/Processador/demux1x16.vhd Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file mux16x1.vhd
+    Info (12022): Found design unit 1: mux16x1-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/mux16x1.vhd Line: 36
+    Info (12023): Found entity 1: mux16x1 File: C:/intelFPGA_lite/19.1/workspace/Processador/mux16x1.vhd Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file operational_block.vhd
+    Info (12022): Found design unit 1: operational_block-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd Line: 30
+    Info (12023): Found entity 1: operational_block File: C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd Line: 13
+Info (12127): Elaborating entity "processador_unidade_controle" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at processador_unidade_controle.vhd(17): used implicit default value for signal "o_RD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_unidade_controle.vhd Line: 17
+Warning (10036): Verilog HDL or VHDL warning at processador_unidade_controle.vhd(72): object "w_I_RD" assigned a value but never read File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_unidade_controle.vhd Line: 72
+Info (12128): Elaborating entity "reg_PC" for hierarchy "reg_PC:u_REG_PC" File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_unidade_controle.vhd Line: 79
+Info (12128): Elaborating entity "instruction_register" for hierarchy "instruction_register:u_REG_IR" File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_unidade_controle.vhd Line: 85
+Info (12128): Elaborating entity "processador_bloco_controle" for hierarchy "processador_bloco_controle:u_CONTROLE" File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_unidade_controle.vhd Line: 93
+Warning (10492): VHDL Process Statement warning at processador_bloco_controle.vhd(110): signal "w_OP" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_bloco_controle.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at processador_bloco_controle.vhd(112): signal "w_OP" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_bloco_controle.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at processador_bloco_controle.vhd(114): signal "w_OP" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_bloco_controle.vhd Line: 114
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "o_RD" is stuck at GND File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_unidade_controle.vhd Line: 17
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 122 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 44 output pins
+    Info (21061): Implemented 60 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4863 megabytes
+    Info: Processing ended: Sun Jun 21 00:29:54 2020
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:17
 
 

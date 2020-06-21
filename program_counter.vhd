@@ -26,14 +26,15 @@ begin
 
   process(i_PC_CLR,i_CLK) 
   begin
-    if (i_PC_CLR = '0') then
-      w_COUNTER <= "0000000000000000";
-		o_PC <= "0000000000000000";
+    if (i_PC_CLR = '1') then
+      w_COUNTER <= "0000000000000000";		
 	 elsif (rising_edge(i_CLK)) then
       if (i_PC_INC = '1') then
-		  w_COUNTER <= w_COUNTER + "1";
-        o_PC <= w_COUNTER;
+		  w_COUNTER <= w_COUNTER + "1";        
       end if;
     end if;
   end process;
+  
+  o_PC <= w_COUNTER;
+  
 end rtl;

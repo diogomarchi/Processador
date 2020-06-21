@@ -47,43 +47,43 @@ architecture rtl of processador_bloco_controle is
 begin
 
    --atribuição do valor de OP a partir do valor de entrada
-	w_OP(3 to 0) <= i_DATA(15 downto 12);
--- w_OP[0] <= i_DATA[12];
---	w_OP[1] <= i_DATA[13];
---	w_OP[2] <= i_DATA[14];
---	w_OP[3] <= i_DATA[15];
+	--w_OP(3 to 0) <= i_DATA(15 downto 12);
+   w_OP(0) <= i_DATA(12);
+	w_OP(1) <= i_DATA(13);
+	w_OP(2) <= i_DATA(14);
+	w_OP(3) <= i_DATA(15);
 	
 	--atribuição do valor de RA a partir do valor de entrada
-	w_RA(3 to 0) <= i_DATA(11 downto 8);
---	w_RA[0] <= i_DATA[8];
---	w_RA[1] <= i_DATA[9];
---	w_RA[2] <= i_DATA[10];
---	w_RA[3] <= i_DATA[11];
+--	w_RA(3 to 0) <= i_DATA(11 downto 8);
+	w_RA(0) <= i_DATA(8);
+	w_RA(1) <= i_DATA(9);
+	w_RA(2) <= i_DATA(10);
+	w_RA(3) <= i_DATA(11);
 	
 	--atribuição do valor de RB a partir do valor de entrada
-	w_RB(3 to 0) <= i_DATA(7 downto 4);
---	w_RB[0] <= i_DATA[4];
---	w_RB[1] <= i_DATA[5];
---	w_RB[2] <= i_DATA[6];
---	w_RB[3] <= i_DATA[7];
+--	w_RB(3 to 0) <= i_DATA(7 downto 4);
+	w_RB(0) <= i_DATA(4);
+	w_RB(1) <= i_DATA(5);
+	w_RB(2) <= i_DATA(6);
+	w_RB(3) <= i_DATA(7);
 	
 	--atribuição do valor de RC a partir do valor de entrada
-	w_RC(3 to 0) <= i_DATA(3 downto 0);
---	w_RC[0] <= i_DATA[0];
---	w_RC[1] <= i_DATA[1];
---	w_RC[2] <= i_DATA[2];
---	w_RC[3] <= i_DATA[3];
+--	w_RC(3 to 0) <= i_DATA(3 downto 0);
+	w_RC(0) <= i_DATA(0);
+	w_RC(1) <= i_DATA(1);
+	w_RC(2) <= i_DATA(2);
+	w_RC(3) <= i_DATA(3);
 	
 	--atribuição do valor de D a partir do valor de entrada
-	w_D(7 to 0)  <= i_DATA(7 downto 0);
---	w_D[0]  <= i_DATA[0];
---	w_D[1]  <= i_DATA[1];
---	w_D[2]  <= i_DATA[2];
---	w_D[3]  <= i_DATA[3];
---	w_D[4]  <= i_DATA[4];
---	w_D[5]  <= i_DATA[5];
---	w_D[6]  <= i_DATA[6];
---	w_D[7]  <= i_DATA[7];
+--	w_D(7 to 0)  <= i_DATA(7 downto 0);
+	w_D(0)  <= i_DATA(0);
+	w_D(1)  <= i_DATA(1);
+	w_D(2)  <= i_DATA(2);
+	w_D(3)  <= i_DATA(3);
+	w_D(4)  <= i_DATA(4);
+	w_D(5)  <= i_DATA(5);
+	w_D(6)  <= i_DATA(6);
+	w_D(7)  <= i_DATA(7);
 
   
   p_STATE : process (i_CLK, i_CLR_n)
@@ -122,7 +122,7 @@ begin
                w_NEXT <= s_1;	
 					
 		when s_5 =>
-					W_NEXT <= s_1;
+					w_NEXT <= s_1;
 						
       when others => 
                w_NEXT <= s_0;
@@ -150,7 +150,8 @@ begin
   
   o_D_WR       <= '1' when (r_STATE = s_4) else '0';  
   
-  o_RF_RP_ADDR <= w_RA when (r_STATE = s_4);o_RF_RP_ADDR <= w_RB when (r_STATE = s_5) else "0000"; 
+  o_RF_RP_ADDR <= w_RA when (r_STATE = s_4) else
+                  w_RB when (r_STATE = s_5) else "0000"; 
   
   o_RF_RP_RD   <= '1' when ((r_STATE = s_4) or (r_STATE = s_5)) else '0';
   

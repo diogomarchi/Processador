@@ -33,12 +33,12 @@ end component;
 begin 
 
 --connecting processador_unidade_controle with processador_control
-u_PROCESSADOR_UC : processador_unidade_controle port map (i_CLR_N => i_PCLR_N,
-																			i_CLK    => i_CLK,
-																			i_DATA   => o_DATA,
-																			o_ADDR   => i_ADDR,
-																			o_RD     => i_RD
-																			);
+--u_PROCESSADOR_UC : processador_unidade_controle port map (i_CLR_N => i_PCLR_N,
+	--																		i_CLK    => i_CLK,
+		--																	i_DATA   => o_DATA,
+			--																o_ADDR   => i_ADDR,
+				--															o_RD     => i_RD
+					--														);
 
 
   

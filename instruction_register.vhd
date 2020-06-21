@@ -10,16 +10,16 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.STD_LOGIC_UNSIGNED.all;
 
-entity reg_IR is
+entity instruction_register is
 port ( i_CLR_N : in  std_logic;  -- clear/reset
        i_CLK    : in  std_logic;  -- clock
 		 i_DATa   : in  std_logic_vector(15 downto 0);--enter data value
        i_LD     : in  std_logic;  -- enable load instruction register   
        o_IR     : out std_logic_vector(15 downto 0)); -- data output
-end reg_IR;
+end instruction_register;
 
 
-architecture rtl of reg_IR is
+architecture rtl of instruction_register is
 
 begin
 
