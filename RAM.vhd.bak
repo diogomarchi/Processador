@@ -1,0 +1,25 @@
+------------------------------------------------
+-- Design: RAM
+-- Entity: RAM
+-- Author: Diogo & George
+-- Rev.  : 1.0
+-- Date  : 06/19/2020
+------------------------------------------------
+
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.STD_LOGIC_UNSIGNED.all;
+
+entity RAM is 
+  generic (D_Width : integer := 8;
+           A_Width : integer := 10);
+  
+  port ( i_CLK   : in std_logic;
+       i_CLR_N : in std_logic;
+       i_ENA   : in  std_logic;  -- enable
+       i_A     : in  std_logic_Vector(15 downto 0);  -- data input       
+       o_Q     : out  std_logic_Vector(15 downto 0)); -- data output
+
+
+end entity RAM;

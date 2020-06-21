@@ -91,16 +91,6 @@ architecture arch1 of register_file is
   end component;
 
 begin
-
-  process(i_CLR_N,i_CLK) 
-  begin
-    if (i_CLR_N = '0') then
-      
-	 elsif (rising_edge(i_CLK)) then
-      
-    end if;
-  end process;
-  
   
   u_R0 : register_16bit port map ( i_CLK   => i_CLK,
                                    i_CLR_N => i_CLR_N,
