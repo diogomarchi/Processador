@@ -47,30 +47,35 @@ architecture rtl of control_block is
 begin
 
    --atribuição do valor de OP a partir do valor de entrada
+--	w_OP <= i_DATA(15 downto 12);
    w_OP(0) <= i_DATA(12);
 	w_OP(1) <= i_DATA(13);
 	w_OP(2) <= i_DATA(14);
 	w_OP(3) <= i_DATA(15);
 	
 	--atribuição do valor de RA a partir do valor de entrada
+--	w_RA <= i_DATA(11 downto 8);
 	w_RA(0) <= i_DATA(8);
 	w_RA(1) <= i_DATA(9);
 	w_RA(2) <= i_DATA(10);
 	w_RA(3) <= i_DATA(11);
 	
 	--atribuição do valor de RB a partir do valor de entrada
+--	w_RB <= i_DATA( 7 downto 4);
 	w_RB(0) <= i_DATA(4);
 	w_RB(1) <= i_DATA(5);
 	w_RB(2) <= i_DATA(6);
 	w_RB(3) <= i_DATA(7);
 	
 	--atribuição do valor de RC a partir do valor de entrada
+--	w_RC <= i_DATA(3 downto 0);
 	w_RC(0) <= i_DATA(0);
 	w_RC(1) <= i_DATA(1);
 	w_RC(2) <= i_DATA(2);
 	w_RC(3) <= i_DATA(3);
 	
 	--atribuição do valor de D a partir do valor de entrada
+--	W_D <= i_DATA(7 downto 0);
 	w_D(0)  <= i_DATA(0);
 	w_D(1)  <= i_DATA(1);
 	w_D(2)  <= i_DATA(2);

@@ -1,13 +1,13 @@
-Fitter Status : Successful - Sun Jun 21 11:48:00 2020
+Fitter Status : Successful - Mon Jun 22 12:51:58 2020
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : processador_top
-Top-level Entity Name : operational_block
+Top-level Entity Name : processador_top
 Family : Cyclone V
 Device : 5CGXFC7C7F23C8
 Timing Models : Final
-Logic utilization (in ALMs) : 195 / 56,480 ( < 1 % )
-Total registers : 288
-Total pins : 51 / 268 ( 19 % )
+Logic utilization (in ALMs) : 1 / 56,480 ( < 1 % )
+Total registers : 0
+Total pins : 2 / 268 ( < 1 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 7,024,640 ( 0 % )
 Total RAM Blocks : 0 / 686 ( 0 % )
