@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador_top
-Sun Jun 21 22:34:24 2020
+Mon Jun 22 08:42:15 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -13,17 +13,22 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. General Register Statistics
- 10. Registers Packed Into Inferred Megafunctions
- 11. Source assignments for single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_p1f1:auto_generated
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |instruction_memory
- 13. Parameter Settings for User Entity Instance: single_port_rom:u_single_port_rom
- 14. Parameter Settings for Inferred Entity Instance: single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0
- 15. altsyncram Parameter Settings by Entity Instance
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+  8. State Machine - |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Registers Packed Into Inferred Megafunctions
+ 13. Source assignments for instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated
+ 14. Parameter Settings for User Entity Instance: data_memo:u_data_memo
+ 15. Parameter Settings for User Entity Instance: data_memo:u_data_memo|RAM:u_RAM
+ 16. Parameter Settings for User Entity Instance: instruction_memory:u_instruction_memory
+ 17. Parameter Settings for User Entity Instance: instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom
+ 18. Parameter Settings for Inferred Entity Instance: instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "control_unity:u_control_unity|control_block:u_CONTROLE"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
 
 
 
@@ -50,16 +55,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Jun 21 22:34:24 2020       ;
+; Analysis & Synthesis Status     ; Successful - Mon Jun 22 08:42:15 2020       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; processador_top                             ;
-; Top-level Entity Name           ; instruction_memory                          ;
+; Top-level Entity Name           ; processador_top                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 19                                          ;
-; Total pins                      ; 35                                          ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 2                                           ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 1,048,576                                   ;
+; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -76,7 +81,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; instruction_memory ; processador_top    ;
+; Top-level entity name                                                           ; processador_top    ; processador_top    ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -166,11 +171,10 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -180,7 +184,20 @@ https://fpgasoftware.intel.com/eula.
 ; File Name with User-Entered Path                         ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                            ; Library ;
 +----------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------+
 ; single_port_rom.vhd                                      ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/single_port_rom.vhd                                      ;         ;
+; control_unity.vhd                                        ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd                                        ;         ;
+; control_block.vhd                                        ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd                                        ;         ;
+; processador_top.vhd                                      ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd                                      ;         ;
 ; register_16bit.vhd                                       ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_16bit.vhd                                       ;         ;
+; mux2x1.vhd                                               ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux2x1.vhd                                               ;         ;
+; ALU.vhd                                                  ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/ALU.vhd                                                  ;         ;
+; instruction_register.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_register.vhd                                 ;         ;
+; program_counter.vhd                                      ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/program_counter.vhd                                      ;         ;
+; register_file.vhd                                        ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd                                        ;         ;
+; demux1x16.vhd                                            ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/demux1x16.vhd                                            ;         ;
+; mux16x1.vhd                                              ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux16x1.vhd                                              ;         ;
+; operational_block.vhd                                    ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd                                    ;         ;
+; RAM.vhd                                                  ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/RAM.vhd                                                  ;         ;
+; data_memo.vhd                                            ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd                                            ;         ;
 ; instruction_memory.vhd                                   ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd                                   ;         ;
 ; altsyncram.tdf                                           ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf                                                   ;         ;
 ; stratix_ram_block.inc                                    ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                            ;         ;
@@ -191,65 +208,108 @@ https://fpgasoftware.intel.com/eula.
 ; altrom.inc                                               ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                                                       ;         ;
 ; altram.inc                                               ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                                                       ;         ;
 ; altdpram.inc                                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc                                                     ;         ;
-; db/altsyncram_p1f1.tdf                                   ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_p1f1.tdf                                   ;         ;
+; db/altsyncram_8ne1.tdf                                   ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf                                   ;         ;
 ; db/processador_top.ram0_single_port_rom_ee80a174.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/processador_top.ram0_single_port_rom_ee80a174.hdl.mif ;         ;
 ; db/decode_61a.tdf                                        ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/decode_61a.tdf                                        ;         ;
 ; db/mux_chb.tdf                                           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/mux_chb.tdf                                           ;         ;
 +----------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 45          ;
-;                                             ;             ;
-; Combinational ALUT usage for logic          ; 56          ;
-;     -- 7 input functions                    ; 0           ;
-;     -- 6 input functions                    ; 32          ;
-;     -- 5 input functions                    ; 0           ;
-;     -- 4 input functions                    ; 0           ;
-;     -- <=3 input functions                  ; 24          ;
-;                                             ;             ;
-; Dedicated logic registers                   ; 19          ;
-;                                             ;             ;
-; I/O pins                                    ; 35          ;
-; Total MLAB memory bits                      ; 0           ;
-; Total block memory bits                     ; 1048576     ;
-;                                             ;             ;
-; Total DSP Blocks                            ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; i_CLK~input ;
-; Maximum fan-out                             ; 147         ;
-; Total fan-out                               ; 2305        ;
-; Average fan-out                             ; 8.44        ;
-+---------------------------------------------+-------------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimate of Logic utilization (ALMs needed) ; 0     ;
+;                                             ;       ;
+; Combinational ALUT usage for logic          ; 0     ;
+;     -- 7 input functions                    ; 0     ;
+;     -- 6 input functions                    ; 0     ;
+;     -- 5 input functions                    ; 0     ;
+;     -- 4 input functions                    ; 0     ;
+;     -- <=3 input functions                  ; 0     ;
+;                                             ;       ;
+; Dedicated logic registers                   ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 2     ;
+;                                             ;       ;
+; Total DSP Blocks                            ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; i_CLK ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 2     ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                       ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                              ; Entity Name        ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
-; |instruction_memory                       ; 56 (0)              ; 19 (0)                    ; 1048576           ; 0          ; 35   ; 0            ; |instruction_memory                                                                                                              ; instruction_memory ; work         ;
-;    |register_16bit:u_register_16bit|      ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |instruction_memory|register_16bit:u_register_16bit                                                                              ; register_16bit     ; work         ;
-;    |single_port_rom:u_single_port_rom|    ; 56 (0)              ; 3 (0)                     ; 1048576           ; 0          ; 0    ; 0            ; |instruction_memory|single_port_rom:u_single_port_rom                                                                            ; single_port_rom    ; work         ;
-;       |altsyncram:rom_rtl_0|              ; 56 (0)              ; 3 (0)                     ; 1048576           ; 0          ; 0    ; 0            ; |instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0                                                       ; altsyncram         ; work         ;
-;          |altsyncram_p1f1:auto_generated| ; 56 (0)              ; 3 (3)                     ; 1048576           ; 0          ; 0    ; 0            ; |instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_p1f1:auto_generated                        ; altsyncram_p1f1    ; work         ;
-;             |decode_61a:rden_decode|      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_p1f1:auto_generated|decode_61a:rden_decode ; decode_61a         ; work         ;
-;             |mux_chb:mux2|                ; 48 (48)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_p1f1:auto_generated|mux_chb:mux2           ; mux_chb            ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                        ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name     ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
+; |processador_top           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 2    ; 0            ; |processador_top    ; processador_top ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                ;
-+--------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+---------+----------------------------------------------------------+
-; Name                                                                                             ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF                                                      ;
-+--------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+---------+----------------------------------------------------------+
-; single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_p1f1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 65536        ; 16           ; --           ; --           ; 1048576 ; db/processador_top.ram0_single_port_rom_ee80a174.hdl.mif ;
-+--------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+---------+----------------------------------------------------------+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------+
+; State Machine - |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+; Name        ; r_STATE.s_5 ; r_STATE.s_4 ; r_STATE.s_3 ; r_STATE.s_2 ; r_STATE.s_1 ; r_STATE.s_0 ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+; r_STATE.s_0 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ;
+; r_STATE.s_1 ; 0           ; 0           ; 0           ; 0           ; 1           ; 1           ;
+; r_STATE.s_2 ; 0           ; 0           ; 0           ; 1           ; 0           ; 1           ;
+; r_STATE.s_3 ; 0           ; 0           ; 1           ; 0           ; 0           ; 1           ;
+; r_STATE.s_4 ; 0           ; 1           ; 0           ; 0           ; 0           ; 1           ;
+; r_STATE.s_5 ; 1           ; 0           ; 0           ; 0           ; 0           ; 1           ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                    ;
++-----------------------------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                                           ; Reason for Removal                          ;
++-----------------------------------------------------------------------------------------+---------------------------------------------+
+; instruction_memory:u_instruction_memory|register_16bit:u_register_16bit|r_STATE[12..15] ; Stuck at GND due to stuck port clock_enable ;
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[12..15]  ; Stuck at GND due to stuck port data_in      ;
+; control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE.s_3                      ; Lost fanout                                 ;
+; control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE.s_4                      ; Lost fanout                                 ;
+; control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE.s_5                      ; Lost fanout                                 ;
+; control_unity:u_control_unity|program_counter:u_program_counter|w_COUNTER[0..15]        ; Lost fanout                                 ;
+; control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE.s_0                      ; Lost fanout                                 ;
+; control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE.s_1                      ; Lost fanout                                 ;
+; control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE.s_2                      ; Lost fanout                                 ;
+; Total Number of Removed Registers = 30                                                  ;                                             ;
++-----------------------------------------------------------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                ;
++-------------------------------------------------------------------------------------+--------------------------------+-------------------------------------------------------------------------------------+
+; Register name                                                                       ; Reason for Removal             ; Registers Removed due to This Register                                              ;
++-------------------------------------------------------------------------------------+--------------------------------+-------------------------------------------------------------------------------------+
+; instruction_memory:u_instruction_memory|register_16bit:u_register_16bit|r_STATE[15] ; Stuck at GND                   ; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[15], ;
+;                                                                                     ; due to stuck port clock_enable ; control_unity:u_control_unity|program_counter:u_program_counter|w_COUNTER[0],       ;
+;                                                                                     ;                                ; control_unity:u_control_unity|program_counter:u_program_counter|w_COUNTER[1],       ;
+;                                                                                     ;                                ; control_unity:u_control_unity|program_counter:u_program_counter|w_COUNTER[2],       ;
+;                                                                                     ;                                ; control_unity:u_control_unity|program_counter:u_program_counter|w_COUNTER[3],       ;
+;                                                                                     ;                                ; control_unity:u_control_unity|program_counter:u_program_counter|w_COUNTER[4],       ;
+;                                                                                     ;                                ; control_unity:u_control_unity|program_counter:u_program_counter|w_COUNTER[5],       ;
+;                                                                                     ;                                ; control_unity:u_control_unity|program_counter:u_program_counter|w_COUNTER[6],       ;
+;                                                                                     ;                                ; control_unity:u_control_unity|program_counter:u_program_counter|w_COUNTER[7],       ;
+;                                                                                     ;                                ; control_unity:u_control_unity|program_counter:u_program_counter|w_COUNTER[8],       ;
+;                                                                                     ;                                ; control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE.s_0,                 ;
+;                                                                                     ;                                ; control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE.s_1                  ;
+; instruction_memory:u_instruction_memory|register_16bit:u_register_16bit|r_STATE[14] ; Stuck at GND                   ; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[14]  ;
+;                                                                                     ; due to stuck port clock_enable ;                                                                                     ;
+; instruction_memory:u_instruction_memory|register_16bit:u_register_16bit|r_STATE[13] ; Stuck at GND                   ; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[13]  ;
+;                                                                                     ; due to stuck port clock_enable ;                                                                                     ;
+; instruction_memory:u_instruction_memory|register_16bit:u_register_16bit|r_STATE[12] ; Stuck at GND                   ; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[12]  ;
+;                                                                                     ; due to stuck port clock_enable ;                                                                                     ;
+; control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE.s_3                  ; Lost Fanouts                   ; control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE.s_2                  ;
++-------------------------------------------------------------------------------------+--------------------------------+-------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -257,155 +317,178 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 19    ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 16    ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 16    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------+
-; Registers Packed Into Inferred Megafunctions                                                    ;
-+--------------------------------------------+---------------------------------------------+------+
-; Register Name                              ; Megafunction                                ; Type ;
-+--------------------------------------------+---------------------------------------------+------+
-; single_port_rom:u_single_port_rom|q[0..15] ; single_port_rom:u_single_port_rom|rom_rtl_0 ; RAM  ;
-+--------------------------------------------+---------------------------------------------+------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                                                                                     ;
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+------+
+; Register Name                                                                       ; Megafunction                                                                        ; Type ;
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+------+
+; instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|q[12..15] ; instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|rom_rtl_0 ; RAM  ;
++-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+------+
 
 
-+--------------------------------------------------------------------------------------------------------------+
-; Source assignments for single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_p1f1:auto_generated ;
-+---------------------------------+--------------------+------+------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                             ;
-+---------------------------------+--------------------+------+------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                              ;
-+---------------------------------+--------------------+------+------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                     ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                      ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |instruction_memory ;
-+----------------+-------+-----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                      ;
-+----------------+-------+-----------------------------------------------------------+
-; D_Width        ; 16    ; Signed Integer                                            ;
-; A_Width        ; 16    ; Signed Integer                                            ;
-+----------------+-------+-----------------------------------------------------------+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_memo:u_data_memo ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; d_width        ; 16    ; Signed Integer                            ;
+; a_width        ; 8     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: single_port_rom:u_single_port_rom ;
-+----------------+-------+-------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                  ;
-+----------------+-------+-------------------------------------------------------+
-; d_width        ; 16    ; Signed Integer                                        ;
-; a_width        ; 16    ; Signed Integer                                        ;
-+----------------+-------+-------------------------------------------------------+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_memo:u_data_memo|RAM:u_RAM ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; d_width        ; 16    ; Signed Integer                                      ;
+; a_width        ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0        ;
-+------------------------------------+----------------------------------------------------------+----------------+
-; Parameter Name                     ; Value                                                    ; Type           ;
-+------------------------------------+----------------------------------------------------------+----------------+
-; BYTE_SIZE_BLOCK                    ; 8                                                        ; Untyped        ;
-; AUTO_CARRY_CHAINS                  ; ON                                                       ; AUTO_CARRY     ;
-; IGNORE_CARRY_BUFFERS               ; OFF                                                      ; IGNORE_CARRY   ;
-; AUTO_CASCADE_CHAINS                ; ON                                                       ; AUTO_CASCADE   ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                                                      ; IGNORE_CASCADE ;
-; WIDTH_BYTEENA                      ; 1                                                        ; Untyped        ;
-; OPERATION_MODE                     ; ROM                                                      ; Untyped        ;
-; WIDTH_A                            ; 16                                                       ; Untyped        ;
-; WIDTHAD_A                          ; 16                                                       ; Untyped        ;
-; NUMWORDS_A                         ; 65536                                                    ; Untyped        ;
-; OUTDATA_REG_A                      ; UNREGISTERED                                             ; Untyped        ;
-; ADDRESS_ACLR_A                     ; NONE                                                     ; Untyped        ;
-; OUTDATA_ACLR_A                     ; NONE                                                     ; Untyped        ;
-; WRCONTROL_ACLR_A                   ; NONE                                                     ; Untyped        ;
-; INDATA_ACLR_A                      ; NONE                                                     ; Untyped        ;
-; BYTEENA_ACLR_A                     ; NONE                                                     ; Untyped        ;
-; WIDTH_B                            ; 1                                                        ; Untyped        ;
-; WIDTHAD_B                          ; 1                                                        ; Untyped        ;
-; NUMWORDS_B                         ; 1                                                        ; Untyped        ;
-; INDATA_REG_B                       ; CLOCK1                                                   ; Untyped        ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                                   ; Untyped        ;
-; RDCONTROL_REG_B                    ; CLOCK1                                                   ; Untyped        ;
-; ADDRESS_REG_B                      ; CLOCK1                                                   ; Untyped        ;
-; OUTDATA_REG_B                      ; UNREGISTERED                                             ; Untyped        ;
-; BYTEENA_REG_B                      ; CLOCK1                                                   ; Untyped        ;
-; INDATA_ACLR_B                      ; NONE                                                     ; Untyped        ;
-; WRCONTROL_ACLR_B                   ; NONE                                                     ; Untyped        ;
-; ADDRESS_ACLR_B                     ; NONE                                                     ; Untyped        ;
-; OUTDATA_ACLR_B                     ; NONE                                                     ; Untyped        ;
-; RDCONTROL_ACLR_B                   ; NONE                                                     ; Untyped        ;
-; BYTEENA_ACLR_B                     ; NONE                                                     ; Untyped        ;
-; WIDTH_BYTEENA_A                    ; 1                                                        ; Untyped        ;
-; WIDTH_BYTEENA_B                    ; 1                                                        ; Untyped        ;
-; RAM_BLOCK_TYPE                     ; AUTO                                                     ; Untyped        ;
-; BYTE_SIZE                          ; 8                                                        ; Untyped        ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                                     ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                                     ; Untyped        ;
-; INIT_FILE                          ; db/processador_top.ram0_single_port_rom_ee80a174.hdl.mif ; Untyped        ;
-; INIT_FILE_LAYOUT                   ; PORT_A                                                   ; Untyped        ;
-; MAXIMUM_DEPTH                      ; 0                                                        ; Untyped        ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL                                                   ; Untyped        ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                                                   ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                                   ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                                   ; Untyped        ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                          ; Untyped        ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                          ; Untyped        ;
-; ENABLE_ECC                         ; FALSE                                                    ; Untyped        ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                                    ; Untyped        ;
-; WIDTH_ECCSTATUS                    ; 3                                                        ; Untyped        ;
-; DEVICE_FAMILY                      ; Cyclone V                                                ; Untyped        ;
-; CBXI_PARAMETER                     ; altsyncram_p1f1                                          ; Untyped        ;
-+------------------------------------+----------------------------------------------------------+----------------+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: instruction_memory:u_instruction_memory ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; D_Width        ; 16    ; Signed Integer                                              ;
+; A_Width        ; 16    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                                   ;
-+-------------------------------------------+--------------------------------------------------------+
-; Name                                      ; Value                                                  ;
-+-------------------------------------------+--------------------------------------------------------+
-; Number of entity instances                ; 1                                                      ;
-; Entity Instance                           ; single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0 ;
-;     -- OPERATION_MODE                     ; ROM                                                    ;
-;     -- WIDTH_A                            ; 16                                                     ;
-;     -- NUMWORDS_A                         ; 65536                                                  ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                           ;
-;     -- WIDTH_B                            ; 1                                                      ;
-;     -- NUMWORDS_B                         ; 1                                                      ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                 ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                           ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                   ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                              ;
-+-------------------------------------------+--------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                          ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+; d_width        ; 16    ; Signed Integer                                                                                ;
+; a_width        ; 16    ; Signed Integer                                                                                ;
++----------------+-------+-----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0 ;
++------------------------------------+----------------------------------------------------------+-------------------------------------------------+
+; Parameter Name                     ; Value                                                    ; Type                                            ;
++------------------------------------+----------------------------------------------------------+-------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                        ; Untyped                                         ;
+; AUTO_CARRY_CHAINS                  ; ON                                                       ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                                      ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS                ; ON                                                       ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                                      ; IGNORE_CASCADE                                  ;
+; WIDTH_BYTEENA                      ; 1                                                        ; Untyped                                         ;
+; OPERATION_MODE                     ; ROM                                                      ; Untyped                                         ;
+; WIDTH_A                            ; 16                                                       ; Untyped                                         ;
+; WIDTHAD_A                          ; 16                                                       ; Untyped                                         ;
+; NUMWORDS_A                         ; 65536                                                    ; Untyped                                         ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                             ; Untyped                                         ;
+; ADDRESS_ACLR_A                     ; NONE                                                     ; Untyped                                         ;
+; OUTDATA_ACLR_A                     ; NONE                                                     ; Untyped                                         ;
+; WRCONTROL_ACLR_A                   ; NONE                                                     ; Untyped                                         ;
+; INDATA_ACLR_A                      ; NONE                                                     ; Untyped                                         ;
+; BYTEENA_ACLR_A                     ; NONE                                                     ; Untyped                                         ;
+; WIDTH_B                            ; 1                                                        ; Untyped                                         ;
+; WIDTHAD_B                          ; 1                                                        ; Untyped                                         ;
+; NUMWORDS_B                         ; 1                                                        ; Untyped                                         ;
+; INDATA_REG_B                       ; CLOCK1                                                   ; Untyped                                         ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                                   ; Untyped                                         ;
+; RDCONTROL_REG_B                    ; CLOCK1                                                   ; Untyped                                         ;
+; ADDRESS_REG_B                      ; CLOCK1                                                   ; Untyped                                         ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                             ; Untyped                                         ;
+; BYTEENA_REG_B                      ; CLOCK1                                                   ; Untyped                                         ;
+; INDATA_ACLR_B                      ; NONE                                                     ; Untyped                                         ;
+; WRCONTROL_ACLR_B                   ; NONE                                                     ; Untyped                                         ;
+; ADDRESS_ACLR_B                     ; NONE                                                     ; Untyped                                         ;
+; OUTDATA_ACLR_B                     ; NONE                                                     ; Untyped                                         ;
+; RDCONTROL_ACLR_B                   ; NONE                                                     ; Untyped                                         ;
+; BYTEENA_ACLR_B                     ; NONE                                                     ; Untyped                                         ;
+; WIDTH_BYTEENA_A                    ; 1                                                        ; Untyped                                         ;
+; WIDTH_BYTEENA_B                    ; 1                                                        ; Untyped                                         ;
+; RAM_BLOCK_TYPE                     ; AUTO                                                     ; Untyped                                         ;
+; BYTE_SIZE                          ; 8                                                        ; Untyped                                         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                ; Untyped                                         ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                                     ; Untyped                                         ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                                     ; Untyped                                         ;
+; INIT_FILE                          ; db/processador_top.ram0_single_port_rom_ee80a174.hdl.mif ; Untyped                                         ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                                   ; Untyped                                         ;
+; MAXIMUM_DEPTH                      ; 0                                                        ; Untyped                                         ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                                   ; Untyped                                         ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                                   ; Untyped                                         ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                                   ; Untyped                                         ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                                   ; Untyped                                         ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                          ; Untyped                                         ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                          ; Untyped                                         ;
+; ENABLE_ECC                         ; FALSE                                                    ; Untyped                                         ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                                    ; Untyped                                         ;
+; WIDTH_ECCSTATUS                    ; 3                                                        ; Untyped                                         ;
+; DEVICE_FAMILY                      ; Cyclone V                                                ; Untyped                                         ;
+; CBXI_PARAMETER                     ; altsyncram_8ne1                                          ; Untyped                                         ;
++------------------------------------+----------------------------------------------------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                                           ;
++-------------------------------------------+------------------------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                                          ;
++-------------------------------------------+------------------------------------------------------------------------------------------------+
+; Number of entity instances                ; 1                                                                                              ;
+; Entity Instance                           ; instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0 ;
+;     -- OPERATION_MODE                     ; ROM                                                                                            ;
+;     -- WIDTH_A                            ; 16                                                                                             ;
+;     -- NUMWORDS_A                         ; 65536                                                                                          ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                                   ;
+;     -- WIDTH_B                            ; 1                                                                                              ;
+;     -- NUMWORDS_B                         ; 1                                                                                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                      ;
++-------------------------------------------+------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "control_unity:u_control_unity|control_block:u_CONTROLE"                               ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_i_rd ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 19                          ;
-;     ENA CLR           ; 16                          ;
-;     plain             ; 3                           ;
-; arriav_lcell_comb     ; 56                          ;
-;     normal            ; 56                          ;
-;         3 data inputs ; 24                          ;
-;         6 data inputs ; 32                          ;
-; boundary_port         ; 35                          ;
-; stratixv_ram_block    ; 128                         ;
-;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.66                        ;
-+-----------------------+-----------------------------+
++-------------------+---------------------------------+
+; Type              ; Count                           ;
++-------------------+---------------------------------+
+; boundary_port     ; 2                               ;
+;                   ;                                 ;
+; Max LUT depth     ; 0.00                            ;
+; Average LUT depth ; 0.00                            ;
++-------------------+---------------------------------+
 
 
 +-------------------------------+
@@ -413,7 +496,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:15     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -423,7 +506,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Sun Jun 21 22:33:39 2020
+    Info: Processing started: Mon Jun 22 08:41:50 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -475,11 +558,31 @@ Info (12021): Found 2 design units, including 1 entities, in source file data_me
 Info (12021): Found 2 design units, including 1 entities, in source file instruction_memory.vhd
     Info (12022): Found design unit 1: instruction_memory-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 28
     Info (12023): Found entity 1: instruction_memory File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 15
-Info (12127): Elaborating entity "instruction_memory" for the top level hierarchy
-Info (12128): Elaborating entity "register_16bit" for hierarchy "register_16bit:u_register_16bit" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 54
-Info (12128): Elaborating entity "single_port_rom" for hierarchy "single_port_rom:u_single_port_rom" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 62
+Info (12127): Elaborating entity "processador_top" for the top level hierarchy
+Info (12128): Elaborating entity "control_unity" for hierarchy "control_unity:u_control_unity" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 90
+Warning (10541): VHDL Signal Declaration warning at control_unity.vhd(17): used implicit default value for signal "o_RD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 17
+Warning (10036): Verilog HDL or VHDL warning at control_unity.vhd(72): object "w_I_RD" assigned a value but never read File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 72
+Info (12128): Elaborating entity "program_counter" for hierarchy "control_unity:u_control_unity|program_counter:u_program_counter" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 79
+Info (12128): Elaborating entity "instruction_register" for hierarchy "control_unity:u_control_unity|instruction_register:u_instruction_register" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 85
+Info (12128): Elaborating entity "control_block" for hierarchy "control_unity:u_control_unity|control_block:u_CONTROLE" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 93
+Warning (10492): VHDL Process Statement warning at control_block.vhd(105): signal "w_OP" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at control_block.vhd(107): signal "w_OP" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at control_block.vhd(109): signal "w_OP" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 109
+Info (12128): Elaborating entity "data_memo" for hierarchy "data_memo:u_data_memo" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 108
+Info (12128): Elaborating entity "RAM" for hierarchy "data_memo:u_data_memo|RAM:u_RAM" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 58
+Info (12128): Elaborating entity "register_16bit" for hierarchy "data_memo:u_data_memo|register_16bit:u_REG_DATA" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 66
+Info (12128): Elaborating entity "operational_block" for hierarchy "operational_block:u_operational_block" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 118
+Info (12128): Elaborating entity "mux2x1" for hierarchy "operational_block:u_operational_block|mux2x1:u_MUX" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 71
+Info (12128): Elaborating entity "register_file" for hierarchy "operational_block:u_operational_block|register_file:u_REGISTER_FILE" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 77
+Info (12128): Elaborating entity "demux1x16" for hierarchy "operational_block:u_operational_block|register_file:u_REGISTER_FILE|demux1x16:u_DEMUX" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 193
+Warning (10620): VHDL warning at demux1x16.vhd(48): comparison between unequal length operands always returns FALSE File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/demux1x16.vhd Line: 48
+Info (12128): Elaborating entity "mux16x1" for hierarchy "operational_block:u_operational_block|register_file:u_REGISTER_FILE|mux16x1:u_MUX_RP" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 214
+Warning (10620): VHDL warning at mux16x1.vhd(48): comparison between unequal length operands always returns FALSE File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux16x1.vhd Line: 48
+Info (12128): Elaborating entity "ALU" for hierarchy "operational_block:u_operational_block|ALU:u_ALU" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 94
+Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:u_instruction_memory" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 133
+Info (12128): Elaborating entity "single_port_rom" for hierarchy "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 62
 Info (19000): Inferred 1 megafunctions from design logic
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "single_port_rom:u_single_port_rom|rom_rtl_0" 
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|rom_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to ROM
         Info (286033): Parameter WIDTH_A set to 16
         Info (286033): Parameter WIDTHAD_A set to 16
@@ -490,8 +593,8 @@ Info (19000): Inferred 1 megafunctions from design logic
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
         Info (286033): Parameter INIT_FILE set to db/processador_top.ram0_single_port_rom_ee80a174.hdl.mif
-Info (12130): Elaborated megafunction instantiation "single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0"
-Info (12133): Instantiated megafunction "single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0" with the following parameter:
+Info (12130): Elaborated megafunction instantiation "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0"
+Info (12133): Instantiated megafunction "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "ROM"
     Info (12134): Parameter "WIDTH_A" = "16"
     Info (12134): Parameter "WIDTHAD_A" = "16"
@@ -502,24 +605,155 @@ Info (12133): Instantiated megafunction "single_port_rom:u_single_port_rom|altsy
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
     Info (12134): Parameter "INIT_FILE" = "db/processador_top.ram0_single_port_rom_ee80a174.hdl.mif"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_p1f1.tdf
-    Info (12023): Found entity 1: altsyncram_p1f1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_p1f1.tdf Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_8ne1.tdf
+    Info (12023): Found entity 1: altsyncram_8ne1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 32
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_61a.tdf
     Info (12023): Found entity 1: decode_61a File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/decode_61a.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_chb.tdf
     Info (12023): Found entity 1: mux_chb File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/mux_chb.tdf Line: 23
-Info (286030): Timing-Driven Synthesis is running
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a0" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 42
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a1" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 63
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a2" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 84
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a3" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 105
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a4" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 126
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a5" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 147
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a6" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 168
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a7" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 189
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a8" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 210
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a9" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 231
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a10" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 252
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a11" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 273
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a12" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 294
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a13" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 315
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a14" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 336
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a15" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 357
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a16" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 378
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a17" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 399
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a18" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 420
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a19" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 441
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a20" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 462
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a21" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 483
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a22" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 504
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a23" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 525
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a24" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 546
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a25" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 567
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a26" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 588
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a27" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 609
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a28" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 630
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a29" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 651
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a30" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 672
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a31" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 693
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a32" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 714
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a33" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 735
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a34" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 756
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a35" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 777
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a36" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 798
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a37" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 819
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a38" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 840
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a39" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 861
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a40" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 882
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a41" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 903
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a42" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 924
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a43" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 945
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a44" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 966
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a45" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 987
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a46" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1008
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a47" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1029
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a48" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1050
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a49" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1071
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a50" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1092
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a51" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1113
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a52" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1134
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a53" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1155
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a54" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1176
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a55" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1197
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a56" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1218
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a57" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1239
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a58" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1260
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a59" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1281
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a60" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1302
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a61" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1323
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a62" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1344
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a63" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1365
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a64" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1386
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a65" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1407
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a66" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1428
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a67" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1449
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a68" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1470
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a69" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1491
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a70" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1512
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a71" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1533
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a72" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1554
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a73" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1575
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a74" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1596
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a75" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1617
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a76" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1638
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a77" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1659
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a78" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1680
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a79" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1701
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a80" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1722
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a81" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1743
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a82" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1764
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a83" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1785
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a84" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1806
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a85" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1827
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a86" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1848
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a87" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1869
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a88" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1890
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a89" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1911
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a90" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1932
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a91" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1953
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a92" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1974
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a93" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 1995
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a94" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2016
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a95" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2037
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a96" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2058
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a97" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2079
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a98" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2100
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a99" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2121
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a100" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2142
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a101" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2163
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a102" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2184
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a103" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2205
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a104" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2226
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a105" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2247
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a106" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2268
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a107" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2289
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a108" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2310
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a109" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2331
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a110" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2352
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a111" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2373
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a112" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2394
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a113" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2415
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a114" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2436
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a115" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2457
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a116" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2478
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a117" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2499
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a118" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2520
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a119" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2541
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a120" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2562
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a121" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2583
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a122" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2604
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a123" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2625
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a124" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2646
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a125" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2667
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a126" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2688
+        Warning (14320): Synthesized away node "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_8ne1:auto_generated|ram_block1a127" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_8ne1.tdf Line: 2709
+Info (17049): 22 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 222 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 19 input pins
-    Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 59 logic cells
-    Info (21064): Implemented 128 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 5015 megabytes
-    Info: Processing ended: Sun Jun 21 22:34:24 2020
-    Info: Elapsed time: 00:00:45
-    Info: Total CPU time (on all processors): 00:00:46
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "i_CLK" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 13
+    Warning (15610): No output dependent on input pin "i_CLR_n" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 14
+Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 141 warnings
+    Info: Peak virtual memory: 4890 megabytes
+    Info: Processing ended: Mon Jun 22 08:42:15 2020
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:42
 
 

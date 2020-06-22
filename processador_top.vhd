@@ -37,6 +37,7 @@ architecture rtl of processador_top is
          ); 
   end component control_unity;
 
+  
   component data_memo is 
     generic (D_Width : integer := 16; -- data width
 	    		  A_Width : integer := 8); -- address width
@@ -47,8 +48,8 @@ architecture rtl of processador_top is
 		   i_D_ADDR : in  std_logic_Vector(A_Width-1 downto 0); -- address
 		   i_W_DATA : in  std_logic_Vector(D_Width-1 downto 0); -- data input
 		   o_R_DATA : out  std_logic_Vector(D_Width-1 downto 0)); -- data output
-
   end component data_memo;
+  
   
   component operational_block is
   port ( i_CLK   : in std_logic;
@@ -65,6 +66,17 @@ architecture rtl of processador_top is
 		   o_W_DATA : out  std_logic_Vector(15 downto 0)   -- W output data
          ); 
   end component operational_block;
+  
+  
+  component instruction_memory is 
+  generic (D_Width : integer := 16; -- data width
+           A_Width : integer := 16); -- address width
+  port ( i_CLK   : in std_logic;       
+         i_CLR_n   : in std_logic;   
+         i_IR_RD   : in  std_logic;  -- enable read         		 
+		   i_IR_ADDR : in  std_logic_Vector(A_Width-1 downto 0); -- address
+         o_R_DATA  : out  std_logic_Vector(D_Width-1 downto 0)); -- data output
+  end component instruction_memory;
 
   
 signal w_IR_DATA, w_O_ADDR, w_MEMO_DATA, w_R_DATA: std_logic_vector(15 downto 0);
@@ -117,6 +129,14 @@ u_operational_block : operational_block port map (
 		 i_R_DATA  => w_R_DATA,
 		 o_W_DATA => w_MEMO_DATA
 );
+
+u_instruction_memory : instruction_memory port map( 
+			i_CLK     => i_CLK,
+         i_CLR_n   => i_CLR_n,
+         i_IR_RD   => w_O_RD,
+		   i_IR_ADDR => w_O_ADDR,
+         o_R_DATA  => w_IR_DATA
+			);
   
   
 end rtl;
