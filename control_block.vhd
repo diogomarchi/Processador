@@ -9,7 +9,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity processador_bloco_controle is 
+entity control_block is 
 port ( i_CLK   : in std_logic;  -- input clock
        i_CLR_n : in std_logic;  -- input clear/reset
 		 i_DATA  : in std_logic_vector(15 downto 0); -- input operacao
@@ -29,9 +29,9 @@ port ( i_CLK   : in std_logic;  -- input clock
 		 o_RF_RQ_RD  : out std_logic;  -- output RF_RQ leitura
 		 o_ALU_S0    : out std_logic   -- output soma ULA
        ); 
-end processador_bloco_controle;
+end control_block;
 
-architecture rtl of processador_bloco_controle is
+architecture rtl of control_block is
   -- s_0 inicio
   -- s_1 busca
   -- s_2 decodificação
@@ -47,35 +47,30 @@ architecture rtl of processador_bloco_controle is
 begin
 
    --atribuição do valor de OP a partir do valor de entrada
-	--w_OP(3 to 0) <= i_DATA(15 downto 12);
    w_OP(0) <= i_DATA(12);
 	w_OP(1) <= i_DATA(13);
 	w_OP(2) <= i_DATA(14);
 	w_OP(3) <= i_DATA(15);
 	
 	--atribuição do valor de RA a partir do valor de entrada
---	w_RA(3 to 0) <= i_DATA(11 downto 8);
 	w_RA(0) <= i_DATA(8);
 	w_RA(1) <= i_DATA(9);
 	w_RA(2) <= i_DATA(10);
 	w_RA(3) <= i_DATA(11);
 	
 	--atribuição do valor de RB a partir do valor de entrada
---	w_RB(3 to 0) <= i_DATA(7 downto 4);
 	w_RB(0) <= i_DATA(4);
 	w_RB(1) <= i_DATA(5);
 	w_RB(2) <= i_DATA(6);
 	w_RB(3) <= i_DATA(7);
 	
 	--atribuição do valor de RC a partir do valor de entrada
---	w_RC(3 to 0) <= i_DATA(3 downto 0);
 	w_RC(0) <= i_DATA(0);
 	w_RC(1) <= i_DATA(1);
 	w_RC(2) <= i_DATA(2);
 	w_RC(3) <= i_DATA(3);
 	
 	--atribuição do valor de D a partir do valor de entrada
---	w_D(7 to 0)  <= i_DATA(7 downto 0);
 	w_D(0)  <= i_DATA(0);
 	w_D(1)  <= i_DATA(1);
 	w_D(2)  <= i_DATA(2);
@@ -113,6 +108,8 @@ begin
 					 w_NEXT <= s_4;
 				  elsif(w_OP = "0010") then   -- caso op = somar next state = somar
 					 w_NEXT <= s_5;
+				  else
+				    w_NEXT <= S_2;
 				  end if;       
 						
       when s_3 =>	

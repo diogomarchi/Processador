@@ -4,83 +4,67 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "o_W_DATA[0]",
+					"name" : "o_R_DATA[0]",
 					"strict" : false
 				},
 				{
-					"name" : "o_W_DATA[1]",
+					"name" : "o_R_DATA[1]",
 					"strict" : false
 				},
 				{
-					"name" : "o_W_DATA[2]",
+					"name" : "o_R_DATA[2]",
 					"strict" : false
 				},
 				{
-					"name" : "o_W_DATA[3]",
+					"name" : "o_R_DATA[3]",
 					"strict" : false
 				},
 				{
-					"name" : "o_W_DATA[4]",
+					"name" : "o_R_DATA[4]",
 					"strict" : false
 				},
 				{
-					"name" : "o_W_DATA[5]",
+					"name" : "o_R_DATA[5]",
 					"strict" : false
 				},
 				{
-					"name" : "o_W_DATA[6]",
+					"name" : "o_R_DATA[6]",
 					"strict" : false
 				},
 				{
-					"name" : "o_W_DATA[7]",
+					"name" : "o_R_DATA[7]",
 					"strict" : false
 				},
 				{
-					"name" : "o_W_DATA[8]",
+					"name" : "o_R_DATA[8]",
 					"strict" : false
 				},
 				{
-					"name" : "o_W_DATA[9]",
+					"name" : "o_R_DATA[9]",
 					"strict" : false
 				},
 				{
-					"name" : "o_W_DATA[10]",
+					"name" : "o_R_DATA[10]",
 					"strict" : false
 				},
 				{
-					"name" : "o_W_DATA[11]",
+					"name" : "o_R_DATA[11]",
 					"strict" : false
 				},
 				{
-					"name" : "o_W_DATA[12]",
+					"name" : "o_R_DATA[12]",
 					"strict" : false
 				},
 				{
-					"name" : "o_W_DATA[13]",
+					"name" : "o_R_DATA[13]",
 					"strict" : false
 				},
 				{
-					"name" : "o_W_DATA[14]",
+					"name" : "o_R_DATA[14]",
 					"strict" : false
 				},
 				{
-					"name" : "o_W_DATA[15]",
-					"strict" : false
-				},
-				{
-					"name" : "i_RF_RP_addr[0]",
-					"strict" : false
-				},
-				{
-					"name" : "i_RF_RP_addr[1]",
-					"strict" : false
-				},
-				{
-					"name" : "i_RF_RP_addr[2]",
-					"strict" : false
-				},
-				{
-					"name" : "i_RF_RP_addr[3]",
+					"name" : "o_R_DATA[15]",
 					"strict" : false
 				},
 				{
@@ -88,123 +72,75 @@
 					"strict" : false
 				},
 				{
-					"name" : "i_CLR_N",
+					"name" : "i_CLR_n",
 					"strict" : false
 				},
 				{
-					"name" : "i_RF_RP_rd",
+					"name" : "i_IR_RD",
 					"strict" : false
 				},
 				{
-					"name" : "i_RF_s",
+					"name" : "i_IR_ADDR[15]",
 					"strict" : false
 				},
 				{
-					"name" : "i_R_DATA[0]",
+					"name" : "i_IR_ADDR[13]",
 					"strict" : false
 				},
 				{
-					"name" : "i_RF_W_wr",
+					"name" : "i_IR_ADDR[14]",
 					"strict" : false
 				},
 				{
-					"name" : "i_RF_W_addr[0]",
+					"name" : "i_IR_ADDR[0]",
 					"strict" : false
 				},
 				{
-					"name" : "i_RF_W_addr[3]",
+					"name" : "i_IR_ADDR[1]",
 					"strict" : false
 				},
 				{
-					"name" : "i_RF_W_addr[1]",
+					"name" : "i_IR_ADDR[2]",
 					"strict" : false
 				},
 				{
-					"name" : "i_RF_W_addr[2]",
+					"name" : "i_IR_ADDR[3]",
 					"strict" : false
 				},
 				{
-					"name" : "i_R_DATA[1]",
+					"name" : "i_IR_ADDR[4]",
 					"strict" : false
 				},
 				{
-					"name" : "i_R_DATA[2]",
+					"name" : "i_IR_ADDR[5]",
 					"strict" : false
 				},
 				{
-					"name" : "i_R_DATA[3]",
+					"name" : "i_IR_ADDR[6]",
 					"strict" : false
 				},
 				{
-					"name" : "i_R_DATA[4]",
+					"name" : "i_IR_ADDR[7]",
 					"strict" : false
 				},
 				{
-					"name" : "i_R_DATA[5]",
+					"name" : "i_IR_ADDR[8]",
 					"strict" : false
 				},
 				{
-					"name" : "i_R_DATA[6]",
+					"name" : "i_IR_ADDR[9]",
 					"strict" : false
 				},
 				{
-					"name" : "i_R_DATA[7]",
+					"name" : "i_IR_ADDR[10]",
 					"strict" : false
 				},
 				{
-					"name" : "i_R_DATA[8]",
+					"name" : "i_IR_ADDR[11]",
 					"strict" : false
 				},
 				{
-					"name" : "i_R_DATA[9]",
-					"strict" : false
-				},
-				{
-					"name" : "i_R_DATA[10]",
-					"strict" : false
-				},
-				{
-					"name" : "i_R_DATA[11]",
-					"strict" : false
-				},
-				{
-					"name" : "i_R_DATA[12]",
-					"strict" : false
-				},
-				{
-					"name" : "i_R_DATA[13]",
-					"strict" : false
-				},
-				{
-					"name" : "i_R_DATA[14]",
-					"strict" : false
-				},
-				{
-					"name" : "i_R_DATA[15]",
-					"strict" : false
-				},
-				{
-					"name" : "i_ALU_s0",
-					"strict" : false
-				},
-				{
-					"name" : "i_RF_RQ_addr[0]",
-					"strict" : false
-				},
-				{
-					"name" : "i_RF_RQ_addr[1]",
-					"strict" : false
-				},
-				{
-					"name" : "i_RF_RQ_addr[2]",
-					"strict" : false
-				},
-				{
-					"name" : "i_RF_RQ_addr[3]",
-					"strict" : false
-				},
-				{
-					"name" : "i_RF_RQ_rd",
+					"name" : "i_IR_ADDR[12]",
 					"strict" : false
 				}
 			]

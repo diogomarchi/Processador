@@ -1,5 +1,5 @@
 Flow report for processador_top
-Sun Jun 21 11:48:18 2020
+Sun Jun 21 22:34:24 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -41,25 +41,25 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun Jun 21 11:48:18 2020       ;
+; Flow Status                     ; Successful - Sun Jun 21 22:34:24 2020       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; processador_top                             ;
-; Top-level Entity Name           ; operational_block                           ;
+; Top-level Entity Name           ; instruction_memory                          ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CGXFC7C7F23C8                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 195 / 56,480 ( < 1 % )                      ;
-; Total registers                 ; 288                                         ;
-; Total pins                      ; 51 / 268 ( 19 % )                           ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 19                                          ;
+; Total pins                      ; 35                                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0 / 7,024,640 ( 0 % )                       ;
-; Total DSP Blocks                ; 0 / 156 ( 0 % )                             ;
-; Total HSSI RX PCSs              ; 0 / 6 ( 0 % )                               ;
-; Total HSSI PMA RX Deserializers ; 0 / 6 ( 0 % )                               ;
-; Total HSSI TX PCSs              ; 0 / 6 ( 0 % )                               ;
-; Total HSSI PMA TX Serializers   ; 0 / 6 ( 0 % )                               ;
-; Total PLLs                      ; 0 / 13 ( 0 % )                              ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
+; Total block memory bits         ; 1,048,576                                   ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
 +---------------------------------+---------------------------------------------+
 
 
@@ -68,35 +68,35 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/21/2020 11:47:15 ;
+; Start date & time ; 06/21/2020 22:33:40 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; processador_top     ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                       ;
-+-------------------------------------+----------------------------------------+-----------------+-------------------+-----------------------------------+
-; Assignment Name                     ; Value                                  ; Default Value   ; Entity Name       ; Section Id                        ;
-+-------------------------------------+----------------------------------------+-----------------+-------------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 84585013607581.159275083507308         ; --              ; --                ; --                                ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --              ; --                ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --              ; --                ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --              ; --                ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --              ; --                ; eda_board_design_symbol           ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --              ; --                ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                 ; ModelSim (VHDL)                        ; <None>          ; --                ; --                                ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --              ; --                ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --              ; --                ; --                                ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --              ; --                ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --              ; operational_block ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --              ; operational_block ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --              ; operational_block ; Top                               ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --              ; --                ; --                                ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --              ; --                ; --                                ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --              ; --                ; --                                ;
-; TOP_LEVEL_ENTITY                    ; operational_block                      ; processador_top ; --                ; --                                ;
-+-------------------------------------+----------------------------------------+-----------------+-------------------+-----------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                        ;
++-------------------------------------+----------------------------------------+-----------------+--------------------+-----------------------------------+
+; Assignment Name                     ; Value                                  ; Default Value   ; Entity Name        ; Section Id                        ;
++-------------------------------------+----------------------------------------+-----------------+--------------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID               ; 31032335685109.159278962003656         ; --              ; --                 ; --                                ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --              ; --                 ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --              ; --                 ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --              ; --                 ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --              ; --                 ; eda_board_design_symbol           ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --              ; --                 ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                 ; ModelSim (VHDL)                        ; <None>          ; --                 ; --                                ;
+; EDA_TIME_SCALE                      ; 1 ps                                   ; --              ; --                 ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --              ; --                 ; --                                ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --              ; --                 ; --                                ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --              ; instruction_memory ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --              ; instruction_memory ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --              ; instruction_memory ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --              ; --                 ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --              ; --                 ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --              ; --                 ; --                                ;
+; TOP_LEVEL_ENTITY                    ; instruction_memory                     ; processador_top ; --                 ; --                                ;
++-------------------------------------+----------------------------------------+-----------------+--------------------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -104,12 +104,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4860 MB             ; 00:00:17                           ;
-; Fitter               ; 00:00:36     ; 1.0                     ; 6745 MB             ; 00:01:02                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4846 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:07     ; 1.2                     ; 5206 MB             ; 00:00:07                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4737 MB             ; 00:00:01                           ;
-; Total                ; 00:00:59     ; --                      ; --                  ; 00:01:34                           ;
+; Analysis & Synthesis ; 00:00:41     ; 1.0                     ; 5015 MB             ; 00:00:45                           ;
+; Total                ; 00:00:41     ; --                      ; --                  ; 00:00:45                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -118,11 +114,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-VMJRNJG  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-VMJRNJG  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-VMJRNJG  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-VMJRNJG  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-VMJRNJG  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-000TCLT  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -130,10 +122,6 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off processador -c processador_top
-quartus_fit --read_settings_files=off --write_settings_files=off processador -c processador_top
-quartus_asm --read_settings_files=off --write_settings_files=off processador -c processador_top
-quartus_sta processador -c processador_top
-quartus_eda --read_settings_files=off --write_settings_files=off processador -c processador_top
 
 
 

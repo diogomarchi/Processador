@@ -31,7 +31,7 @@ end processador_unidade_controle;
 
 architecture rtl of processador_unidade_controle is
   
-  component reg_PC is
+  component program_counter is
   port ( i_PC_CLR : in  std_logic;  -- clear/reset
        i_CLK    : in  std_logic;  -- clock
        i_PC_INC : in  std_logic;  -- enable    
@@ -76,13 +76,13 @@ architecture rtl of processador_unidade_controle is
 begin 
 
   --connecting reg_PC with processador_unidade_controle
-  u_REG_PC : reg_PC port map (i_PC_CLR => w_PC_CLR,
+  u_program_counter : program_counter port map (i_PC_CLR => w_PC_CLR,
                             i_CLK    => i_CLK,
                             i_PC_INC => w_PC_INC,
                             o_PC     => o_ADDR);
 
   --connecting instruction_register with processador_unidade_controle	 
-  u_REG_IR : instruction_register port map (
+  u_instruction_register : instruction_register port map (
                             i_CLR_n => i_CLR_n,
                             i_CLK   => i_CLK,
 								    i_DATA  => i_DATA,
