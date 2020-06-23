@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador_top
-Tue Jun 23 12:44:10 2020
+Tue Jun 23 13:32:50 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -13,11 +13,12 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |RAM
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  8. State Machine - |control_block|r_STATE
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -44,14 +45,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Jun 23 12:44:10 2020       ;
+; Analysis & Synthesis Status     ; Successful - Tue Jun 23 13:32:50 2020       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; processador_top                             ;
-; Top-level Entity Name           ; RAM                                         ;
+; Top-level Entity Name           ; control_block                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 4096                                        ;
-; Total pins                      ; 43                                          ;
+; Total registers                 ; 6                                           ;
+; Total pins                      ; 49                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -70,7 +71,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; RAM                ; processador_top    ;
+; Top-level entity name                                                           ; control_block      ; processador_top    ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -164,19 +165,17 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                         ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
-; RAM.vhd                          ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/RAM.vhd ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                   ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
+; control_block.vhd                ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/control_block.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -184,36 +183,51 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 2804        ;
+; Estimate of Logic utilization (ALMs needed) ; 15          ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 1684        ;
+; Combinational ALUT usage for logic          ; 27          ;
 ;     -- 7 input functions                    ; 0           ;
-;     -- 6 input functions                    ; 1424        ;
-;     -- 5 input functions                    ; 0           ;
-;     -- 4 input functions                    ; 0           ;
-;     -- <=3 input functions                  ; 260         ;
+;     -- 6 input functions                    ; 1           ;
+;     -- 5 input functions                    ; 3           ;
+;     -- 4 input functions                    ; 8           ;
+;     -- <=3 input functions                  ; 15          ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 4096        ;
+; Dedicated logic registers                   ; 6           ;
 ;                                             ;             ;
-; I/O pins                                    ; 43          ;
+; I/O pins                                    ; 49          ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
-; Maximum fan-out node                        ; i_CLK~input ;
-; Maximum fan-out                             ; 4096        ;
-; Total fan-out                               ; 21415       ;
-; Average fan-out                             ; 3.65        ;
+; Maximum fan-out node                        ; r_STATE.s_4 ;
+; Maximum fan-out                             ; 18          ;
+; Total fan-out                               ; 188         ;
+; Average fan-out                             ; 1.44        ;
 +---------------------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |RAM                       ; 1684 (1684)         ; 4096 (4096)               ; 0                 ; 0          ; 43   ; 0            ; |RAM                ;             ;              ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name   ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
+; |control_block             ; 27 (27)             ; 6 (6)                     ; 0                 ; 0          ; 49   ; 0            ; |control_block      ; control_block ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------+
+; State Machine - |control_block|r_STATE                                                          ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+; Name        ; r_STATE.s_5 ; r_STATE.s_4 ; r_STATE.s_3 ; r_STATE.s_2 ; r_STATE.s_1 ; r_STATE.s_0 ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+; r_STATE.s_0 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ;
+; r_STATE.s_1 ; 0           ; 0           ; 0           ; 0           ; 1           ; 1           ;
+; r_STATE.s_2 ; 0           ; 0           ; 0           ; 1           ; 0           ; 1           ;
+; r_STATE.s_3 ; 0           ; 0           ; 1           ; 0           ; 0           ; 1           ;
+; r_STATE.s_4 ; 0           ; 1           ; 0           ; 0           ; 0           ; 1           ;
+; r_STATE.s_5 ; 1           ; 0           ; 0           ; 0           ; 0           ; 1           ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 
 +------------------------------------------------------+
@@ -221,25 +235,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4096  ;
+; Total registers                              ; 6     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 6     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4096  ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |RAM ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; D_Width        ; 16    ; Signed Integer                             ;
-; A_Width        ; 8     ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |control_block|o_RF_RP_ADDR ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 
 
 +-----------------------------------------------------+
@@ -247,17 +259,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 4096                        ;
-;     ENA               ; 4096                        ;
-; arriav_lcell_comb     ; 1684                        ;
-;     normal            ; 1684                        ;
-;         2 data inputs ; 256                         ;
-;         3 data inputs ; 4                           ;
-;         6 data inputs ; 1424                        ;
-; boundary_port         ; 43                          ;
+; arriav_ff             ; 6                           ;
+;     CLR               ; 6                           ;
+; arriav_lcell_comb     ; 28                          ;
+;     normal            ; 28                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 8                           ;
+;         5 data inputs ; 3                           ;
+;         6 data inputs ; 1                           ;
+; boundary_port         ; 49                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 3.88                        ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.96                        ;
 +-----------------------+-----------------------------+
 
 
@@ -266,7 +281,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -276,7 +291,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Jun 23 12:43:59 2020
+    Info: Processing started: Tue Jun 23 13:32:41 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -328,22 +343,18 @@ Info (12021): Found 2 design units, including 1 entities, in source file data_me
 Info (12021): Found 2 design units, including 1 entities, in source file instruction_memory.vhd
     Info (12022): Found design unit 1: instruction_memory-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 28
     Info (12023): Found entity 1: instruction_memory File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 15
-Info (12127): Elaborating entity "RAM" for the top level hierarchy
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "ram" is uninferred due to asynchronous read logic File: C:/intelFPGA_lite/19.1/workspace/Processador/RAM.vhd Line: 55
+Info (12127): Elaborating entity "control_block" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "i_CLR_n" File: C:/intelFPGA_lite/19.1/workspace/Processador/RAM.vhd Line: 21
-Info (21057): Implemented 5823 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 27 input pins
-    Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 5780 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4867 megabytes
-    Info: Processing ended: Tue Jun 23 12:44:10 2020
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:20
+Info (21057): Implemented 77 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 31 output pins
+    Info (21061): Implemented 28 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4857 megabytes
+    Info: Processing ended: Tue Jun 23 13:32:50 2020
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:18
 
 

@@ -1,5 +1,5 @@
 
-State Machine - |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE
+State Machine - |control_block|r_STATE
 Name r_STATE.s_5 r_STATE.s_4 r_STATE.s_3 r_STATE.s_2 r_STATE.s_1 r_STATE.s_0 
 r_STATE.s_0 0 0 0 0 0 0 
 r_STATE.s_1 0 0 0 0 1 1 
