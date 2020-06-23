@@ -10,9 +10,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.ALL;
-use STD.textio.all;
-use ieee.std_logic_textio.all;
-use ieee.STD_LOGIC_UNSIGNED.all;
+
 
 
 entity RAM is 
@@ -31,24 +29,31 @@ end entity RAM;
 
 
 architecture RAM_Arch of RAM is
-  type ram_type is array (0 to 2**A_Width-1) of std_logic_vector(D_Width-1 downto 0);
-    
-  impure function read_file (txt_file : in string) return ram_type is 
-    file ram_file : text open read_mode is txt_file;
-	 variable txt_line : line;
-	 variable txt_bit  : bit_vector(D_Width-1 downto 0);
-	 variable txt_ram  : ram_type;	 
-  begin 
-    for i in ram_type'range loop
-	   readline(ram_file, txt_line);
-		read(txt_line, txt_bit);
-		txt_ram(i) := to_stdlogicvector(txt_bit);	 
-	 end loop; return txt_ram;  
-  end function;
+  -- endereços que receberão valores 
+  constant ADDR1 : integer := 0;  
+  constant VAL1 : std_logic_vector := "1111000011110000";
   
-  signal ram : ram_type := read_file("initial_ram.txt");
-   
+  type ram_type is array (0 to 2**A_Width-1) of std_logic_vector(D_Width-1 downto 0);
+      
 
+  -- essa função gera um arquivo .mif de inicialização da rom
+  function init_ram
+    return ram_type is
+    variable tmp : ram_type := (others => (others => '0'));
+  begin
+    for addr_pos in 0 to 2**A_Width-1 loop
+      case (addr_pos) is
+        when  ADDR1 => 
+          tmp(addr_pos) := VAL1;
+        when others =>
+          tmp(addr_pos) := "0000000000000000"; 
+      end case;
+    end loop;
+  return tmp;
+  end init_ram;
+		
+  signal ram : ram_type := init_ram;
+   
 begin
 
   p_RAM : process (i_CLK)

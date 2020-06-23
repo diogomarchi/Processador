@@ -45,7 +45,7 @@ begin
          i_S6 when (i_SEL = "0110") else 
          i_S7 when (i_SEL = "0111") else 
          i_S8 when (i_SEL = "1000") else 
-         i_S9 when (i_SEL = "10001") else 
+         i_S9 when (i_SEL = "1001") else 
          i_S10 when (i_SEL = "1010") else 
          i_S11 when (i_SEL = "1011") else 
          i_S12 when (i_SEL = "1100") else 

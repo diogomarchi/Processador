@@ -45,7 +45,7 @@ begin
   o_S6 <= i_A when (i_SEL = "0110") else '0';
   o_S7 <= i_A when (i_SEL = "0111") else '0';
   o_S8 <= i_A when (i_SEL = "1000") else '0';
-  o_S9 <= i_A when (i_SEL = "10001") else '0';
+  o_S9 <= i_A when (i_SEL = "1001") else '0';
   o_S10 <= i_A when (i_SEL = "1010") else '0';
   o_S11 <= i_A when (i_SEL = "1011") else '0';
   o_S12 <= i_A when (i_SEL = "1100") else '0';
