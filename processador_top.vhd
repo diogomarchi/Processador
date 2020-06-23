@@ -11,7 +11,8 @@ use ieee.std_logic_1164.all;
 
 entity processador_top is 
 port ( i_CLK   : in std_logic;  -- input clock
-       i_CLR_n : in std_logic  -- input clear/reset
+       i_CLR_n : in std_logic;  -- input clear/reset
+       o_SAIDA_RF: in std_logic_vector(15 downto 0)
        ); 
 end processador_top;
 
@@ -20,20 +21,20 @@ architecture rtl of processador_top is
   component control_unity is 
   port ( i_CLK   : in std_logic;  -- input clock
          i_CLR_n : in std_logic;  -- input clear/reset
-		   i_DATA  : in std_logic_vector(15 downto 0); -- input operacao
-		   o_ADDR  : out std_logic_vector(15 downto 0); -- output adress
-		   o_RD    : out std_logic;   -- output read
-		   o_D_ADDR: out std_logic_vector(7 downto 0);  -- output data address
+         i_DATA  : in std_logic_vector(15 downto 0); -- input operacao
+  	 o_ADDR  : out std_logic_vector(15 downto 0); -- output adress
+         o_RD    : out std_logic;   -- output read
+         o_D_ADDR: out std_logic_vector(7 downto 0);  -- output data address
          o_D_RD  : out std_logic;  -- output data read
-		   o_D_WR  : out std_logic;  -- output data write
-		   o_RF_S  : out std_logic;  -- output RD_S
+	 o_D_WR  : out std_logic;  -- output data write
+	 o_RF_S  : out std_logic;  -- output RD_S
          o_RF_W_ADDR : out std_logic_vector(3 downto 0);  -- output register file address
          o_RF_W_WR   : out std_logic;  -- output RF_w escrita
-		   o_RF_RP_ADDR: out std_logic_vector(3 downto 0);  -- output RF_RP endereco
-		   o_RF_RP_RD  : out std_logic;  -- output RF_RP leitura
-		   o_RF_RQ_ADDR: out std_logic_vector(3 downto 0);  -- output RF_RQ endereco
-		   o_RF_RQ_RD  : out std_logic;  -- output RF_RQ leitura
-		   o_ALU_S0    : out std_logic   -- output soma ULA       
+         o_RF_RP_ADDR: out std_logic_vector(3 downto 0);  -- output RF_RP endereco
+	 o_RF_RP_RD  : out std_logic;  -- output RF_RP leitura
+         o_RF_RQ_ADDR: out std_logic_vector(3 downto 0);  -- output RF_RQ endereco
+         o_RF_RQ_RD  : out std_logic;  -- output RF_RQ leitura
+         o_ALU_S0    : out std_logic   -- output soma ULA       
          ); 
   end component control_unity;
 
@@ -87,57 +88,59 @@ signal w_O_RD, w_O_D_RD, w_O_D_WR, w_O_RF_S, w_O_RF_W_WR, w_O_RF_RP_RD, w_O_RF_R
 begin 
 
 --connecting processador_unidade_controle with processador_control
-u_control_unity : control_unity port map (i_CLK     => i_CLK,
-														 i_CLR_n  => i_CLR_n,
-														 i_DATA   => w_IR_DATA,
-														 o_ADDR   => w_O_ADDR,
-														 o_RD     => w_O_RD,
-														 o_D_ADDR => w_O_D_ADDR,
-														 o_D_RD   => w_O_D_RD,
-														 o_D_WR   => w_O_D_WR,
-														 o_RF_S   => w_O_RF_S,
-														 o_RF_W_ADDR => w_O_RF_W_ADDR,
-														 o_RF_W_WR   => w_O_RF_W_WR,
-														 o_RF_RP_ADDR=> w_O_RF_RP_ADDR,
-														 o_RF_RP_RD  => w_o_RF_RP_RD,
-														 o_RF_RQ_ADDR=> w_o_RF_RQ_ADDR,
-														 o_RF_RQ_RD  => w_O_RF_RQ_RD,
-														 o_ALU_S0    => w_O_ALU_S0
-														 );
+u_control_unity : control_unity port map (
+                                        i_CLK     => i_CLK,
+					i_CLR_n  => i_CLR_n,
+					i_DATA   => w_IR_DATA,
+					o_ADDR   => w_O_ADDR,
+					o_RD     => w_O_RD,
+					o_D_ADDR => w_O_D_ADDR,
+					o_D_RD   => w_O_D_RD,
+					o_D_WR   => w_O_D_WR,
+					o_RF_S   => w_O_RF_S,
+					o_RF_W_ADDR => w_O_RF_W_ADDR,
+				        o_RF_W_WR   => w_O_RF_W_WR,
+					o_RF_RP_ADDR=> w_O_RF_RP_ADDR,
+					o_RF_RP_RD  => w_o_RF_RP_RD,
+					o_RF_RQ_ADDR=> w_o_RF_RQ_ADDR,
+					o_RF_RQ_RD  => w_O_RF_RQ_RD,
+					o_ALU_S0    => w_O_ALU_S0
+ );
 														  
-u_data_memo : data_memo port map ( i_CLK    => i_CLK,
-												i_CLR_n  => i_CLR_n,
-												i_D_rd   => w_O_D_RD,
-												i_D_wr   => w_O_D_WR,
-												i_D_ADDR => w_O_D_ADDR,
-												i_W_DATA => w_MEMO_DATA,
-												o_R_DATA => w_R_DATA
-												);
+  u_data_memo : data_memo port map ( 
+        i_CLK    => i_CLK,
+	i_CLR_n  => i_CLR_n,
+	i_D_rd   => w_O_D_RD,
+	i_D_wr   => w_O_D_WR,
+	i_D_ADDR => w_O_D_ADDR,
+	i_W_DATA => w_MEMO_DATA,
+	o_R_DATA => w_R_DATA
+  );
 												
 
-u_operational_block : operational_block port map (  
-		 i_CLK   => i_CLK,
+  u_operational_block : operational_block port map (  
+       i_CLK   => i_CLK,
        i_CLR_N => i_CLR_N,
        i_RF_s  => w_O_RF_s,
-		 i_ALU_s0  => w_O_ALU_s0,
-		 i_RF_W_wr  => w_O_RF_W_WR,
-		 i_RF_RP_rd => w_O_RF_RP_RD,
-		 i_RF_RQ_rd => w_O_RF_RQ_RD,
+       i_ALU_s0  => w_O_ALU_s0,
+       i_RF_W_wr  => w_O_RF_W_WR,
+       i_RF_RP_rd => w_O_RF_RP_RD,
+       i_RF_RQ_rd => w_O_RF_RQ_RD,
        i_RF_W_addr => w_O_RF_W_addr,
-		 i_RF_RP_addr => w_O_RF_RP_addr,
-		 i_RF_RQ_addr => w_O_RF_RQ_addr,
-		 i_R_DATA  => w_R_DATA,
-		 o_W_DATA => w_MEMO_DATA
-);
+       i_RF_RP_addr => w_O_RF_RP_addr,
+       i_RF_RQ_addr => w_O_RF_RQ_addr,
+       i_R_DATA  => w_R_DATA,
+       o_W_DATA => w_MEMO_DATA
+  );
 
-u_instruction_memory : instruction_memory port map( 
-			i_CLK     => i_CLK,
-         i_CLR_n   => i_CLR_n,
-         i_IR_RD   => w_O_RD,
-		   i_IR_ADDR => w_O_ADDR,
-         o_R_DATA  => w_IR_DATA
-			);
+  u_instruction_memory : instruction_memory port map( 
+	i_CLK     => i_CLK,
+        i_CLR_n   => i_CLR_n,
+        i_IR_RD   => w_O_RD,
+	i_IR_ADDR => w_O_ADDR,
+        o_R_DATA  => w_IR_DATA
+  );
   
-  
+   w_MEMO_DATA<=o_SAIDA_RF; 
 end rtl;
 
