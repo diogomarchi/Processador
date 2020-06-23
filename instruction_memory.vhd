@@ -28,16 +28,13 @@ end entity instruction_memory;
 architecture rtl of instruction_memory is
   
   component single_port_rom is
-  generic (D_Width : integer := 16; -- data width
-           A_Width : integer := 16); -- address width
-	port
-	(
-		addr	: in std_logic_vector(15 downto 0);
+    generic (D_Width : integer := 16; -- data width
+             A_Width : integer := 16); -- address width
+			  
+  port(addr	: in std_logic_vector(15 downto 0);
 		clk	: in std_logic;
-		q		: out std_logic_vector(15 downto 0)
-	);
-	
-end component single_port_rom;
+		q		: out std_logic_vector(15 downto 0));	
+  end component single_port_rom;
   
   component register_16bit is
   port ( i_CLK   : in std_logic;
