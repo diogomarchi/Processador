@@ -69,7 +69,7 @@ architecture rtl of control_unity is
   end component;
 
 
-  signal w_PC_CLR, w_PC_INC, w_IR_LD, w_I_RD: std_logic;
+  signal w_PC_CLR, w_PC_INC, w_IR_LD: std_logic;
   signal w_IR:std_logic_vector(15 downto 0);
 
 		
@@ -94,7 +94,7 @@ begin
 														i_CLR_n  => i_CLR_n,
 														i_DATA   => W_IR,
 														o_PC_CLR => w_PC_CLR,
-														o_I_RD   => w_I_RD,
+														o_I_RD   => o_RD,
 														o_IR_LD  => w_IR_LD,
 														o_PC_INC => w_PC_INC,
 														o_D_ADDR => o_D_ADDR,

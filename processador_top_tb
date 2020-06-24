@@ -20,7 +20,7 @@ architecture RTL of processador_top_tb is
 component processador_top is 
 port ( i_CLK   : in std_logic;  -- input clock
        i_CLR_n : in std_logic;  -- input clear/reset
-       o_SAIDA_RF: in std_logic_vector(15 downto 0)
+       o_SAIDA_RF: out std_logic_vector(15 downto 0)
        ); 
 end component processador_top;
 

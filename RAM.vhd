@@ -31,7 +31,10 @@ end entity RAM;
 architecture RAM_Arch of RAM is
   -- endereços que receberão valores 
   constant ADDR1 : integer := 0;  
-  constant VAL1 : std_logic_vector := "1111000011110000";
+  constant ADDR2 : integer := 1;
+  
+  constant VAL1 : std_logic_vector := "0000000000000001";
+  constant VAL2 : std_logic_vector := "0000000000000001";
   
   type ram_type is array (0 to 2**A_Width-1) of std_logic_vector(D_Width-1 downto 0);
       
@@ -45,6 +48,8 @@ architecture RAM_Arch of RAM is
       case (addr_pos) is
         when  ADDR1 => 
           tmp(addr_pos) := VAL1;
+        when  ADDR2 => 
+          tmp(addr_pos) := VAL2;
         when others =>
           tmp(addr_pos) := "0000000000000000"; 
       end case;

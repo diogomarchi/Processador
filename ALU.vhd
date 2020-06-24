@@ -25,20 +25,23 @@ architecture arch_1 of ALU is
 
 begin
   
-  process(i_CLR_N,i_CLK) 
-  begin
-    if (i_CLR_N = '0') then
-		w_o_ADD <= "0000000000000000";
-	 
-	 elsif (rising_edge(i_CLK)) then
-	 
-      if (i_S0 = '1') then -- sinal de soma habilitado
-        w_o_ADD <= i_A + i_B;
-      end if;
-		
-    end if;
-  end process;
-    
-  o_Q <= w_o_ADD;
+--  process(i_CLR_N,i_CLK) 
+--  begin
+--    if (i_CLR_N = '0') then
+--		w_o_ADD <= "0000000000000000";
+--	 
+--	 elsif (rising_edge(i_CLK)) then
+--	 
+--      if (i_S0 = '1') then -- sinal de soma habilitado
+--        w_o_ADD <= i_A + i_B;
+--      end if;
+--		
+--    end if;
+--  end process;
+--    
+--  o_Q <= w_o_ADD;
+  	      
+  w_o_ADD <= i_A + i_B;
+  o_Q <= w_o_ADD when (i_S0 = '1') else i_A;
   
 end arch_1;

@@ -29,8 +29,14 @@ end entity;
 architecture rtl of single_port_rom is
   -- endereços que receberão valores iniciais
   constant ADDR1 : integer := 0;  
-  constant VAL1 : std_logic_vector := "1111000011110000";
-
+  constant ADDR2 : integer := 1;
+  constant ADDR3 : integer := 2;
+  constant ADDR4 : integer := 3;
+  
+  constant VAL1 : std_logic_vector := "0000000000000000";
+  constant VAL2 : std_logic_vector := "0000000100000001";
+  constant VAL3 : std_logic_vector := "0010001000000001";
+  constant VAL4 : std_logic_vector := "0001001000001001";
 
   -- Build a 2-D array type for the RoM
   subtype word_t is std_logic_vector(D_Width-1 downto 0);
@@ -45,8 +51,14 @@ architecture rtl of single_port_rom is
          case (addr_pos) is
            when  ADDR1 => 
 			    tmp(addr_pos) := VAL1;
+           when  ADDR2 => 
+			    tmp(addr_pos) := VAL2;
+           when  ADDR3 => 
+			    tmp(addr_pos) := VAL3;
+           when  ADDR4 => 
+			    tmp(addr_pos) := VAL4;				 
 		     when others =>
-			    tmp(addr_pos) := "0000000000000000"; 
+			    tmp(addr_pos) := "1111111111111111"; 
 			end case;
 		end loop;
     return tmp;

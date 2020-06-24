@@ -12,7 +12,7 @@ use ieee.std_logic_1164.all;
 entity processador_top is 
 port ( i_CLK   : in std_logic;  -- input clock
        i_CLR_n : in std_logic;  -- input clear/reset
-       o_SAIDA_RF: in std_logic_vector(15 downto 0)
+       o_SAIDA_RF: out std_logic_vector(15 downto 0)
        ); 
 end processador_top;
 
@@ -141,6 +141,6 @@ u_control_unity : control_unity port map (
         o_R_DATA  => w_IR_DATA
   );
   
-   w_MEMO_DATA<=o_SAIDA_RF; 
+   o_SAIDA_RF <= w_MEMO_DATA; 
 end rtl;
 

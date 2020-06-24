@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador_top
-Tue Jun 23 13:32:50 2020
+Wed Jun 24 11:04:23 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -13,12 +13,11 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |control_block|r_STATE
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -45,14 +44,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Jun 23 13:32:50 2020       ;
+; Analysis & Synthesis Status     ; Successful - Wed Jun 24 11:04:23 2020       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; processador_top                             ;
-; Top-level Entity Name           ; control_block                               ;
+; Top-level Entity Name           ; register_file                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 6                                           ;
-; Total pins                      ; 49                                          ;
+; Total registers                 ; 256                                         ;
+; Total pins                      ; 65                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -71,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; control_block      ; processador_top    ;
+; Top-level entity name                                                           ; register_file      ; processador_top    ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -161,21 +160,23 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                          ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                   ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
-; control_block.vhd                ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/control_block.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; register_16bit.vhd               ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/register_16bit.vhd ;         ;
+; register_file.vhd                ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd  ;         ;
+; mux16x1.vhd                      ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/mux16x1.vhd        ;         ;
+; decoder4x16.vhd                  ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/decoder4x16.vhd    ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -183,51 +184,53 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 15          ;
+; Estimate of Logic utilization (ALMs needed) ; 232         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 27          ;
-;     -- 7 input functions                    ; 0           ;
-;     -- 6 input functions                    ; 1           ;
-;     -- 5 input functions                    ; 3           ;
-;     -- 4 input functions                    ; 8           ;
-;     -- <=3 input functions                  ; 15          ;
+; Combinational ALUT usage for logic          ; 176         ;
+;     -- 7 input functions                    ; 32          ;
+;     -- 6 input functions                    ; 128         ;
+;     -- 5 input functions                    ; 16          ;
+;     -- 4 input functions                    ; 0           ;
+;     -- <=3 input functions                  ; 0           ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 6           ;
+; Dedicated logic registers                   ; 256         ;
 ;                                             ;             ;
-; I/O pins                                    ; 49          ;
+; I/O pins                                    ; 65          ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
-; Maximum fan-out node                        ; r_STATE.s_4 ;
-; Maximum fan-out                             ; 18          ;
-; Total fan-out                               ; 188         ;
-; Average fan-out                             ; 1.44        ;
+; Maximum fan-out node                        ; i_CLK~input ;
+; Maximum fan-out                             ; 256         ;
+; Total fan-out                               ; 2193        ;
+; Average fan-out                             ; 3.90        ;
 +---------------------------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name   ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
-; |control_block             ; 27 (27)             ; 6 (6)                     ; 0                 ; 0          ; 49   ; 0            ; |control_block      ; control_block ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                              ;
++-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                     ; Entity Name    ; Library Name ;
++-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+----------------+--------------+
+; |register_file                ; 176 (160)           ; 256 (0)                   ; 0                 ; 0          ; 65   ; 0            ; |register_file                          ; register_file  ; work         ;
+;    |decoder4x16:u_WR_DECODER| ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |register_file|decoder4x16:u_WR_DECODER ; decoder4x16    ; work         ;
+;    |register_16bit:u_R0|      ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |register_file|register_16bit:u_R0      ; register_16bit ; work         ;
+;    |register_16bit:u_R10|     ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |register_file|register_16bit:u_R10     ; register_16bit ; work         ;
+;    |register_16bit:u_R11|     ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |register_file|register_16bit:u_R11     ; register_16bit ; work         ;
+;    |register_16bit:u_R12|     ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |register_file|register_16bit:u_R12     ; register_16bit ; work         ;
+;    |register_16bit:u_R13|     ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |register_file|register_16bit:u_R13     ; register_16bit ; work         ;
+;    |register_16bit:u_R14|     ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |register_file|register_16bit:u_R14     ; register_16bit ; work         ;
+;    |register_16bit:u_R15|     ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |register_file|register_16bit:u_R15     ; register_16bit ; work         ;
+;    |register_16bit:u_R1|      ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |register_file|register_16bit:u_R1      ; register_16bit ; work         ;
+;    |register_16bit:u_R2|      ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |register_file|register_16bit:u_R2      ; register_16bit ; work         ;
+;    |register_16bit:u_R3|      ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |register_file|register_16bit:u_R3      ; register_16bit ; work         ;
+;    |register_16bit:u_R4|      ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |register_file|register_16bit:u_R4      ; register_16bit ; work         ;
+;    |register_16bit:u_R5|      ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |register_file|register_16bit:u_R5      ; register_16bit ; work         ;
+;    |register_16bit:u_R6|      ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |register_file|register_16bit:u_R6      ; register_16bit ; work         ;
+;    |register_16bit:u_R7|      ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |register_file|register_16bit:u_R7      ; register_16bit ; work         ;
+;    |register_16bit:u_R8|      ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |register_file|register_16bit:u_R8      ; register_16bit ; work         ;
+;    |register_16bit:u_R9|      ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |register_file|register_16bit:u_R9      ; register_16bit ; work         ;
++-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------+
-; State Machine - |control_block|r_STATE                                                          ;
-+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-; Name        ; r_STATE.s_5 ; r_STATE.s_4 ; r_STATE.s_3 ; r_STATE.s_2 ; r_STATE.s_1 ; r_STATE.s_0 ;
-+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-; r_STATE.s_0 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ;
-; r_STATE.s_1 ; 0           ; 0           ; 0           ; 0           ; 1           ; 1           ;
-; r_STATE.s_2 ; 0           ; 0           ; 0           ; 1           ; 0           ; 1           ;
-; r_STATE.s_3 ; 0           ; 0           ; 1           ; 0           ; 0           ; 1           ;
-; r_STATE.s_4 ; 0           ; 1           ; 0           ; 0           ; 0           ; 1           ;
-; r_STATE.s_5 ; 1           ; 0           ; 0           ; 0           ; 0           ; 1           ;
-+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 
 +------------------------------------------------------+
@@ -235,23 +238,24 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 6     ;
+; Total registers                              ; 256   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 6     ;
+; Number of registers using Asynchronous Clear ; 256   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 256   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |control_block|o_RF_RP_ADDR ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 17:1               ; 16 bits   ; 176 LEs       ; 176 LEs              ; 0 LEs                  ; No         ; |register_file|o_RP_DATA   ;
+; 17:1               ; 16 bits   ; 176 LEs       ; 176 LEs              ; 0 LEs                  ; No         ; |register_file|o_RQ_DATA   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +-----------------------------------------------------+
@@ -259,20 +263,18 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 6                           ;
-;     CLR               ; 6                           ;
-; arriav_lcell_comb     ; 28                          ;
-;     normal            ; 28                          ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 8                           ;
-;         4 data inputs ; 8                           ;
-;         5 data inputs ; 3                           ;
-;         6 data inputs ; 1                           ;
-; boundary_port         ; 49                          ;
+; arriav_ff             ; 256                         ;
+;     ENA CLR           ; 256                         ;
+; arriav_lcell_comb     ; 176                         ;
+;     extend            ; 32                          ;
+;         7 data inputs ; 32                          ;
+;     normal            ; 144                         ;
+;         5 data inputs ; 16                          ;
+;         6 data inputs ; 128                         ;
+; boundary_port         ; 65                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.96                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.86                        ;
 +-----------------------+-----------------------------+
 
 
@@ -291,7 +293,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Jun 23 13:32:41 2020
+    Info: Processing started: Wed Jun 24 11:04:14 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -305,7 +307,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file control
     Info (12022): Found design unit 1: control_block-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/control_block.vhd Line: 34
     Info (12023): Found entity 1: control_block File: C:/intelFPGA_lite/19.1/workspace/Processador/control_block.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file processador_top.vhd
-    Info (12022): Found design unit 1: processador_top-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 18
+    Info (12022): Found design unit 1: processador_top-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 19
     Info (12023): Found entity 1: processador_top File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file register_16bit.vhd
     Info (12022): Found design unit 1: register_16bit-arch1 File: C:/intelFPGA_lite/19.1/workspace/Processador/register_16bit.vhd Line: 22
@@ -343,17 +345,26 @@ Info (12021): Found 2 design units, including 1 entities, in source file data_me
 Info (12021): Found 2 design units, including 1 entities, in source file instruction_memory.vhd
     Info (12022): Found design unit 1: instruction_memory-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 28
     Info (12023): Found entity 1: instruction_memory File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 15
-Info (12127): Elaborating entity "control_block" for the top level hierarchy
+Info (12021): Found 2 design units, including 1 entities, in source file decoder4x16.vhd
+    Info (12022): Found design unit 1: decoder4x16-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/decoder4x16.vhd Line: 36
+    Info (12023): Found entity 1: decoder4x16 File: C:/intelFPGA_lite/19.1/workspace/Processador/decoder4x16.vhd Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file tri_state_buffer.vhd
+    Info (12022): Found design unit 1: tri_state_buffer-Behavioral File: C:/intelFPGA_lite/19.1/workspace/Processador/tri_state_buffer.vhd Line: 10
+    Info (12023): Found entity 1: tri_state_buffer File: C:/intelFPGA_lite/19.1/workspace/Processador/tri_state_buffer.vhd Line: 4
+Info (12127): Elaborating entity "register_file" for the top level hierarchy
+Info (12128): Elaborating entity "register_16bit" for hierarchy "register_16bit:u_R0" File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 95
+Info (12128): Elaborating entity "decoder4x16" for hierarchy "decoder4x16:u_WR_DECODER" File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 192
+Info (12128): Elaborating entity "mux16x1" for hierarchy "mux16x1:u_MUX_RP" File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 213
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 77 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 18 input pins
-    Info (21059): Implemented 31 output pins
-    Info (21061): Implemented 28 logic cells
+Info (21057): Implemented 497 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 33 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 432 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4857 megabytes
-    Info: Processing ended: Tue Jun 23 13:32:50 2020
+    Info: Peak virtual memory: 4860 megabytes
+    Info: Processing ended: Wed Jun 24 11:04:23 2020
     Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:18
 

@@ -46,9 +46,9 @@ architecture arch1 of register_file is
          o_Q     : out  std_logic_Vector(15 downto 0)); -- data output
   end component;
   
-  component demux1x16 is
+  component decoder4x16 is
   port ( i_SEL : in  std_logic_Vector(3 downto 0);  -- selector
-       i_A   : in  std_logic;  -- data input
+       i_ENA : in  std_logic;  -- data input
        o_S0  : out  std_logic;  -- data output
 		 o_S1  : out  std_logic;  -- data output
 		 o_S2  : out  std_logic;  -- data output
@@ -65,7 +65,7 @@ architecture arch1 of register_file is
 		 o_S13  : out  std_logic;  -- data output
 		 o_S14  : out  std_logic;  -- data output		 
 		 o_S15  : out  std_logic   -- data output
-       );
+       ); 
   end component;
   
   component mux16x1 is
@@ -189,10 +189,9 @@ begin
                                    o_Q     => w_i_O_R15);
 											  											  
 											  
-
-  u_DEMUX : demux1x16 port map ( 
+  u_WR_DECODER : decoder4x16 port map (  
        i_SEL => i_RF_W_addr,  -- selector
-       i_A   => i_RF_W_wr,  -- register enable/disable
+       i_ENA => i_RF_W_wr,  -- decoder enable/disable
        o_S0  => w_ENA_R0,  -- data output
 		 o_S1  => w_ENA_R1,  -- data output
 		 o_S2  => w_ENA_R2,  -- data output
@@ -253,19 +252,8 @@ begin
 		 o_Q    => w_O_MUX_RQ  -- data output
        );
 
-
-  u_RP : register_16bit port map ( i_CLK   => i_CLK,
-                                   i_CLR_N => i_CLR_N,
-                                   i_ENA   => i_RF_RP_rd,  -- enable
-                                   i_A     => w_O_MUX_RP,  -- data input       
-                                   o_Q     => o_RP_DATA);
-											  
-  u_RQ : register_16bit port map ( i_CLK   => i_CLK,
-                                   i_CLR_N => i_CLR_N,
-                                   i_ENA   => i_RF_RQ_rd,  -- enable
-                                   i_A     => w_O_MUX_RQ,  -- data input       
-                                   o_Q     => o_RQ_DATA);
-		 
+  o_RP_DATA <= w_O_MUX_RP when (i_RF_RP_rd = '1') else "0000000000000000";
+  o_RQ_DATA <= w_O_MUX_RQ when (i_RF_RQ_rd = '1') else "0000000000000000"; 
   
 end arch1;
 

@@ -21,6 +21,6 @@ end mux2x1;
 architecture arch_1 of mux2x1 is
 begin
 
-  o_Q <= i_A when (i_SEL = '0') else i_B;
+  o_Q <= i_A when (i_SEL = '1') else i_B;
   
 end arch_1;
