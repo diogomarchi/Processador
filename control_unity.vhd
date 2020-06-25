@@ -15,10 +15,7 @@ port ( i_CLK   : in std_logic;  -- input clock
        i_CLR_n     : in std_logic;  -- input clear/reset
 		 i_DATA      : in std_logic_vector(15 downto 0); -- input instruction register
 		 i_RF_RP_zero: in std_logic;  -- output RF_RP zero
-		 o_PC_CLR    : out std_logic;  -- output clear
 		 o_I_RD      : out std_logic;  -- output instruction read
-       o_IR_LD     : out std_logic;  -- output instruction register load
-		 o_PC_INC    : out std_logic;  -- output program counter increment   
        o_D_ADDR    : out std_logic_vector(7 downto 0);  -- output data address
        o_D_RD      : out std_logic;  -- output data read
 		 o_D_WR      : out std_logic;  -- output data write
@@ -102,7 +99,7 @@ begin
                             o_PC     => w_O_PC
 									 );
   o_ADDR <= w_O_PC;
-  w_ADDITION_INTRUCTION <= w_O_PC + w_i_ADDITION_IR;
+  w_ADDITION_INTRUCTION <= w_O_PC + w_i_ADDITION_IR - '1';
 
 
   --connecting instruction_register with processador_unidade_controle	 

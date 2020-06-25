@@ -10,20 +10,17 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity mux3x1 is
-port ( i_SEL0 : in  std_logic;  -- selector
-       i_SEL1 : in  std_logic;  -- selector
+entity mux2x1 is
+port ( i_SEL : in  std_logic;  -- selector
        i_A   : in  std_logic_Vector(15 downto 0);  -- data input
        i_B   : in  std_logic_Vector(15 downto 0);  -- data input
-		 i_C   : in  std_logic_Vector(15 downto 0);  -- data input
-       o_Q   : out  std_logic_Vector(7 downto 0));  -- data output
-end mux3x1;
+       o_Q   : out  std_logic_Vector(15 downto 0));  -- data output
+end mux2x1;
 
 
-architecture arch_1 of mux3x1 is
+architecture arch_1 of mux2x1 is
 begin
 
-  o_Q <= i_A when (i_SEL0 = '1' and i_SEL1 = '0') else
-         i_B when (i_SEL0 = '0' and i_SEL1 = '0') else i_C;
+  o_Q <= i_A when (i_SEL = '1') else i_B;
   
 end arch_1;

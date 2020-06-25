@@ -15,15 +15,21 @@ port ( i_SEL0 : in  std_logic;  -- selector
        i_SEL1 : in  std_logic;  -- selector
        i_A   : in  std_logic_Vector(15 downto 0);  -- data input
        i_B   : in  std_logic_Vector(15 downto 0);  -- data input
-		 i_C   : in  std_logic_Vector(15 downto 0);  -- data input
-       o_Q   : out  std_logic_Vector(7 downto 0));  -- data output
+		 i_C   : in  std_logic_Vector(7 downto 0);  -- data input
+       o_Q   : out  std_logic_Vector(15 downto 0));  -- data output
 end mux3x1;
 
-
 architecture arch_1 of mux3x1 is
-begin
 
+signal w_C: std_logic_vector(15 downto 0);
+
+begin
+  
+  w_C(15 downto 8) <="00000000";
+  w_C(7 downto 0) <= i_C;
+  
   o_Q <= i_A when (i_SEL0 = '1' and i_SEL1 = '0') else
-         i_B when (i_SEL0 = '0' and i_SEL1 = '0') else i_C;
+         i_B when (i_SEL0 = '0' and i_SEL1 = '0') else
+		   w_C when (i_SEL0 = '0' and i_SEL1 = '1') else "0000000000000000";
   
 end arch_1;

@@ -23,10 +23,7 @@ architecture rtl of processador_top is
        i_CLR_n     : in std_logic;  -- input clear/reset
 		 i_DATA      : in std_logic_vector(15 downto 0); -- input instruction register
 		 i_RF_RP_zero: in std_logic;  -- output RF_RP zero
-		 o_PC_CLR    : out std_logic;  -- output clear
-		 o_I_RD      : out std_logic;  -- output instruction read
-       o_IR_LD     : out std_logic;  -- output instruction register load
-		 o_PC_INC    : out std_logic;  -- output program counter increment  
+		 o_I_RD      : out std_logic;  -- output instruction read 
        o_D_ADDR    : out std_logic_vector(7 downto 0);  -- output data address
        o_D_RD      : out std_logic;  -- output data read
 		 o_D_WR      : out std_logic;  -- output data write
@@ -61,17 +58,21 @@ architecture rtl of processador_top is
   
   component operational_block is
   port ( i_CLK   : in std_logic;
-         i_CLR_N : in std_logic;
-         i_RF_s  : in  std_logic;  -- register file selector
-		   i_ALU_s0  : in  std_logic;  -- ALU operation
-		   i_RF_W_wr  : in  std_logic;  -- enable W write
-		   i_RF_RP_rd : in  std_logic;  -- enable RP read
-		   i_RF_RQ_rd : in  std_logic;  -- enable RQ read
-         i_RF_W_addr  : in  std_logic_Vector(3 downto 0);  -- W write address
-		   i_RF_RP_addr : in  std_logic_Vector(3 downto 0);  -- RP read address   
-		   i_RF_RQ_addr : in  std_logic_Vector(3 downto 0);  -- RP read address
-		   i_R_DATA  : in  std_logic_Vector(15 downto 0);    -- W input data
-		   o_W_DATA : out  std_logic_Vector(15 downto 0)   -- W output data
+       i_CLR_N : in std_logic;
+       i_RF_s0  : in  std_logic;  -- register file selector
+		 i_RF_s1  : in  std_logic;  -- register file selector
+		 i_ALU_s0  : in  std_logic;  -- ALU operation
+		 i_ALU_s1  : in  std_logic;  -- ALU operation
+		 i_RF_W_wr  : in  std_logic;  -- enable W write
+		 i_RF_RP_rd : in  std_logic;  -- enable RP read
+		 i_RF_RQ_rd : in  std_logic;  -- enable RQ read
+       i_RF_W_addr  : in  std_logic_Vector(3 downto 0);  -- W write address
+		 i_RF_RP_addr : in  std_logic_Vector(3 downto 0);  -- RP read address   
+		 i_RF_RQ_addr : in  std_logic_Vector(3 downto 0);  -- RP read address
+		 i_RF_W_DATA  : in  std_logic_Vector(7 downto 0);  -- RP read address
+		 i_R_DATA     : in  std_logic_Vector(15 downto 0);    -- W input data
+		 o_RF_RP_ZERO : out std_logic;
+		 o_W_DATA     : out  std_logic_Vector(15 downto 0)   -- W output data
          ); 
   end component operational_block;
   
@@ -132,15 +133,19 @@ u_control_unity : control_unity port map (
   u_operational_block : operational_block port map (  
        i_CLK   => i_CLK,
        i_CLR_N => i_CLR_N,
-       i_RF_s  => w_O_RF_s0,
+       i_RF_s0  => w_O_RF_s0,
+		 i_RF_s1  => w_O_RF_s1,
        i_ALU_s0  => w_O_ALU_s0,
+		 i_ALU_s1  => w_O_ALU_s1,
        i_RF_W_wr  => w_O_RF_W_WR,
        i_RF_RP_rd => w_O_RF_RP_RD,
        i_RF_RQ_rd => w_O_RF_RQ_RD,
        i_RF_W_addr => w_O_RF_W_addr,
+		 i_RF_W_DATA => w_o_RF_W_DATA,
        i_RF_RP_addr => w_O_RF_RP_addr,
        i_RF_RQ_addr => w_O_RF_RQ_addr,
        i_R_DATA  => w_R_DATA,
+		 o_RF_RP_ZERO=>w_i_RF_RP_zero,
        o_W_DATA => w_MEMO_DATA
   );
 

@@ -32,17 +32,11 @@ architecture rtl of single_port_rom is
   constant ADDR2 : integer := 1;
   constant ADDR3 : integer := 2;
   constant ADDR4 : integer := 3;
-  constant ADDR5 : integer := 4;
-  constant ADDR6 : integer := 5;
-  constant ADDR7 : integer := 6;
   
   constant VAL1 : std_logic_vector := "0000000000000000";
   constant VAL2 : std_logic_vector := "0000000100000001";
   constant VAL3 : std_logic_vector := "0010001000000001";
   constant VAL4 : std_logic_vector := "0001001000001001";
-  constant VAL5 : std_logic_vector := "0011000100001001";--rf[1]=9
-  constant VAL6 : std_logic_vector := "0100010001000001";--rf[4]=(4 - 1)
-  constant VAL7 : std_logic_vector := "0101000100001001";--salta
 
   -- Build a 2-D array type for the RoM
   subtype word_t is std_logic_vector(D_Width-1 downto 0);
@@ -62,13 +56,7 @@ architecture rtl of single_port_rom is
            when  ADDR3 => 
 			    tmp(addr_pos) := VAL3;
            when  ADDR4 => 
-			    tmp(addr_pos) := VAL4;
-           when  ADDR5 => 
-			    tmp(addr_pos) := VAL5;
-           when  ADDR6 => 
-			    tmp(addr_pos) := VAL6;
-           when  ADDR7 => 
-			    tmp(addr_pos) := VAL7;				 
+			    tmp(addr_pos) := VAL4;				 
 		     when others =>
 			    tmp(addr_pos) := "1111111111111111"; 
 			end case;
