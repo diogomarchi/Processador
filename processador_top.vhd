@@ -20,21 +20,28 @@ architecture rtl of processador_top is
   
   component control_unity is 
   port ( i_CLK   : in std_logic;  -- input clock
-         i_CLR_n : in std_logic;  -- input clear/reset
-         i_DATA  : in std_logic_vector(15 downto 0); -- input operacao
-  	 o_ADDR  : out std_logic_vector(15 downto 0); -- output adress
-         o_RD    : out std_logic;   -- output read
-         o_D_ADDR: out std_logic_vector(7 downto 0);  -- output data address
-         o_D_RD  : out std_logic;  -- output data read
-	 o_D_WR  : out std_logic;  -- output data write
-	 o_RF_S  : out std_logic;  -- output RD_S
-         o_RF_W_ADDR : out std_logic_vector(3 downto 0);  -- output register file address
-         o_RF_W_WR   : out std_logic;  -- output RF_w escrita
-         o_RF_RP_ADDR: out std_logic_vector(3 downto 0);  -- output RF_RP endereco
-	 o_RF_RP_RD  : out std_logic;  -- output RF_RP leitura
-         o_RF_RQ_ADDR: out std_logic_vector(3 downto 0);  -- output RF_RQ endereco
-         o_RF_RQ_RD  : out std_logic;  -- output RF_RQ leitura
-         o_ALU_S0    : out std_logic   -- output soma ULA       
+       i_CLR_n     : in std_logic;  -- input clear/reset
+		 i_DATA      : in std_logic_vector(15 downto 0); -- input instruction register
+		 i_RF_RP_zero: in std_logic;  -- output RF_RP zero
+		 o_PC_CLR    : out std_logic;  -- output clear
+		 o_I_RD      : out std_logic;  -- output instruction read
+       o_IR_LD     : out std_logic;  -- output instruction register load
+		 o_PC_INC    : out std_logic;  -- output program counter increment  
+       o_D_ADDR    : out std_logic_vector(7 downto 0);  -- output data address
+       o_D_RD      : out std_logic;  -- output data read
+		 o_D_WR      : out std_logic;  -- output data write
+		 o_RF_S0     : out std_logic;  -- output RD_S
+		 o_RF_S1     : out std_logic;  -- output RD_S
+       o_RF_W_ADDR : out std_logic_vector(3 downto 0);  -- output register file address
+       o_RF_W_WR   : out std_logic;  -- output RF_w escrita
+		 o_RF_W_DATA : out std_logic_vector(7 downto 0);  -- output data for mux 3x1
+		 o_RF_RP_ADDR: out std_logic_vector(3 downto 0);  -- output RF_RP adress
+		 o_RF_RP_RD  : out std_logic;  -- output RF_RP read
+		 o_RF_RQ_ADDR: out std_logic_vector(3 downto 0);  -- output RF_RQ adress
+		 o_RF_RQ_RD  : out std_logic;  -- output RF_RQ lread
+		 o_ALU_S0    : out std_logic;   -- output soma ULA
+		 o_ALU_S1    : out std_logic;   -- output soma ULA 
+       o_ADDR    	 : out std_logic_vector(15 downto 0)     
          ); 
   end component control_unity;
 
@@ -81,30 +88,34 @@ architecture rtl of processador_top is
 
   
 signal w_IR_DATA, w_O_ADDR, w_MEMO_DATA, w_R_DATA: std_logic_vector(15 downto 0);
-signal w_O_D_ADDR: std_logic_vector(7 downto 0);
+signal w_O_D_ADDR, w_o_RF_W_DATA: std_logic_vector(7 downto 0);
 signal w_O_RF_W_ADDR, w_O_RF_RP_ADDR, w_O_RF_RQ_ADDR: std_logic_vector(3 downto 0);
-signal w_O_RD, w_O_D_RD, w_O_D_WR, w_O_RF_S, w_O_RF_W_WR, w_O_RF_RP_RD, w_O_RF_RQ_RD, w_O_ALU_S0: std_logic;
+signal w_O_RD, w_O_D_RD, w_O_D_WR, w_O_RF_S0, w_O_RF_S1, w_O_RF_W_WR, w_O_RF_RP_RD, w_O_RF_RQ_RD, w_O_ALU_S0, w_O_ALU_S1, w_i_RF_RP_zero: std_logic;
 		
 begin 
 
 --connecting processador_unidade_controle with processador_control
 u_control_unity : control_unity port map (
-                                        i_CLK     => i_CLK,
+               i_CLK     => i_CLK,
 					i_CLR_n  => i_CLR_n,
 					i_DATA   => w_IR_DATA,
+					i_RF_RP_zero=>w_i_RF_RP_zero,
 					o_ADDR   => w_O_ADDR,
-					o_RD     => w_O_RD,
+					o_I_RD     => w_O_RD,
 					o_D_ADDR => w_O_D_ADDR,
 					o_D_RD   => w_O_D_RD,
 					o_D_WR   => w_O_D_WR,
-					o_RF_S   => w_O_RF_S,
+					o_RF_S0   => w_O_RF_S0,
+					o_RF_S1   => w_O_RF_S1,
 					o_RF_W_ADDR => w_O_RF_W_ADDR,
-				        o_RF_W_WR   => w_O_RF_W_WR,
+				   o_RF_W_WR   => w_O_RF_W_WR,
+					o_RF_W_DATA => w_o_RF_W_DATA,
 					o_RF_RP_ADDR=> w_O_RF_RP_ADDR,
 					o_RF_RP_RD  => w_o_RF_RP_RD,
 					o_RF_RQ_ADDR=> w_o_RF_RQ_ADDR,
 					o_RF_RQ_RD  => w_O_RF_RQ_RD,
-					o_ALU_S0    => w_O_ALU_S0
+					o_ALU_S0    => w_O_ALU_S0,
+					o_ALU_S1    => w_O_ALU_S1
  );
 														  
   u_data_memo : data_memo port map ( 
@@ -121,7 +132,7 @@ u_control_unity : control_unity port map (
   u_operational_block : operational_block port map (  
        i_CLK   => i_CLK,
        i_CLR_N => i_CLR_N,
-       i_RF_s  => w_O_RF_s,
+       i_RF_s  => w_O_RF_s0,
        i_ALU_s0  => w_O_ALU_s0,
        i_RF_W_wr  => w_O_RF_W_WR,
        i_RF_RP_rd => w_O_RF_RP_RD,
@@ -137,10 +148,10 @@ u_control_unity : control_unity port map (
 	i_CLK     => i_CLK,
         i_CLR_n   => i_CLR_n,
         i_IR_RD   => w_O_RD,
-	i_IR_ADDR => w_O_ADDR,
+	     i_IR_ADDR => w_O_ADDR,
         o_R_DATA  => w_IR_DATA
   );
   
-   o_SAIDA_RF <= w_MEMO_DATA; 
+  o_SAIDA_RF <= w_MEMO_DATA; 
 end rtl;
 

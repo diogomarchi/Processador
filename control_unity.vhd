@@ -18,8 +18,7 @@ port ( i_CLK   : in std_logic;  -- input clock
 		 o_PC_CLR    : out std_logic;  -- output clear
 		 o_I_RD      : out std_logic;  -- output instruction read
        o_IR_LD     : out std_logic;  -- output instruction register load
-		 o_PC_INC    : out std_logic;  -- output program counter increment  
-       o_PC_LD     : out std_logic;  -- output program counter load 		 
+		 o_PC_INC    : out std_logic;  -- output program counter increment   
        o_D_ADDR    : out std_logic_vector(7 downto 0);  -- output data address
        o_D_RD      : out std_logic;  -- output data read
 		 o_D_WR      : out std_logic;  -- output data write
