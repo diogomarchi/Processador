@@ -10,24 +10,29 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity control_block is 
-port ( i_CLK   : in std_logic;  -- input clock
-       i_CLR_n : in std_logic;  -- input clear/reset
-		 i_DATA  : in std_logic_vector(15 downto 0); -- input operacao
-		 o_PC_CLR: out std_logic;  -- output clear
-		 o_I_RD  : out std_logic;  -- output instruction read
-       o_IR_LD : out std_logic;  -- output instruction register load
-		 o_PC_INC: out std_logic;  -- output program count increment       
-       o_D_ADDR: out std_logic_vector(7 downto 0);  -- output data address
-       o_D_RD  : out std_logic;  -- output data read
-		 o_D_WR  : out std_logic;  -- output data write
-		 o_RF_S  : out std_logic;  -- output RD_S
+port ( i_CLK       : in std_logic;  -- input clock
+       i_CLR_n     : in std_logic;  -- input clear/reset
+		 i_DATA      : in std_logic_vector(15 downto 0); -- input instruction register
+		 i_RF_RP_zero: in std_logic;  -- output RF_RP zero
+		 o_PC_CLR    : out std_logic;  -- output clear
+		 o_I_RD      : out std_logic;  -- output instruction read
+       o_IR_LD     : out std_logic;  -- output instruction register load
+		 o_PC_INC    : out std_logic;  -- output program counter increment  
+       o_PC_LD     : out std_logic;  -- output program counter load 		 
+       o_D_ADDR    : out std_logic_vector(7 downto 0);  -- output data address
+       o_D_RD      : out std_logic;  -- output data read
+		 o_D_WR      : out std_logic;  -- output data write
+		 o_RF_S0     : out std_logic;  -- output RD_S
+		 o_RF_S1     : out std_logic;  -- output RD_S
        o_RF_W_ADDR : out std_logic_vector(3 downto 0);  -- output register file address
        o_RF_W_WR   : out std_logic;  -- output RF_w escrita
-		 o_RF_RP_ADDR: out std_logic_vector(3 downto 0);  -- output RF_RP endereco
-		 o_RF_RP_RD  : out std_logic;  -- output RF_RP leitura
-		 o_RF_RQ_ADDR: out std_logic_vector(3 downto 0);  -- output RF_RQ endereco
-		 o_RF_RQ_RD  : out std_logic;  -- output RF_RQ leitura
-		 o_ALU_S0    : out std_logic   -- output soma ULA
+		 o_RF_W_DATA : out std_logic_vector(7 downto 0);  -- output data for mux 3x1
+		 o_RF_RP_ADDR: out std_logic_vector(3 downto 0);  -- output RF_RP adress
+		 o_RF_RP_RD  : out std_logic;  -- output RF_RP read
+		 o_RF_RQ_ADDR: out std_logic_vector(3 downto 0);  -- output RF_RQ adress
+		 o_RF_RQ_RD  : out std_logic;  -- output RF_RQ lread
+		 o_ALU_S0    : out std_logic;   -- output soma ULA
+		 o_ALU_S1    : out std_logic   -- output soma ULA
        ); 
 end control_block;
 
@@ -38,7 +43,11 @@ architecture rtl of control_block is
   -- s_3 carregar
   -- s_4 armazenar
   -- s_5 somar
-  type t_STATE is (s_0, s_1, s_2, s_3, s_4, s_5);
+  -- S_6 carrega constante
+  -- S_7 substrair
+  -- S_8 saltar se zero
+  -- S_9 saltar
+  type t_STATE is (s_0, s_1, s_2, s_3, s_4, s_5, S_6, S_7, S_8, S_9);
   signal r_STATE: t_STATE;  -- state register
   signal w_NEXT : t_STATE;  -- next state  
   signal w_OP, w_RA, w_RB, w_RC:std_logic_vector(3 downto 0);
@@ -73,6 +82,12 @@ begin
 					 w_NEXT <= s_4;
 				  elsif(w_OP = "0010") then   -- caso op = somar next state = somar
 					 w_NEXT <= s_5;
+				  elsif(w_OP = "0011") then   -- caso op = somar next state = somar
+					 w_NEXT <= s_6;
+				  elsif(w_OP = "0100") then   -- caso op = somar next state = somar
+					 w_NEXT <= s_7;
+				  elsif(w_OP = "0101") then   -- caso op = somar next state = somar
+					 w_NEXT <= s_8;
 				  else
 				    w_NEXT <= S_2;
 				  end if;       
@@ -84,6 +99,22 @@ begin
                w_NEXT <= s_1;	
 					
 		when s_5 =>
+					w_NEXT <= s_1;
+					
+		when s_6 =>
+					w_NEXT <= s_1;
+					
+	   when s_7 =>
+					w_NEXT <= s_1;
+					
+		when s_8 =>
+		         if (i_RF_RP_zero = '1') then    -- caso 1, vai para saltar
+					  w_NEXT <= s_9;
+					else
+					  w_NEXT <= s_1;
+					end if;
+					
+		when s_9 =>
 					w_NEXT <= s_1;
 						
       when others => 
@@ -107,7 +138,8 @@ begin
 	
 	--atribuição do valor de D a partir do valor de entrada
   W_D <= i_DATA(7 downto 0);
-
+  
+  o_RF_W_DATA <= i_DATA(7 downto 0);
 	
   o_PC_CLR <= '1' when (r_STATE = s_0) else '0';  
   
@@ -115,30 +147,37 @@ begin
   
   o_IR_LD  <= '1' when (r_STATE = s_1) else '0';  
   
-  o_PC_INC <= '1' when (r_STATE = s_1) else '0';  
+  o_PC_INC  <= '1' when (r_STATE = s_1) else '0';  
   
-  o_D_ADDR <=  w_D when ((r_STATE = s_3) or (r_STATE = s_4)) else "00000000"; 
+  o_D_ADDR  <=  w_D when ((r_STATE = s_3) or (r_STATE = s_4)) else "00000000"; 
   
-  o_D_RD   <= '1' when (r_STATE = s_3) else '0';    
+  o_D_RD    <= '1' when (r_STATE = s_3) else '0'; 
+
+  o_D_WR    <= '1' when (r_STATE = s_4) else '0';    
   
-  o_RF_S   <= '1' when (r_STATE = s_3) else '0';  
+  o_RF_S0   <= '1' when (r_STATE = s_3) else '0';  
   
-  o_RF_W_ADDR  <= w_RA when ((r_STATE = s_3) or (r_STATE = s_4) or (r_STATE = s_5)) else "0000";  
+  o_RF_S1   <= '1' when (r_STATE = s_6) else '0';
   
-  o_RF_W_WR    <= '1' when ((r_STATE = s_3) or (r_STATE = s_5)) else '0'; 
+  o_RF_W_ADDR  <= w_RA when ((r_STATE = s_3) or (r_STATE = s_5) or (r_STATE = s_6) or (r_STATE = s_7)) else "0000";  
   
-  o_D_WR       <= '1' when (r_STATE = s_4) else '0';  
+  o_RF_W_WR    <= '1' when ((r_STATE = s_3) or (r_STATE = s_5) or (r_STATE = s_6) or (r_STATE = s_7)) else '0'; 
+ 
   
-  o_RF_RP_ADDR <= w_RA when (r_STATE = s_4) else
-                  w_RB when (r_STATE = s_5) else "0000"; 
+  o_RF_RP_ADDR <= w_RA when ((r_STATE = s_4) or (r_STATE = s_8)) else
+                  w_RB when ((r_STATE = s_5) or (r_STATE = s_7)) else "0000"; 
   
-  o_RF_RP_RD   <= '1' when ((r_STATE = s_4) or (r_STATE = s_5)) else '0';
+  o_RF_RP_RD   <= '1' when ((r_STATE = s_4) or (r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_8)) else '0';
   
-  o_RF_RQ_ADDR <= w_RC when (r_STATE = s_5) else "0000";
+  o_RF_RQ_ADDR <= w_RC when ((r_STATE = s_5) or (r_STATE = s_7)) else "0000";
   
-  o_RF_RQ_RD   <= '1' when (r_STATE = s_5) else '0';
+  o_RF_RQ_RD   <= '1' when ((r_STATE = s_5) or (r_STATE = s_7)) else '0';
   
   o_ALU_S0     <= '1' when (r_STATE = s_5) else '0';
+  
+  o_ALU_S1     <= '1' when (r_STATE = s_7) else '0';
+  
+  o_PC_LD      <= '1' when (r_STATE = s_9) else '0';
   
   
 end rtl;
