@@ -49,19 +49,12 @@ begin
 	     if(i_RF_W_wr = '1') then
 		    reg_file(to_integer(unsigned(i_RF_W_addr))) <=  i_W_DATA;
 	     end if;
-      
-        if(i_RF_RP_rd = '1') then 
-		    w_o_REG_RP <= reg_file(to_integer(unsigned(i_RF_RP_addr)));		
-        end if;		
-	     
-		  if(i_RF_RQ_rd = '1') then
-		    w_o_REG_RQ <= reg_file(to_integer(unsigned(i_RF_RQ_addr)));		
-        end if;	   
+        
     end if;	 
   end process;
   
-  o_RP_DATA <= w_o_REG_RP;
-  o_RQ_DATA <= w_o_REG_RQ;
+  o_RP_DATA <= reg_file(to_integer(unsigned(i_RF_RP_addr))) when(i_RF_RP_rd = '1')  else "ZZZZZZZZZZZZZZZZ";
+  o_RQ_DATA <= reg_file(to_integer(unsigned(i_RF_RQ_addr))) when(i_RF_RQ_rd = '1')  else "ZZZZZZZZZZZZZZZZ";
   
 end arch1;
 
