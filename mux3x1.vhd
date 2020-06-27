@@ -30,6 +30,6 @@ begin
   
   o_Q <= i_A when (i_SEL0 = '1' and i_SEL1 = '0') else
          i_B when (i_SEL0 = '0' and i_SEL1 = '0') else
-		   w_C when (i_SEL0 = '0' and i_SEL1 = '1') else "0000000000000000";
+		   w_C ;
   
 end arch_1;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador_top
-Thu Jun 25 20:50:43 2020
+Fri Jun 26 23:51:58 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -15,20 +15,21 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. State Machine - |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE
- 10. General Register Statistics
- 11. Registers Packed Into Inferred Megafunctions
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_p1f1:auto_generated
- 14. Parameter Settings for User Entity Instance: data_memo:u_data_memo
- 15. Parameter Settings for User Entity Instance: data_memo:u_data_memo|RAM:u_RAM
- 16. Parameter Settings for User Entity Instance: operational_block:u_operational_block|register_file:u_REGISTER_FILE
- 17. Parameter Settings for User Entity Instance: instruction_memory:u_instruction_memory
- 18. Parameter Settings for User Entity Instance: instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom
- 19. Parameter Settings for Inferred Entity Instance: instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0
- 20. altsyncram Parameter Settings by Entity Instance
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Registers Packed Into Inferred Megafunctions
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_p1f1:auto_generated
+ 15. Parameter Settings for User Entity Instance: data_memo:u_data_memo
+ 16. Parameter Settings for User Entity Instance: data_memo:u_data_memo|RAM:u_RAM
+ 17. Parameter Settings for User Entity Instance: operational_block:u_operational_block|register_file:u_REGISTER_FILE
+ 18. Parameter Settings for User Entity Instance: instruction_memory:u_instruction_memory
+ 19. Parameter Settings for User Entity Instance: instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom
+ 20. Parameter Settings for Inferred Entity Instance: instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0
+ 21. altsyncram Parameter Settings by Entity Instance
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
 
 
 
@@ -55,13 +56,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Jun 25 20:50:42 2020       ;
+; Analysis & Synthesis Status     ; Successful - Fri Jun 26 23:51:58 2020       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; processador_top                             ;
 ; Top-level Entity Name           ; processador_top                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 4445                                        ;
+; Total registers                 ; 4417                                        ;
 ; Total pins                      ; 18                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 1,048,576                                   ;
@@ -168,50 +169,52 @@ https://fpgasoftware.intel.com/eula.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                 ;
-+----------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                         ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                            ; Library ;
-+----------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------+
-; single_port_rom.vhd                                      ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/single_port_rom.vhd                                      ;         ;
-; control_unity.vhd                                        ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd                                        ;         ;
-; control_block.vhd                                        ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd                                        ;         ;
-; processador_top.vhd                                      ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd                                      ;         ;
-; register_16bit.vhd                                       ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_16bit.vhd                                       ;         ;
-; ALU.vhd                                                  ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/ALU.vhd                                                  ;         ;
-; instruction_register.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_register.vhd                                 ;         ;
-; program_counter.vhd                                      ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/program_counter.vhd                                      ;         ;
-; register_file.vhd                                        ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd                                        ;         ;
-; operational_block.vhd                                    ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd                                    ;         ;
-; RAM.vhd                                                  ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/RAM.vhd                                                  ;         ;
-; data_memo.vhd                                            ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd                                            ;         ;
-; instruction_memory.vhd                                   ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd                                   ;         ;
-; mux3x1.vhd                                               ; yes             ; User VHDL File                                        ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux3x1.vhd                                               ;         ;
-; altsyncram.tdf                                           ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf                                                   ;         ;
-; stratix_ram_block.inc                                    ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                            ;         ;
-; lpm_mux.inc                                              ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mux.inc                                                      ;         ;
-; lpm_decode.inc                                           ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_decode.inc                                                   ;         ;
-; aglobal191.inc                                           ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc                                                   ;         ;
-; a_rdenreg.inc                                            ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                    ;         ;
-; altrom.inc                                               ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                                                       ;         ;
-; altram.inc                                               ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                                                       ;         ;
-; altdpram.inc                                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc                                                     ;         ;
-; db/altsyncram_p1f1.tdf                                   ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_p1f1.tdf                                   ;         ;
-; db/processador_top.ram0_single_port_rom_ee80a174.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/processador_top.ram0_single_port_rom_ee80a174.hdl.mif ;         ;
-; db/decode_61a.tdf                                        ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/decode_61a.tdf                                        ;         ;
-; db/mux_chb.tdf                                           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/mux_chb.tdf                                           ;         ;
-+----------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                               ;
++----------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                         ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                          ; Library ;
++----------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------+
+; single_port_rom.vhd                                      ; yes             ; User VHDL File                                        ; C:/intelFPGA_lite/19.1/workspace/Processador/single_port_rom.vhd                                      ;         ;
+; control_unity.vhd                                        ; yes             ; User VHDL File                                        ; C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd                                        ;         ;
+; control_block.vhd                                        ; yes             ; User VHDL File                                        ; C:/intelFPGA_lite/19.1/workspace/Processador/control_block.vhd                                        ;         ;
+; processador_top.vhd                                      ; yes             ; User VHDL File                                        ; C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd                                      ;         ;
+; register_16bit.vhd                                       ; yes             ; User VHDL File                                        ; C:/intelFPGA_lite/19.1/workspace/Processador/register_16bit.vhd                                       ;         ;
+; ALU.vhd                                                  ; yes             ; User VHDL File                                        ; C:/intelFPGA_lite/19.1/workspace/Processador/ALU.vhd                                                  ;         ;
+; instruction_register.vhd                                 ; yes             ; User VHDL File                                        ; C:/intelFPGA_lite/19.1/workspace/Processador/instruction_register.vhd                                 ;         ;
+; program_counter.vhd                                      ; yes             ; User VHDL File                                        ; C:/intelFPGA_lite/19.1/workspace/Processador/program_counter.vhd                                      ;         ;
+; register_file.vhd                                        ; yes             ; User VHDL File                                        ; C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd                                        ;         ;
+; operational_block.vhd                                    ; yes             ; User VHDL File                                        ; C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd                                    ;         ;
+; RAM.vhd                                                  ; yes             ; User VHDL File                                        ; C:/intelFPGA_lite/19.1/workspace/Processador/RAM.vhd                                                  ;         ;
+; data_memo.vhd                                            ; yes             ; User VHDL File                                        ; C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd                                            ;         ;
+; instruction_memory.vhd                                   ; yes             ; User VHDL File                                        ; C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd                                   ;         ;
+; mux3x1.vhd                                               ; yes             ; User VHDL File                                        ; C:/intelFPGA_lite/19.1/workspace/Processador/mux3x1.vhd                                               ;         ;
+; altsyncram.tdf                                           ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf                                 ;         ;
+; stratix_ram_block.inc                                    ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc                          ;         ;
+; lpm_mux.inc                                              ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mux.inc                                    ;         ;
+; lpm_decode.inc                                           ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_decode.inc                                 ;         ;
+; aglobal191.inc                                           ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc                                 ;         ;
+; a_rdenreg.inc                                            ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/a_rdenreg.inc                                  ;         ;
+; altrom.inc                                               ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                                     ;         ;
+; altram.inc                                               ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                                     ;         ;
+; altdpram.inc                                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc                                   ;         ;
+; db/altsyncram_p1f1.tdf                                   ; yes             ; Auto-Generated Megafunction                           ; C:/intelFPGA_lite/19.1/workspace/Processador/db/altsyncram_p1f1.tdf                                   ;         ;
+; db/processador_top.ram0_single_port_rom_ee80a174.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/intelFPGA_lite/19.1/workspace/Processador/db/processador_top.ram0_single_port_rom_ee80a174.hdl.mif ;         ;
+; db/decode_61a.tdf                                        ; yes             ; Auto-Generated Megafunction                           ; C:/intelFPGA_lite/19.1/workspace/Processador/db/decode_61a.tdf                                        ;         ;
+; db/mux_chb.tdf                                           ; yes             ; Auto-Generated Megafunction                           ; C:/intelFPGA_lite/19.1/workspace/Processador/db/mux_chb.tdf                                           ;         ;
++----------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -219,16 +222,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 3084        ;
+; Estimate of Logic utilization (ALMs needed) ; 3100        ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 2017        ;
-;     -- 7 input functions                    ; 8           ;
-;     -- 6 input functions                    ; 1624        ;
-;     -- 5 input functions                    ; 30          ;
-;     -- 4 input functions                    ; 4           ;
-;     -- <=3 input functions                  ; 351         ;
+; Combinational ALUT usage for logic          ; 2104        ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 1637        ;
+;     -- 5 input functions                    ; 52          ;
+;     -- 4 input functions                    ; 26          ;
+;     -- <=3 input functions                  ; 389         ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 4445        ;
+; Dedicated logic registers                   ; 4417        ;
 ;                                             ;             ;
 ; I/O pins                                    ; 18          ;
 ; Total MLAB memory bits                      ; 0           ;
@@ -237,8 +240,8 @@ https://fpgasoftware.intel.com/eula.
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; i_CLK~input ;
-; Maximum fan-out                             ; 4573        ;
-; Total fan-out                               ; 26392       ;
+; Maximum fan-out                             ; 4545        ;
+; Total fan-out                               ; 26612       ;
 ; Average fan-out                             ; 3.98        ;
 +---------------------------------------------+-------------+
 
@@ -248,9 +251,9 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                   ; Entity Name          ; Library Name ;
 +-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |processador_top                                    ; 2017 (0)            ; 4445 (0)                  ; 1048576           ; 0          ; 18   ; 0            ; |processador_top                                                                                                                                                      ; processador_top      ; work         ;
-;    |control_unity:u_control_unity|                  ; 61 (16)             ; 42 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity                                                                                                                        ; control_unity        ; work         ;
-;       |control_block:u_CONTROLE|                    ; 28 (28)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE                                                                                               ; control_block        ; work         ;
+; |processador_top                                    ; 2104 (0)            ; 4417 (0)                  ; 1048576           ; 0          ; 18   ; 0            ; |processador_top                                                                                                                                                      ; processador_top      ; work         ;
+;    |control_unity:u_control_unity|                  ; 72 (16)             ; 46 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity                                                                                                                        ; control_unity        ; work         ;
+;       |control_block:u_CONTROLE|                    ; 39 (39)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE                                                                                               ; control_block        ; work         ;
 ;       |instruction_register:u_instruction_register| ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity|instruction_register:u_instruction_register                                                                            ; instruction_register ; work         ;
 ;       |program_counter:u_program_counter|           ; 17 (17)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity|program_counter:u_program_counter                                                                                      ; program_counter      ; work         ;
 ;    |data_memo:u_data_memo|                          ; 1686 (0)            ; 4096 (0)                  ; 0                 ; 0          ; 0    ; 0            ; |processador_top|data_memo:u_data_memo                                                                                                                                ; data_memo            ; work         ;
@@ -262,10 +265,10 @@ https://fpgasoftware.intel.com/eula.
 ;             |altsyncram_p1f1:auto_generated|        ; 56 (0)              ; 3 (3)                     ; 1048576           ; 0          ; 0    ; 0            ; |processador_top|instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_p1f1:auto_generated                        ; altsyncram_p1f1      ; work         ;
 ;                |decode_61a:rden_decode|             ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_p1f1:auto_generated|decode_61a:rden_decode ; decode_61a           ; work         ;
 ;                |mux_chb:mux2|                       ; 48 (48)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|altsyncram:rom_rtl_0|altsyncram_p1f1:auto_generated|mux_chb:mux2           ; mux_chb              ; work         ;
-;    |operational_block:u_operational_block|          ; 214 (4)             ; 288 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block                                                                                                                ; operational_block    ; work         ;
-;       |ALU:u_ALU|                                   ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block|ALU:u_ALU                                                                                                      ; ALU                  ; work         ;
-;       |mux3x1:u_MUX|                                ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block|mux3x1:u_MUX                                                                                                   ; mux3x1               ; work         ;
-;       |register_file:u_REGISTER_FILE|               ; 176 (176)           ; 288 (288)                 ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block|register_file:u_REGISTER_FILE                                                                                  ; register_file        ; work         ;
+;    |operational_block:u_operational_block|          ; 290 (3)             ; 256 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block                                                                                                                ; operational_block    ; work         ;
+;       |ALU:u_ALU|                                   ; 54 (54)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block|ALU:u_ALU                                                                                                      ; ALU                  ; work         ;
+;       |mux3x1:u_MUX|                                ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block|mux3x1:u_MUX                                                                                                   ; mux3x1               ; work         ;
+;       |register_file:u_REGISTER_FILE|               ; 194 (194)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block|register_file:u_REGISTER_FILE                                                                                  ; register_file        ; work         ;
 +-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -280,22 +283,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE                                                         ;
-+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-; Name        ; r_STATE.S_9 ; r_STATE.S_8 ; r_STATE.S_7 ; r_STATE.S_6 ; r_STATE.s_5 ; r_STATE.s_4 ; r_STATE.s_3 ; r_STATE.s_2 ; r_STATE.s_1 ; r_STATE.s_0 ;
-+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-; r_STATE.s_0 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ;
-; r_STATE.s_1 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1           ;
-; r_STATE.s_2 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 1           ;
-; r_STATE.s_3 ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 1           ;
-; r_STATE.s_4 ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 1           ;
-; r_STATE.s_5 ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 1           ;
-; r_STATE.S_6 ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
-; r_STATE.S_7 ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
-; r_STATE.S_8 ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
-; r_STATE.S_9 ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
-+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE                                                                                                                                     ;
++--------------+--------------+--------------+--------------+--------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+; Name         ; r_STATE.s_14 ; r_STATE.s_13 ; r_STATE.s_12 ; r_STATE.s_11 ; r_STATE.s_10 ; r_STATE.S_9 ; r_STATE.S_8 ; r_STATE.S_7 ; r_STATE.S_6 ; r_STATE.s_5 ; r_STATE.s_4 ; r_STATE.s_3 ; r_STATE.s_2 ; r_STATE.s_1 ; r_STATE.s_0 ;
++--------------+--------------+--------------+--------------+--------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+; r_STATE.s_0  ; 0            ; 0            ; 0            ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ;
+; r_STATE.s_1  ; 0            ; 0            ; 0            ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1           ;
+; r_STATE.s_2  ; 0            ; 0            ; 0            ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 1           ;
+; r_STATE.s_3  ; 0            ; 0            ; 0            ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 1           ;
+; r_STATE.s_4  ; 0            ; 0            ; 0            ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 1           ;
+; r_STATE.s_5  ; 0            ; 0            ; 0            ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; r_STATE.S_6  ; 0            ; 0            ; 0            ; 0            ; 0            ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; r_STATE.S_7  ; 0            ; 0            ; 0            ; 0            ; 0            ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; r_STATE.S_8  ; 0            ; 0            ; 0            ; 0            ; 0            ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; r_STATE.S_9  ; 0            ; 0            ; 0            ; 0            ; 0            ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; r_STATE.s_10 ; 0            ; 0            ; 0            ; 0            ; 1            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; r_STATE.s_11 ; 0            ; 0            ; 0            ; 1            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; r_STATE.s_12 ; 0            ; 0            ; 1            ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; r_STATE.s_13 ; 0            ; 1            ; 0            ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; r_STATE.s_14 ; 1            ; 0            ; 0            ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
++--------------+--------------+--------------+--------------+--------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
++------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                       ;
++---------------------------------------------------------------------+--------------------+
+; Register name                                                       ; Reason for Removal ;
++---------------------------------------------------------------------+--------------------+
+; control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE.s_14 ; Lost fanout        ;
+; Total Number of Removed Registers = 1                               ;                    ;
++---------------------------------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -303,12 +321,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4445  ;
+; Total registers                              ; 4417  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 346   ;
+; Number of registers using Asynchronous Clear ; 318   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4432  ;
+; Number of registers using Clock Enable       ; 4400  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -322,17 +340,19 @@ Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------+
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |processador_top|operational_block:u_operational_block|register_file:u_REGISTER_FILE|w_o_REG_RP[7] ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |processador_top|operational_block:u_operational_block|register_file:u_REGISTER_FILE|w_o_REG_RQ[6] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RP_ADDR[3]            ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|mux3x1:u_MUX|o_Q[14]                        ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|mux3x1:u_MUX|o_Q[0]                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RP_ADDR[3]    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|w_NEXT.s_14        ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_W_ADDR[0]     ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|register_file:u_REGISTER_FILE|Mux29 ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|register_file:u_REGISTER_FILE|Mux10 ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|mux3x1:u_MUX|o_Q[15]                ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|mux3x1:u_MUX|o_Q[6]                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -485,30 +505,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 4445                        ;
-;     CLR               ; 10                          ;
+; arriav_ff             ; 4417                        ;
+;     CLR               ; 14                          ;
 ;     ENA               ; 4096                        ;
-;     ENA CLR           ; 336                         ;
+;     ENA CLR           ; 304                         ;
 ;     plain             ; 3                           ;
-; arriav_lcell_comb     ; 2017                        ;
+; arriav_io_obuf        ; 16                          ;
+; arriav_lcell_comb     ; 2104                        ;
 ;     arith             ; 49                          ;
 ;         1 data inputs ; 9                           ;
 ;         2 data inputs ; 8                           ;
 ;         3 data inputs ; 32                          ;
-;     extend            ; 8                           ;
-;         7 data inputs ; 8                           ;
-;     normal            ; 1960                        ;
+;     normal            ; 2039                        ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 264                         ;
-;         3 data inputs ; 36                          ;
-;         4 data inputs ; 4                           ;
-;         5 data inputs ; 30                          ;
-;         6 data inputs ; 1624                        ;
+;         2 data inputs ; 277                         ;
+;         3 data inputs ; 45                          ;
+;         4 data inputs ; 26                          ;
+;         5 data inputs ; 52                          ;
+;         6 data inputs ; 1637                        ;
+;     shared            ; 16                          ;
+;         2 data inputs ; 16                          ;
 ; boundary_port         ; 18                          ;
 ; stratixv_ram_block    ; 128                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 4.81                        ;
+; Max LUT depth         ; 8.50                        ;
+; Average LUT depth     ; 5.79                        ;
 +-----------------------+-----------------------------+
 
 
@@ -517,7 +538,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:09     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -527,78 +548,97 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Thu Jun 25 20:50:04 2020
+    Info: Processing started: Fri Jun 26 23:51:44 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file single_port_rom.vhd
-    Info (12022): Found design unit 1: single_port_rom-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/single_port_rom.vhd Line: 29
-    Info (12023): Found entity 1: single_port_rom File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/single_port_rom.vhd Line: 17
+    Info (12022): Found design unit 1: single_port_rom-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/single_port_rom.vhd Line: 29
+    Info (12023): Found entity 1: single_port_rom File: C:/intelFPGA_lite/19.1/workspace/Processador/single_port_rom.vhd Line: 17
 Info (12021): Found 2 design units, including 1 entities, in source file control_unity.vhd
-    Info (12022): Found design unit 1: control_unity-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 37
-    Info (12023): Found entity 1: control_unity File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 13
+    Info (12022): Found design unit 1: control_unity-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd Line: 39
+    Info (12023): Found entity 1: control_unity File: C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file control_block.vhd
-    Info (12022): Found design unit 1: control_block-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 39
-    Info (12023): Found entity 1: control_block File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 12
+    Info (12022): Found design unit 1: control_block-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/control_block.vhd Line: 41
+    Info (12023): Found entity 1: control_block File: C:/intelFPGA_lite/19.1/workspace/Processador/control_block.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file processador_top.vhd
-    Info (12022): Found design unit 1: processador_top-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 19
-    Info (12023): Found entity 1: processador_top File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 12
+    Info (12022): Found design unit 1: processador_top-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 19
+    Info (12023): Found entity 1: processador_top File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file register_16bit.vhd
-    Info (12022): Found design unit 1: register_16bit-arch1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_16bit.vhd Line: 22
-    Info (12023): Found entity 1: register_16bit File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_16bit.vhd Line: 13
+    Info (12022): Found design unit 1: register_16bit-arch1 File: C:/intelFPGA_lite/19.1/workspace/Processador/register_16bit.vhd Line: 22
+    Info (12023): Found entity 1: register_16bit File: C:/intelFPGA_lite/19.1/workspace/Processador/register_16bit.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
-    Info (12022): Found design unit 1: ALU-arch_1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/ALU.vhd Line: 24
-    Info (12023): Found entity 1: ALU File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/ALU.vhd Line: 13
+    Info (12022): Found design unit 1: ALU-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/ALU.vhd Line: 26
+    Info (12023): Found entity 1: ALU File: C:/intelFPGA_lite/19.1/workspace/Processador/ALU.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file instruction_register.vhd
-    Info (12022): Found design unit 1: instruction_register-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_register.vhd Line: 22
-    Info (12023): Found entity 1: instruction_register File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_register.vhd Line: 13
+    Info (12022): Found design unit 1: instruction_register-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_register.vhd Line: 22
+    Info (12023): Found entity 1: instruction_register File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_register.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file program_counter.vhd
-    Info (12022): Found design unit 1: program_counter-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/program_counter.vhd Line: 24
-    Info (12023): Found entity 1: program_counter File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/program_counter.vhd Line: 13
+    Info (12022): Found design unit 1: program_counter-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/program_counter.vhd Line: 24
+    Info (12023): Found entity 1: program_counter File: C:/intelFPGA_lite/19.1/workspace/Processador/program_counter.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file register_file.vhd
-    Info (12022): Found design unit 1: register_file-arch1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 33
-    Info (12023): Found entity 1: register_file File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 15
+    Info (12022): Found design unit 1: register_file-arch1 File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 33
+    Info (12023): Found entity 1: register_file File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 15
 Info (12021): Found 2 design units, including 1 entities, in source file demux1x16.vhd
-    Info (12022): Found design unit 1: demux1x16-arch_1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/demux1x16.vhd Line: 36
-    Info (12023): Found entity 1: demux1x16 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/demux1x16.vhd Line: 13
+    Info (12022): Found design unit 1: demux1x16-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/demux1x16.vhd Line: 36
+    Info (12023): Found entity 1: demux1x16 File: C:/intelFPGA_lite/19.1/workspace/Processador/demux1x16.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file mux16x1.vhd
-    Info (12022): Found design unit 1: mux16x1-arch_1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux16x1.vhd Line: 36
-    Info (12023): Found entity 1: mux16x1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux16x1.vhd Line: 13
+    Info (12022): Found design unit 1: mux16x1-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/mux16x1.vhd Line: 36
+    Info (12023): Found entity 1: mux16x1 File: C:/intelFPGA_lite/19.1/workspace/Processador/mux16x1.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file operational_block.vhd
-    Info (12022): Found design unit 1: operational_block-arch_1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 34
-    Info (12023): Found entity 1: operational_block File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 13
+    Info (12022): Found design unit 1: operational_block-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd Line: 36
+    Info (12023): Found entity 1: operational_block File: C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file ram.vhd
-    Info (12022): Found design unit 1: RAM-RAM_Arch File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/RAM.vhd Line: 31
-    Info (12023): Found entity 1: RAM File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/RAM.vhd Line: 16
+    Info (12022): Found design unit 1: RAM-RAM_Arch File: C:/intelFPGA_lite/19.1/workspace/Processador/RAM.vhd Line: 31
+    Info (12023): Found entity 1: RAM File: C:/intelFPGA_lite/19.1/workspace/Processador/RAM.vhd Line: 16
 Info (12021): Found 2 design units, including 1 entities, in source file data_memo.vhd
-    Info (12022): Found design unit 1: data_memo-data_memo_Arch File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 31
-    Info (12023): Found entity 1: data_memo File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 15
+    Info (12022): Found design unit 1: data_memo-data_memo_Arch File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 31
+    Info (12023): Found entity 1: data_memo File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 15
 Info (12021): Found 2 design units, including 1 entities, in source file instruction_memory.vhd
-    Info (12022): Found design unit 1: instruction_memory-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 28
-    Info (12023): Found entity 1: instruction_memory File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 15
+    Info (12022): Found design unit 1: instruction_memory-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 28
+    Info (12023): Found entity 1: instruction_memory File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 15
 Info (12021): Found 2 design units, including 1 entities, in source file decoder4x16.vhd
-    Info (12022): Found design unit 1: decoder4x16-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/decoder4x16.vhd Line: 36
-    Info (12023): Found entity 1: decoder4x16 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/decoder4x16.vhd Line: 13
+    Info (12022): Found design unit 1: decoder4x16-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/decoder4x16.vhd Line: 36
+    Info (12023): Found entity 1: decoder4x16 File: C:/intelFPGA_lite/19.1/workspace/Processador/decoder4x16.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file mux3x1.vhd
-    Info (12022): Found design unit 1: mux3x1-arch_1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux3x1.vhd Line: 22
-    Info (12023): Found entity 1: mux3x1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux3x1.vhd Line: 13
+    Info (12022): Found design unit 1: mux3x1-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/mux3x1.vhd Line: 22
+    Info (12023): Found entity 1: mux3x1 File: C:/intelFPGA_lite/19.1/workspace/Processador/mux3x1.vhd Line: 13
 Info (12127): Elaborating entity "processador_top" for the top level hierarchy
-Info (12128): Elaborating entity "control_unity" for hierarchy "control_unity:u_control_unity" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 99
-Info (12128): Elaborating entity "program_counter" for hierarchy "control_unity:u_control_unity|program_counter:u_program_counter" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 94
-Info (12128): Elaborating entity "instruction_register" for hierarchy "control_unity:u_control_unity|instruction_register:u_instruction_register" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 106
-Info (12128): Elaborating entity "control_block" for hierarchy "control_unity:u_control_unity|control_block:u_CONTROLE" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 114
-Warning (10492): VHDL Process Statement warning at control_block.vhd(111): signal "i_RF_RP_zero" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 111
-Info (12128): Elaborating entity "data_memo" for hierarchy "data_memo:u_data_memo" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 122
-Info (12128): Elaborating entity "RAM" for hierarchy "data_memo:u_data_memo|RAM:u_RAM" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 58
-Info (12128): Elaborating entity "operational_block" for hierarchy "operational_block:u_operational_block" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 133
-Info (12128): Elaborating entity "mux3x1" for hierarchy "operational_block:u_operational_block|mux3x1:u_MUX" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 78
-Info (12128): Elaborating entity "register_file" for hierarchy "operational_block:u_operational_block|register_file:u_REGISTER_FILE" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 86
-Info (12128): Elaborating entity "ALU" for hierarchy "operational_block:u_operational_block|ALU:u_ALU" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 103
-Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:u_instruction_memory" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 152
-Info (12128): Elaborating entity "register_16bit" for hierarchy "instruction_memory:u_instruction_memory|register_16bit:u_register_16bit" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 51
-Info (12128): Elaborating entity "single_port_rom" for hierarchy "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 59
+Info (12128): Elaborating entity "control_unity" for hierarchy "control_unity:u_control_unity" File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 105
+Info (12128): Elaborating entity "program_counter" for hierarchy "control_unity:u_control_unity|program_counter:u_program_counter" File: C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd Line: 98
+Info (12128): Elaborating entity "instruction_register" for hierarchy "control_unity:u_control_unity|instruction_register:u_instruction_register" File: C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd Line: 110
+Info (12128): Elaborating entity "control_block" for hierarchy "control_unity:u_control_unity|control_block:u_CONTROLE" File: C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd Line: 118
+Warning (10492): VHDL Process Statement warning at control_block.vhd(115): signal "i_RF_RP_zero" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/19.1/workspace/Processador/control_block.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at control_block.vhd(128): signal "i_RP_LT_RQ" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/19.1/workspace/Processador/control_block.vhd Line: 128
+Warning (10492): VHDL Process Statement warning at control_block.vhd(130): signal "i_RP_EQ_RQ" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/19.1/workspace/Processador/control_block.vhd Line: 130
+Info (12128): Elaborating entity "data_memo" for hierarchy "data_memo:u_data_memo" File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 130
+Info (12128): Elaborating entity "RAM" for hierarchy "data_memo:u_data_memo|RAM:u_RAM" File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 58
+Info (12128): Elaborating entity "operational_block" for hierarchy "operational_block:u_operational_block" File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 141
+Info (12128): Elaborating entity "mux3x1" for hierarchy "operational_block:u_operational_block|mux3x1:u_MUX" File: C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd Line: 81
+Info (12128): Elaborating entity "register_file" for hierarchy "operational_block:u_operational_block|register_file:u_REGISTER_FILE" File: C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd Line: 89
+Info (12128): Elaborating entity "ALU" for hierarchy "operational_block:u_operational_block|ALU:u_ALU" File: C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd Line: 107
+Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:u_instruction_memory" File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 162
+Info (12128): Elaborating entity "register_16bit" for hierarchy "instruction_memory:u_instruction_memory|register_16bit:u_register_16bit" File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 51
+Info (12128): Elaborating entity "single_port_rom" for hierarchy "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom" File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 59
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "data_memo:u_data_memo|RAM:u_RAM|ram" is uninferred due to asynchronous read logic File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/RAM.vhd Line: 60
+    Info (276007): RAM logic "data_memo:u_data_memo|RAM:u_RAM|ram" is uninferred due to asynchronous read logic File: C:/intelFPGA_lite/19.1/workspace/Processador/RAM.vhd Line: 60
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[0]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[1]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[2]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[3]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[4]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[5]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[6]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[7]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[8]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[9]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[10]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[11]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[12]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[13]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[14]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[15]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom|rom_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to ROM
@@ -624,23 +664,41 @@ Info (12133): Instantiated megafunction "instruction_memory:u_instruction_memory
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
     Info (12134): Parameter "INIT_FILE" = "db/processador_top.ram0_single_port_rom_ee80a174.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_p1f1.tdf
-    Info (12023): Found entity 1: altsyncram_p1f1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/altsyncram_p1f1.tdf Line: 32
+    Info (12023): Found entity 1: altsyncram_p1f1 File: C:/intelFPGA_lite/19.1/workspace/Processador/db/altsyncram_p1f1.tdf Line: 32
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_61a.tdf
-    Info (12023): Found entity 1: decode_61a File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/decode_61a.tdf Line: 23
+    Info (12023): Found entity 1: decode_61a File: C:/intelFPGA_lite/19.1/workspace/Processador/db/decode_61a.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_chb.tdf
-    Info (12023): Found entity 1: mux_chb File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/db/mux_chb.tdf Line: 23
+    Info (12023): Found entity 1: mux_chb File: C:/intelFPGA_lite/19.1/workspace/Processador/db/mux_chb.tdf Line: 23
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[0]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[1]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[2]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[3]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[4]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[5]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[6]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[7]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[8]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[9]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[10]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[11]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[12]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[13]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[14]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[15]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 6533 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 6621 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 6387 logic cells
+    Info (21061): Implemented 6475 logic cells
     Info (21064): Implemented 128 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 5009 megabytes
-    Info: Processing ended: Thu Jun 25 20:50:43 2020
-    Info: Elapsed time: 00:00:39
-    Info: Total CPU time (on all processors): 00:00:48
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 38 warnings
+    Info: Peak virtual memory: 4884 megabytes
+    Info: Processing ended: Fri Jun 26 23:51:58 2020
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:23
 
 

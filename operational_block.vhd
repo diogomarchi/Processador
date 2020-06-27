@@ -25,7 +25,9 @@ port ( i_CLK   : in std_logic;
 		 i_RF_RQ_addr : in  std_logic_Vector(3 downto 0);  -- RP read address
 		 i_RF_W_DATA  : in  std_logic_Vector(7 downto 0);  -- RP read address
 		 i_R_DATA     : in  std_logic_Vector(15 downto 0);    -- W input data
-		 o_RF_RP_ZERO : out std_logic;
+		 o_RP_LT_RQ   : out std_logic; -- a < b
+		 o_RP_EQ_RQ   : out std_logic; -- a == b
+		 o_RF_RP_ZERO : out std_logic; -- a == 0
 		 o_W_DATA     : out  std_logic_Vector(15 downto 0)   -- W output data
        ); 
 end operational_block;
@@ -36,8 +38,7 @@ architecture arch_1 of operational_block is
   signal w_o_ALU : std_logic_vector(15 downto 0);
   signal w_o_MUX : std_logic_vector(15 downto 0);
   signal w_o_RP_DATA : std_logic_vector(15 downto 0);
-  signal w_o_RQ_DATA : std_logic_vector(15 downto 0);
-  
+  signal w_o_RQ_DATA : std_logic_vector(15 downto 0);  
   
   component mux3x1 is
   port ( i_SEL0 : in  std_logic;  -- selector
@@ -70,6 +71,8 @@ architecture arch_1 of operational_block is
 			i_S1    : in  std_logic;  -- selector
          i_A     : in  std_logic_Vector(15 downto 0);  -- data input
          i_B     : in  std_logic_Vector(15 downto 0);  -- data input
+         o_A_LT_B : out std_logic; -- A menor q B
+         o_A_EQ_B : out std_logic; -- A == B
          o_Q     : out  std_logic_Vector(15 downto 0)); -- data output
   end component;
 
@@ -99,6 +102,7 @@ begin
 	 
 	 
   o_W_DATA <= w_o_RP_DATA;
+
   
   u_ALU : ALU port map ( 
          i_CLK   => i_CLK,
@@ -107,7 +111,9 @@ begin
 			i_S1    => i_ALU_s1,  -- selector
          i_A     => w_o_RP_DATA,  -- data input
          i_B     => w_o_RQ_DATA,  -- data input
-         o_Q     => w_o_ALU  -- data output
+         o_A_LT_B => o_RP_LT_RQ,  -- a < b
+			o_A_EQ_B => o_RP_EQ_RQ,  -- a == b
+			o_Q     => w_o_ALU  -- data output
 			); 
 
   o_RF_RP_ZERO <= '1' when (w_o_RP_DATA = "0000000000000000") else '0';

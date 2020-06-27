@@ -1,13 +1,18 @@
 
 State Machine - |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE
-Name r_STATE.S_9 r_STATE.S_8 r_STATE.S_7 r_STATE.S_6 r_STATE.s_5 r_STATE.s_4 r_STATE.s_3 r_STATE.s_2 r_STATE.s_1 r_STATE.s_0 
-r_STATE.s_0 0 0 0 0 0 0 0 0 0 0 
-r_STATE.s_1 0 0 0 0 0 0 0 0 1 1 
-r_STATE.s_2 0 0 0 0 0 0 0 1 0 1 
-r_STATE.s_3 0 0 0 0 0 0 1 0 0 1 
-r_STATE.s_4 0 0 0 0 0 1 0 0 0 1 
-r_STATE.s_5 0 0 0 0 1 0 0 0 0 1 
-r_STATE.S_6 0 0 0 1 0 0 0 0 0 1 
-r_STATE.S_7 0 0 1 0 0 0 0 0 0 1 
-r_STATE.S_8 0 1 0 0 0 0 0 0 0 1 
-r_STATE.S_9 1 0 0 0 0 0 0 0 0 1 
+Name r_STATE.s_14 r_STATE.s_13 r_STATE.s_12 r_STATE.s_11 r_STATE.s_10 r_STATE.S_9 r_STATE.S_8 r_STATE.S_7 r_STATE.S_6 r_STATE.s_5 r_STATE.s_4 r_STATE.s_3 r_STATE.s_2 r_STATE.s_1 r_STATE.s_0 
+r_STATE.s_0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+r_STATE.s_1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+r_STATE.s_2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+r_STATE.s_3 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+r_STATE.s_4 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+r_STATE.s_5 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+r_STATE.S_6 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+r_STATE.S_7 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+r_STATE.S_8 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+r_STATE.S_9 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+r_STATE.s_10 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+r_STATE.s_11 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+r_STATE.s_12 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+r_STATE.s_13 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r_STATE.s_14 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

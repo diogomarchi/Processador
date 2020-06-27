@@ -1,2 +1,2 @@
 onerror resume
-add mem /ram_tb/u_RAM/ram -a hexadecimal -d symbolic
+add mem /processador_top_tb/u_DUT/u_instruction_memory/u_single_port_rom/rom -a hexadecimal -d symbolic

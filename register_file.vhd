@@ -35,16 +35,12 @@ architecture arch1 of register_file is
   type reg_file_type is array (0 to 2**A_Width-1) of std_logic_vector(D_Width-1 downto 0);
   signal reg_file : reg_file_type := (others => (others => '0'));
 
-  signal w_o_REG_RP, w_o_REG_RQ : std_logic_Vector(15 downto 0);  
-
 begin
   
   process(i_CLK, i_CLR_n)
   begin
     if(i_CLR_n = '0') then
-	   reg_file <= (others => (others => '0'));
-	   w_o_REG_RP <= (others => '0');
-		w_o_REG_RQ <= (others => '0');
+	   reg_file <= (others => (others => '0'));	   
 	 elsif(rising_edge(i_CLK)) then
 	     if(i_RF_W_wr = '1') then
 		    reg_file(to_integer(unsigned(i_RF_W_addr))) <=  i_W_DATA;
