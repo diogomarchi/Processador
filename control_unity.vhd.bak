@@ -88,7 +88,7 @@ architecture rtl of control_unity is
 
   signal w_PC_CLR, w_PC_INC, w_IR_LD, W_PC_LD: std_logic;
   signal w_IR, w_ADDITION_INTRUCTION, w_O_PC:std_logic_vector(15 downto 0);
-  signal w_i_ADDITION_IR, w_COMP_2:std_logic_vector(7 downto 0);
+  signal w_i_ADDITION_IR:std_logic_vector(7 downto 0);
 
 		
 begin 
@@ -103,10 +103,9 @@ begin
                             o_PC     => w_O_PC
 									 );
   o_ADDR <= w_O_PC;
-  w_COMP_2 <= w_i_ADDITION_IR XOR "11111111" + "1"; --complemento de 2 para fazer subtração
-  
-  w_ADDITION_INTRUCTION <= ((w_O_PC + w_COMP_2) - '1') when (w_i_ADDITION_IR(7) = '1') else (w_O_PC + w_i_ADDITION_IR - '1');
- 
+  w_ADDITION_INTRUCTION <= w_O_PC + w_i_ADDITION_IR - '1';
+
+
   --connecting instruction_register with processador_unidade_controle	 
   u_instruction_register : instruction_register port map (
                             i_CLR_n => i_CLR_n,

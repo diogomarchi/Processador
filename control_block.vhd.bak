@@ -165,7 +165,6 @@ begin
 	--atribuição do valor de D a partir do valor de entrada
   W_D <= i_DATA(7 downto 0);
   
-  --atribuição do valor de constante
   o_RF_W_DATA <= i_DATA(7 downto 0);
 	
   o_PC_CLR <= '1' when (r_STATE = s_0) else '0';  
@@ -176,31 +175,29 @@ begin
   
   o_PC_INC  <= '1' when (r_STATE = s_1) else '0';  
   
-  o_D_ADDR  <=  w_D when ((r_STATE = s_3) or (r_STATE = s_4)) else "ZZZZZZZZ"; 
+  o_D_ADDR  <=  w_D when ((r_STATE = s_3) or (r_STATE = s_4)) else "00000000"; 
   
   o_D_RD    <= '1' when (r_STATE = s_3) else '0'; 
 
   o_D_WR    <= '1' when (r_STATE = s_4) else '0';    
   
-  o_RF_S0   <= '1' when (r_STATE = s_3) else 
-               'X' when (r_STATE = s_4) else '0';  
+  o_RF_S0   <= '1' when (r_STATE = s_3) else '0';  
   
-  o_RF_S1   <= '1' when (r_STATE = s_6) else
-               'X' when (r_STATE = s_4) else '0';
+  o_RF_S1   <= '1' when (r_STATE = s_6) else '0';
   
   o_RF_W_ADDR  <= w_RA when ((r_STATE = s_3) or (r_STATE = s_5) or (r_STATE = s_6) or (r_STATE = s_7)) else
                   w_RB when (r_STATE = s_13) else
-					   w_RC when (r_STATE = s_12) else	"ZZZZ";  
+					   w_RC when (r_STATE = s_12) else	"0000";  
   
   o_RF_W_WR    <= '1' when ((r_STATE = s_3) or (r_STATE = s_5) or (r_STATE = s_6) or (r_STATE = s_7) or (r_STATE = s_12) or(r_STATE = s_13)) else '0'; 
  
   
   o_RF_RP_ADDR <= w_RA when ((r_STATE = s_4) or (r_STATE = s_8)) else
-                  w_RB when ((r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_11) or (r_STATE = s_12) or(r_STATE = s_13) ) else "ZZZZ"; 
+                  w_RB when ((r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_11) or (r_STATE = s_12) or(r_STATE = s_13) ) else "0000"; 
   
   o_RF_RP_RD   <= '1' when ((r_STATE = s_4) or (r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_8) or (r_STATE = s_11) or (r_STATE = s_12) or(r_STATE = s_13)) else '0';
   
-  o_RF_RQ_ADDR <= w_RC when ((r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_11) or (r_STATE = s_12) or(r_STATE = s_13) ) else "ZZZZ";
+  o_RF_RQ_ADDR <= w_RC when ((r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_11) or (r_STATE = s_12) or(r_STATE = s_13) ) else "0000";
   
   o_RF_RQ_RD   <= '1' when ((r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_11) or (r_STATE = s_12) or(r_STATE = s_13)) else '0';
   

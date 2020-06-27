@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador_top
-Sat Jun 27 17:14:37 2020
+Sat Jun 27 18:33:42 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -52,13 +52,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Jun 27 17:14:37 2020       ;
+; Analysis & Synthesis Status     ; Successful - Sat Jun 27 18:33:42 2020       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; processador_top                             ;
 ; Top-level Entity Name           ; processador_top                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 670                                         ;
+; Total registers                 ; 558                                         ;
 ; Total pins                      ; 18                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -165,39 +165,37 @@ https://fpgasoftware.intel.com/eula.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                 ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                          ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
-; single_port_rom.vhd              ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/single_port_rom.vhd      ;         ;
-; control_unity.vhd                ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd        ;         ;
-; control_block.vhd                ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/control_block.vhd        ;         ;
-; processador_top.vhd              ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd      ;         ;
-; register_16bit.vhd               ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/register_16bit.vhd       ;         ;
-; ALU.vhd                          ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/ALU.vhd                  ;         ;
-; instruction_register.vhd         ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/instruction_register.vhd ;         ;
-; program_counter.vhd              ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/program_counter.vhd      ;         ;
-; register_file.vhd                ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd        ;         ;
-; operational_block.vhd            ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd    ;         ;
-; RAM.vhd                          ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/RAM.vhd                  ;         ;
-; data_memo.vhd                    ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd            ;         ;
-; instruction_memory.vhd           ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd   ;         ;
-; mux3x1.vhd                       ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/mux3x1.vhd               ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                            ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
+; single_port_rom.vhd              ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/single_port_rom.vhd      ;         ;
+; control_unity.vhd                ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd        ;         ;
+; control_block.vhd                ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd        ;         ;
+; processador_top.vhd              ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd      ;         ;
+; register_16bit.vhd               ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_16bit.vhd       ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/ALU.vhd                  ;         ;
+; instruction_register.vhd         ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_register.vhd ;         ;
+; program_counter.vhd              ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/program_counter.vhd      ;         ;
+; register_file.vhd                ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd        ;         ;
+; operational_block.vhd            ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd    ;         ;
+; RAM.vhd                          ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/RAM.vhd                  ;         ;
+; data_memo.vhd                    ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd            ;         ;
+; instruction_memory.vhd           ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd   ;         ;
+; mux3x1.vhd                       ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux3x1.vhd               ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -205,25 +203,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 519         ;
+; Estimate of Logic utilization (ALMs needed) ; 428         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 541         ;
-;     -- 7 input functions                    ; 3           ;
-;     -- 6 input functions                    ; 242         ;
-;     -- 5 input functions                    ; 102         ;
-;     -- 4 input functions                    ; 69          ;
-;     -- <=3 input functions                  ; 125         ;
+; Combinational ALUT usage for logic          ; 436         ;
+;     -- 7 input functions                    ; 5           ;
+;     -- 6 input functions                    ; 205         ;
+;     -- 5 input functions                    ; 83          ;
+;     -- 4 input functions                    ; 43          ;
+;     -- <=3 input functions                  ; 100         ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 670         ;
+; Dedicated logic registers                   ; 558         ;
 ;                                             ;             ;
 ; I/O pins                                    ; 18          ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; i_CLK~input ;
-; Maximum fan-out                             ; 670         ;
-; Total fan-out                               ; 4987        ;
-; Average fan-out                             ; 4.00        ;
+; Maximum fan-out                             ; 558         ;
+; Total fan-out                               ; 4172        ;
+; Average fan-out                             ; 4.05        ;
 +---------------------------------------------+-------------+
 
 
@@ -232,20 +230,20 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                        ; Entity Name          ; Library Name ;
 +-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------+----------------------+--------------+
-; |processador_top                                    ; 541 (0)             ; 670 (0)                   ; 0                 ; 0          ; 18   ; 0            ; |processador_top                                                                           ; processador_top      ; work         ;
-;    |control_unity:u_control_unity|                  ; 68 (16)             ; 38 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity                                             ; control_unity        ; work         ;
-;       |control_block:u_CONTROLE|                    ; 35 (35)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE                    ; control_block        ; work         ;
+; |processador_top                                    ; 436 (0)             ; 558 (0)                   ; 0                 ; 0          ; 18   ; 0            ; |processador_top                                                                           ; processador_top      ; work         ;
+;    |control_unity:u_control_unity|                  ; 55 (16)             ; 38 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity                                             ; control_unity        ; work         ;
+;       |control_block:u_CONTROLE|                    ; 22 (22)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE                    ; control_block        ; work         ;
 ;       |instruction_register:u_instruction_register| ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity|instruction_register:u_instruction_register ; instruction_register ; work         ;
 ;       |program_counter:u_program_counter|           ; 17 (17)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity|program_counter:u_program_counter           ; program_counter      ; work         ;
-;    |data_memo:u_data_memo|                          ; 169 (0)             ; 368 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|data_memo:u_data_memo                                                     ; data_memo            ; work         ;
-;       |RAM:u_RAM|                                   ; 169 (169)           ; 368 (368)                 ; 0                 ; 0          ; 0    ; 0            ; |processador_top|data_memo:u_data_memo|RAM:u_RAM                                           ; RAM                  ; work         ;
+;    |data_memo:u_data_memo|                          ; 95 (0)              ; 256 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|data_memo:u_data_memo                                                     ; data_memo            ; work         ;
+;       |RAM:u_RAM|                                   ; 95 (95)             ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |processador_top|data_memo:u_data_memo|RAM:u_RAM                                           ; RAM                  ; work         ;
 ;    |instruction_memory:u_instruction_memory|        ; 12 (0)              ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|instruction_memory:u_instruction_memory                                   ; instruction_memory   ; work         ;
 ;       |register_16bit:u_register_16bit|             ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|instruction_memory:u_instruction_memory|register_16bit:u_register_16bit   ; register_16bit       ; work         ;
 ;       |single_port_rom:u_single_port_rom|           ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom ; single_port_rom      ; work         ;
-;    |operational_block:u_operational_block|          ; 292 (3)             ; 256 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block                                     ; operational_block    ; work         ;
-;       |ALU:u_ALU|                                   ; 73 (73)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block|ALU:u_ALU                           ; ALU                  ; work         ;
-;       |mux3x1:u_MUX|                                ; 49 (49)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block|mux3x1:u_MUX                        ; mux3x1               ; work         ;
-;       |register_file:u_REGISTER_FILE|               ; 167 (167)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block|register_file:u_REGISTER_FILE       ; register_file        ; work         ;
+;    |operational_block:u_operational_block|          ; 274 (3)             ; 256 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block                                     ; operational_block    ; work         ;
+;       |ALU:u_ALU|                                   ; 66 (66)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block|ALU:u_ALU                           ; ALU                  ; work         ;
+;       |mux3x1:u_MUX|                                ; 42 (42)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block|mux3x1:u_MUX                        ; mux3x1               ; work         ;
+;       |register_file:u_REGISTER_FILE|               ; 163 (163)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block|register_file:u_REGISTER_FILE       ; register_file        ; work         ;
 +-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -3870,151 +3868,263 @@ Encoding Type:  One-Hot
 ; data_memo:u_data_memo|RAM:u_RAM|ram~3896                                                      ; Lost fanout                                                                                     ;
 ; data_memo:u_data_memo|RAM:u_RAM|ram~4008                                                      ; Lost fanout                                                                                     ;
 ; data_memo:u_data_memo|RAM:u_RAM|ram~4024                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~889                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~905                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1017                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1033                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1913                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1929                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2041                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2057                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2073                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2089                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2201                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2217                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3097                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3113                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3225                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3241                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~890                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~906                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1018                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1034                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1914                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1930                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2042                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2058                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2074                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2090                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2202                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2218                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3098                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3114                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3226                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3242                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~891                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~907                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1019                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1035                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1915                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1931                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2043                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2059                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2075                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2091                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2203                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2219                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3099                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3115                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3227                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3243                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~899                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~915                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1027                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1043                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1923                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1939                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2051                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2067                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2083                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2099                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2211                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2227                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3107                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3123                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3235                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3251                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~900                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~916                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1028                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1044                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1924                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1940                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2052                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2068                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2084                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2100                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2212                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2228                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3108                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3124                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3236                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3252                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~901                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~917                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1029                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1045                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1925                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1941                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2053                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2069                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2085                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2101                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2213                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2229                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3109                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3125                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3237                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3253                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~902                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~918                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1030                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1046                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1926                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1942                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2054                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2070                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2086                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2102                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2214                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2230                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3110                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3126                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3238                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3254                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~903                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~919                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1031                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1047                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1927                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1943                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2055                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2071                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2087                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2103                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2215                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2231                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3111                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3127                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3239                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3255                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~904                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~920                                                       ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1032                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1048                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1928                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~1944                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2056                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2072                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2088                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2104                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2216                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~2232                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3112                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3128                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3240                                                      ; Lost fanout                                                                                     ;
-; data_memo:u_data_memo|RAM:u_RAM|ram~3256                                                      ; Lost fanout                                                                                     ;
-; Total Number of Removed Registers = 3745                                                      ;                                                                                                 ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~889                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1017                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~905                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1033                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1913                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2041                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1929                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2057                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2073                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2201                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2089                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2217                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3097                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3225                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3113                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3241                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~890                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1018                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~906                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1034                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1914                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2042                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1930                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2058                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2074                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2202                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2090                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2218                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3098                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3226                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3114                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3242                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~891                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1019                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~907                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1035                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1915                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2043                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1931                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2059                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2075                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2203                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2091                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2219                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3099                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3227                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3115                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3243                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~892                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1020                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~908                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1036                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1916                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2044                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1932                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2060                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2076                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2204                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2092                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2220                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3100                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3228                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3116                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3244                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~893                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1021                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~909                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1037                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1917                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2045                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1933                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2061                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2077                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2205                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2093                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2221                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3101                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3229                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3117                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3245                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~894                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1022                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~910                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1038                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1918                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2046                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1934                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2062                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2078                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2206                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2094                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2222                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3102                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3230                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3118                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3246                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~895                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1023                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~911                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1039                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1919                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2047                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1935                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2063                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2079                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2207                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2095                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2223                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3103                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3231                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3119                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3247                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~896                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1024                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~912                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1040                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1920                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2048                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1936                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2064                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2080                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2208                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2096                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2224                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3104                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3232                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3120                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3248                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~897                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1025                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~913                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1041                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1921                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2049                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1937                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2065                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2081                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2209                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2097                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2225                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3105                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3233                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3121                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3249                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~898                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1026                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~914                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1042                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1922                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2050                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1938                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2066                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2082                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2210                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2098                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2226                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3106                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3234                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3122                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3250                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~899                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1027                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~915                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1043                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1923                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2051                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1939                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2067                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2083                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2211                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2099                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2227                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3107                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3235                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3123                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3251                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~900                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1028                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~916                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1044                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1924                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2052                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1940                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2068                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2084                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2212                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2100                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2228                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3108                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3236                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3124                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3252                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~901                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1029                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~917                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1045                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1925                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2053                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1941                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2069                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2085                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2213                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2101                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2229                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3109                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3237                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3125                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3253                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~902                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1030                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~918                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1046                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1926                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2054                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1942                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2070                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2086                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2214                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2102                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2230                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3110                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3238                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3126                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3254                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~903                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1031                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~919                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1047                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1927                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2055                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1943                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2071                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2087                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2215                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2103                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2231                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3111                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3239                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3127                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3255                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~904                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1032                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~920                                                       ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1048                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1928                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2056                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~1944                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2072                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2088                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2216                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2104                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~2232                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3112                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3240                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3128                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; data_memo:u_data_memo|RAM:u_RAM|ram~3256                                                      ; Stuck at GND due to stuck port clock_enable                                                     ;
+; Total Number of Removed Registers = 3857                                                      ;                                                                                                 ;
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 
 
@@ -4023,12 +4133,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 670   ;
+; Total registers                              ; 558   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 302   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 656   ;
+; Number of registers using Clock Enable       ; 544   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -4038,22 +4148,22 @@ Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                   ; Fan out ;
 +-------------------------------------------------------------------------------------+---------+
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[15]  ; 107     ;
 ; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[8]   ; 2       ;
-; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[15]  ; 74      ;
-; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[9]   ; 2       ;
-; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[10]  ; 45      ;
-; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[0]   ; 13      ;
-; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[12]  ; 52      ;
-; instruction_memory:u_instruction_memory|register_16bit:u_register_16bit|r_STATE[8]  ; 1       ;
-; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[13]  ; 8       ;
-; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[14]  ; 8       ;
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[9]   ; 3       ;
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[10]  ; 54      ;
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[0]   ; 115     ;
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[12]  ; 145     ;
 ; instruction_memory:u_instruction_memory|register_16bit:u_register_16bit|r_STATE[15] ; 1       ;
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[14]  ; 8       ;
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[13]  ; 8       ;
+; instruction_memory:u_instruction_memory|register_16bit:u_register_16bit|r_STATE[8]  ; 1       ;
 ; instruction_memory:u_instruction_memory|register_16bit:u_register_16bit|r_STATE[9]  ; 1       ;
 ; instruction_memory:u_instruction_memory|register_16bit:u_register_16bit|r_STATE[10] ; 1       ;
 ; instruction_memory:u_instruction_memory|register_16bit:u_register_16bit|r_STATE[0]  ; 1       ;
 ; instruction_memory:u_instruction_memory|register_16bit:u_register_16bit|r_STATE[12] ; 1       ;
-; instruction_memory:u_instruction_memory|register_16bit:u_register_16bit|r_STATE[13] ; 1       ;
 ; instruction_memory:u_instruction_memory|register_16bit:u_register_16bit|r_STATE[14] ; 1       ;
+; instruction_memory:u_instruction_memory|register_16bit:u_register_16bit|r_STATE[13] ; 1       ;
 ; Total number of inverted registers = 16                                             ;         ;
 +-------------------------------------------------------------------------------------+---------+
 
@@ -4063,11 +4173,12 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|w_NEXT.s_14        ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|register_file:u_REGISTER_FILE|Mux16 ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|register_file:u_REGISTER_FILE|Mux0  ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|mux3x1:u_MUX|o_Q[8]                 ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|mux3x1:u_MUX|o_Q[7]                 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_W_ADDR[3]     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|w_NEXT.s_13        ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|register_file:u_REGISTER_FILE|Mux27 ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|register_file:u_REGISTER_FILE|Mux14 ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|mux3x1:u_MUX|o_Q[15]                ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|mux3x1:u_MUX|o_Q[0]                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------+
 
 
@@ -4131,31 +4242,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 670                         ;
+; arriav_ff             ; 558                         ;
 ;     CLR               ; 14                          ;
-;     ENA               ; 368                         ;
+;     ENA               ; 256                         ;
 ;     ENA CLR           ; 288                         ;
 ; arriav_io_obuf        ; 16                          ;
-; arriav_lcell_comb     ; 541                         ;
+; arriav_lcell_comb     ; 436                         ;
 ;     arith             ; 66                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 9                           ;
 ;         2 data inputs ; 8                           ;
 ;         3 data inputs ; 16                          ;
-;         5 data inputs ; 32                          ;
-;     extend            ; 3                           ;
-;         7 data inputs ; 3                           ;
-;     normal            ; 472                         ;
+;         4 data inputs ; 23                          ;
+;         5 data inputs ; 9                           ;
+;     extend            ; 5                           ;
+;         7 data inputs ; 5                           ;
+;     normal            ; 365                         ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 23                          ;
-;         3 data inputs ; 66                          ;
-;         4 data inputs ; 69                          ;
-;         5 data inputs ; 70                          ;
-;         6 data inputs ; 242                         ;
+;         2 data inputs ; 20                          ;
+;         3 data inputs ; 44                          ;
+;         4 data inputs ; 20                          ;
+;         5 data inputs ; 74                          ;
+;         6 data inputs ; 205                         ;
 ; boundary_port         ; 18                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.50                        ;
-; Average LUT depth     ; 5.47                        ;
+; Max LUT depth         ; 7.50                        ;
+; Average LUT depth     ; 4.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -4164,7 +4276,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:27     ;
 +----------------+--------------+
 
 
@@ -4174,123 +4286,143 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Sat Jun 27 17:14:18 2020
+    Info: Processing started: Sat Jun 27 18:32:02 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file single_port_rom.vhd
-    Info (12022): Found design unit 1: single_port_rom-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/single_port_rom.vhd Line: 28
-    Info (12023): Found entity 1: single_port_rom File: C:/intelFPGA_lite/19.1/workspace/Processador/single_port_rom.vhd Line: 17
+    Info (12022): Found design unit 1: single_port_rom-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/single_port_rom.vhd Line: 28
+    Info (12023): Found entity 1: single_port_rom File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/single_port_rom.vhd Line: 17
 Info (12021): Found 2 design units, including 1 entities, in source file control_unity.vhd
-    Info (12022): Found design unit 1: control_unity-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd Line: 39
-    Info (12023): Found entity 1: control_unity File: C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd Line: 13
+    Info (12022): Found design unit 1: control_unity-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 39
+    Info (12023): Found entity 1: control_unity File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file control_block.vhd
-    Info (12022): Found design unit 1: control_block-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/control_block.vhd Line: 41
-    Info (12023): Found entity 1: control_block File: C:/intelFPGA_lite/19.1/workspace/Processador/control_block.vhd Line: 12
+    Info (12022): Found design unit 1: control_block-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 41
+    Info (12023): Found entity 1: control_block File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file processador_top.vhd
-    Info (12022): Found design unit 1: processador_top-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 19
-    Info (12023): Found entity 1: processador_top File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 12
+    Info (12022): Found design unit 1: processador_top-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 19
+    Info (12023): Found entity 1: processador_top File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file register_16bit.vhd
-    Info (12022): Found design unit 1: register_16bit-arch1 File: C:/intelFPGA_lite/19.1/workspace/Processador/register_16bit.vhd Line: 22
-    Info (12023): Found entity 1: register_16bit File: C:/intelFPGA_lite/19.1/workspace/Processador/register_16bit.vhd Line: 13
+    Info (12022): Found design unit 1: register_16bit-arch1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_16bit.vhd Line: 22
+    Info (12023): Found entity 1: register_16bit File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_16bit.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
-    Info (12022): Found design unit 1: ALU-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/ALU.vhd Line: 26
-    Info (12023): Found entity 1: ALU File: C:/intelFPGA_lite/19.1/workspace/Processador/ALU.vhd Line: 13
+    Info (12022): Found design unit 1: ALU-arch_1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/ALU.vhd Line: 26
+    Info (12023): Found entity 1: ALU File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/ALU.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file instruction_register.vhd
-    Info (12022): Found design unit 1: instruction_register-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_register.vhd Line: 22
-    Info (12023): Found entity 1: instruction_register File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_register.vhd Line: 13
+    Info (12022): Found design unit 1: instruction_register-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_register.vhd Line: 22
+    Info (12023): Found entity 1: instruction_register File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_register.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file program_counter.vhd
-    Info (12022): Found design unit 1: program_counter-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/program_counter.vhd Line: 24
-    Info (12023): Found entity 1: program_counter File: C:/intelFPGA_lite/19.1/workspace/Processador/program_counter.vhd Line: 13
+    Info (12022): Found design unit 1: program_counter-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/program_counter.vhd Line: 24
+    Info (12023): Found entity 1: program_counter File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/program_counter.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file register_file.vhd
-    Info (12022): Found design unit 1: register_file-arch1 File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 33
-    Info (12023): Found entity 1: register_file File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 15
+    Info (12022): Found design unit 1: register_file-arch1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 33
+    Info (12023): Found entity 1: register_file File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 15
 Info (12021): Found 2 design units, including 1 entities, in source file demux1x16.vhd
-    Info (12022): Found design unit 1: demux1x16-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/demux1x16.vhd Line: 36
-    Info (12023): Found entity 1: demux1x16 File: C:/intelFPGA_lite/19.1/workspace/Processador/demux1x16.vhd Line: 13
+    Info (12022): Found design unit 1: demux1x16-arch_1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/demux1x16.vhd Line: 36
+    Info (12023): Found entity 1: demux1x16 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/demux1x16.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file mux16x1.vhd
-    Info (12022): Found design unit 1: mux16x1-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/mux16x1.vhd Line: 36
-    Info (12023): Found entity 1: mux16x1 File: C:/intelFPGA_lite/19.1/workspace/Processador/mux16x1.vhd Line: 13
+    Info (12022): Found design unit 1: mux16x1-arch_1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux16x1.vhd Line: 36
+    Info (12023): Found entity 1: mux16x1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux16x1.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file operational_block.vhd
-    Info (12022): Found design unit 1: operational_block-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd Line: 36
-    Info (12023): Found entity 1: operational_block File: C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd Line: 13
+    Info (12022): Found design unit 1: operational_block-arch_1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 36
+    Info (12023): Found entity 1: operational_block File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file ram.vhd
-    Info (12022): Found design unit 1: RAM-RAM_Arch File: C:/intelFPGA_lite/19.1/workspace/Processador/RAM.vhd Line: 31
-    Info (12023): Found entity 1: RAM File: C:/intelFPGA_lite/19.1/workspace/Processador/RAM.vhd Line: 16
+    Info (12022): Found design unit 1: RAM-RAM_Arch File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/RAM.vhd Line: 31
+    Info (12023): Found entity 1: RAM File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/RAM.vhd Line: 16
 Info (12021): Found 2 design units, including 1 entities, in source file data_memo.vhd
-    Info (12022): Found design unit 1: data_memo-data_memo_Arch File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 31
-    Info (12023): Found entity 1: data_memo File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 15
+    Info (12022): Found design unit 1: data_memo-data_memo_Arch File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 31
+    Info (12023): Found entity 1: data_memo File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 15
 Info (12021): Found 2 design units, including 1 entities, in source file instruction_memory.vhd
-    Info (12022): Found design unit 1: instruction_memory-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 28
-    Info (12023): Found entity 1: instruction_memory File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 15
+    Info (12022): Found design unit 1: instruction_memory-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 28
+    Info (12023): Found entity 1: instruction_memory File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 15
 Info (12021): Found 2 design units, including 1 entities, in source file decoder4x16.vhd
-    Info (12022): Found design unit 1: decoder4x16-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/decoder4x16.vhd Line: 36
-    Info (12023): Found entity 1: decoder4x16 File: C:/intelFPGA_lite/19.1/workspace/Processador/decoder4x16.vhd Line: 13
+    Info (12022): Found design unit 1: decoder4x16-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/decoder4x16.vhd Line: 36
+    Info (12023): Found entity 1: decoder4x16 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/decoder4x16.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file mux3x1.vhd
-    Info (12022): Found design unit 1: mux3x1-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/mux3x1.vhd Line: 22
-    Info (12023): Found entity 1: mux3x1 File: C:/intelFPGA_lite/19.1/workspace/Processador/mux3x1.vhd Line: 13
+    Info (12022): Found design unit 1: mux3x1-arch_1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux3x1.vhd Line: 22
+    Info (12023): Found entity 1: mux3x1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux3x1.vhd Line: 13
 Info (12127): Elaborating entity "processador_top" for the top level hierarchy
-Info (12128): Elaborating entity "control_unity" for hierarchy "control_unity:u_control_unity" File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 105
-Info (12128): Elaborating entity "program_counter" for hierarchy "control_unity:u_control_unity|program_counter:u_program_counter" File: C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd Line: 98
-Info (12128): Elaborating entity "instruction_register" for hierarchy "control_unity:u_control_unity|instruction_register:u_instruction_register" File: C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd Line: 110
-Info (12128): Elaborating entity "control_block" for hierarchy "control_unity:u_control_unity|control_block:u_CONTROLE" File: C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd Line: 118
-Info (12128): Elaborating entity "data_memo" for hierarchy "data_memo:u_data_memo" File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 130
-Info (12128): Elaborating entity "RAM" for hierarchy "data_memo:u_data_memo|RAM:u_RAM" File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 58
-Info (12128): Elaborating entity "operational_block" for hierarchy "operational_block:u_operational_block" File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 141
-Info (12128): Elaborating entity "mux3x1" for hierarchy "operational_block:u_operational_block|mux3x1:u_MUX" File: C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd Line: 81
-Info (12128): Elaborating entity "register_file" for hierarchy "operational_block:u_operational_block|register_file:u_REGISTER_FILE" File: C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd Line: 89
-Info (12128): Elaborating entity "ALU" for hierarchy "operational_block:u_operational_block|ALU:u_ALU" File: C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd Line: 107
-Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:u_instruction_memory" File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 162
-Info (12128): Elaborating entity "register_16bit" for hierarchy "instruction_memory:u_instruction_memory|register_16bit:u_register_16bit" File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 50
-Info (12128): Elaborating entity "single_port_rom" for hierarchy "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom" File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 58
+Info (12128): Elaborating entity "control_unity" for hierarchy "control_unity:u_control_unity" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 105
+Info (12128): Elaborating entity "program_counter" for hierarchy "control_unity:u_control_unity|program_counter:u_program_counter" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 98
+Info (12128): Elaborating entity "instruction_register" for hierarchy "control_unity:u_control_unity|instruction_register:u_instruction_register" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 111
+Info (12128): Elaborating entity "control_block" for hierarchy "control_unity:u_control_unity|control_block:u_CONTROLE" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 119
+Info (12128): Elaborating entity "data_memo" for hierarchy "data_memo:u_data_memo" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 130
+Info (12128): Elaborating entity "RAM" for hierarchy "data_memo:u_data_memo|RAM:u_RAM" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 58
+Info (12128): Elaborating entity "operational_block" for hierarchy "operational_block:u_operational_block" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 141
+Info (12128): Elaborating entity "mux3x1" for hierarchy "operational_block:u_operational_block|mux3x1:u_MUX" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 81
+Info (12128): Elaborating entity "register_file" for hierarchy "operational_block:u_operational_block|register_file:u_REGISTER_FILE" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 89
+Info (12128): Elaborating entity "ALU" for hierarchy "operational_block:u_operational_block|ALU:u_ALU" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 107
+Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:u_instruction_memory" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 162
+Info (12128): Elaborating entity "register_16bit" for hierarchy "instruction_memory:u_instruction_memory|register_16bit:u_register_16bit" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 50
+Info (12128): Elaborating entity "single_port_rom" for hierarchy "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 58
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "data_memo:u_data_memo|RAM:u_RAM|ram" is uninferred due to asynchronous read logic File: C:/intelFPGA_lite/19.1/workspace/Processador/RAM.vhd Line: 60
+    Info (276007): RAM logic "data_memo:u_data_memo|RAM:u_RAM|ram" is uninferred due to asynchronous read logic File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/RAM.vhd Line: 60
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[0]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[1]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[2]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[3]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[4]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[5]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[6]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[7]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[8]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[9]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[10]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[11]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[12]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[13]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[14]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[15]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[0]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[1]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[2]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[3]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[4]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[5]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[6]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[7]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[8]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[9]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[10]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[11]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[12]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[13]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[14]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[15]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_D_ADDR[7]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_D_ADDR[6]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_D_ADDR[5]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_D_ADDR[4]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_D_ADDR[3]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_D_ADDR[2]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_D_ADDR[1]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_W_ADDR[3]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 29
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_D_ADDR[0]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 24
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_W_ADDR[2]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 29
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_W_ADDR[1]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 29
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_W_ADDR[0]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 29
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RP_ADDR[3]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RP_ADDR[2]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RP_ADDR[1]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RP_ADDR[0]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 32
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RQ_ADDR[3]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RQ_ADDR[2]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RQ_ADDR[1]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 34
+    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RQ_ADDR[0]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 34
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[0]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[1]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[2]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[3]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[4]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[5]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[6]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[7]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[8]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[9]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[10]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[11]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[12]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[13]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[14]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[15]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[0]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[1]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[2]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[3]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[4]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[5]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[6]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[7]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[8]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[9]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[10]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[11]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[12]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[13]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[14]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[15]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3729 registers lost all their fanouts during netlist optimizations.
+Info (17049): 3585 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1191 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 974 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 1173 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 35 warnings
-    Info: Peak virtual memory: 4925 megabytes
-    Info: Processing ended: Sat Jun 27 17:14:38 2020
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:29
+    Info (21061): Implemented 956 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 55 warnings
+    Info: Peak virtual memory: 4916 megabytes
+    Info: Processing ended: Sat Jun 27 18:33:43 2020
+    Info: Elapsed time: 00:01:41
+    Info: Total CPU time (on all processors): 00:01:32
 
 
