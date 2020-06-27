@@ -63,8 +63,14 @@ begin
 		 i_DATA => i_W_DATA, -- data input
        o_DATA => w_o_RAM); -- data output
 		 
-  o_R_DATA <=  w_o_RAM when(i_D_rd = '1') else "ZZZZZZZZZZZZZZZZ";
+  o_R_DATA <=  w_o_RAM when(i_D_rd = '1') else "0000000000000000";
 
+--  u_REG_DATA : register_16bit port map ( 
+--         i_CLK   => i_CLK,
+--         i_CLR_N => i_CLR_N,
+--         i_ENA   => i_D_rd,  -- enable
+--         i_A     => w_o_RAM,  -- data input       
+--         o_Q     =>  o_R_DATA); -- data output
 
 end data_memo_Arch;
 
