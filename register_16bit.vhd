@@ -28,7 +28,7 @@ begin
   process(i_CLR_N,i_CLK) 
   begin
     if (i_CLR_N = '0') then
-      r_STATE <= "0000000000000000";		
+      r_STATE <= "1111111111111111";		
 	 elsif (rising_edge(i_CLK)) then
       if (i_ENA = '1') then
 		  r_STATE <= i_A;        

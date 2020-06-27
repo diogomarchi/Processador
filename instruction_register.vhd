@@ -26,7 +26,7 @@ begin
   process(i_CLR_N,i_CLK) 
   begin
     if (i_CLR_N = '0') then
-		o_IR <= "0000000000000000";
+		o_IR <= "1111111111111111";
 	 elsif (rising_edge(i_CLK)) then
       if (i_LD = '1') then
         o_IR <= i_DATA;

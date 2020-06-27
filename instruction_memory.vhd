@@ -31,8 +31,7 @@ architecture rtl of instruction_memory is
     generic (D_Width : integer := 16; -- data width
              A_Width : integer := 16); -- address width
 			  
-  port(addr	: in std_logic_vector(15 downto 0);
-		clk	: in std_logic;
+  port(addr	: in std_logic_vector(15 downto 0);		
 		q		: out std_logic_vector(15 downto 0));	
   end component single_port_rom;
   
@@ -57,8 +56,7 @@ begin
 			
 			
   u_single_port_rom: single_port_rom port map(
-      addr	=> i_IR_ADDR,
-	   clk	=> i_CLK,
+      addr	=> i_IR_ADDR,	   
 	   q		=> w_O_ROM);
 
 end rtl;

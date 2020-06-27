@@ -19,8 +19,7 @@ entity single_port_rom is
            A_Width : integer := 16); -- address width
 	port
 	(
-		addr	: in std_logic_vector(15 downto 0);
-		clk	: in std_logic;
+		addr	: in std_logic_vector(15 downto 0);		
 		q		: out std_logic_vector(15 downto 0)
 	);
 	
@@ -79,11 +78,7 @@ architecture rtl of single_port_rom is
   signal rom : memory_t := init_rom;
 			
 begin	
-	p_ROM : process (clk)
-	begin
-		if(rising_edge(clk)) then
-			q <= rom(to_integer(unsigned(addr)));
-		end if;
-	end process p_ROM;
+	
+	q <= rom(to_integer(unsigned(addr)));	
 		
 end rtl;
