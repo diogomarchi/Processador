@@ -87,12 +87,10 @@ architecture rtl of control_unity is
 
 
   signal w_PC_CLR, w_PC_INC, w_IR_LD, W_PC_LD: std_logic;
-  signal w_IR, w_ADDITION_INTRUCTION, w_O_PC:std_logic_vector(15 downto 0);
-  signal w_i_ADDITION_IR, w_COMP_2:std_logic_vector(7 downto 0);
+  signal w_IR, w_ADDITION_INTRUCTION, w_O_PC, w_AUX_SOMA:std_logic_vector(15 downto 0);
 
 		
-begin 
-  w_i_ADDITION_IR <= w_IR(7 Downto 0);
+begin   
   
   --connecting reg_PC with processador_unidade_controle
   u_program_counter : program_counter port map (i_PC_CLR => w_PC_CLR,
@@ -102,10 +100,12 @@ begin
 									 i_ADDITION => w_ADDITION_INTRUCTION,
                             o_PC     => w_O_PC
 									 );
-  o_ADDR <= w_O_PC;
-  w_COMP_2 <= w_i_ADDITION_IR XOR "11111111" + "1"; --complemento de 2 para fazer subtração
+  o_ADDR <= w_O_PC;  
   
-  w_ADDITION_INTRUCTION <= ((w_O_PC + w_COMP_2) - '1') when (w_i_ADDITION_IR(7) = '1') else (w_O_PC + w_i_ADDITION_IR - '1');
+  w_AUX_SOMA(15 downto 8) <= "00000000" when (w_IR(7) = '0') else "11111111";  
+  w_AUX_SOMA(7 downto 0) <= w_IR(7 Downto 0);
+  
+  w_ADDITION_INTRUCTION <= w_O_PC + w_AUX_SOMA - "1";
  
   --connecting instruction_register with processador_unidade_controle	 
   u_instruction_register : instruction_register port map (

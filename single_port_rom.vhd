@@ -26,22 +26,51 @@ entity single_port_rom is
 end entity;
 
 architecture rtl of single_port_rom is
+  
+    -- MOV RF[0] 	2			-- Salva 2 registrador 0
+	 -- MOV RF[1] 	16			-- Salva 16 registrador 1
+	 -- MDC RF[0] 	RF[1]		-- Inicia MDC entre os registradores 
+	 -- ST  RF[0] 	D[5]		-- Salva o resultado na memoria 5
+	 -- MOV RF[10]	1			-- carrega constante 1 no reg 10		--valor iteracao
+	 -- MOV RF[11]	10			-- carrega constante 10 no reg 11   --valor limite
+	 -- MOV RF[12]  0			-- carrega constante 0 no reg 12    --iterador
+	 -- SUB RF[13]	RF[11] RF[12] -- RF[13]	= RF[11] - RF[12] 
+	 -- JMPZ RF[13] 3			-- se resultado sub = 0 pula 3 instruct
+	 -- ADD RF[12] RF[12] RF[10] -- iterador = iterador + 1 
+	 -- MOV RF[7]	0			-- carrega constante 0 no reg 7    --para pular	 
+	 -- JMPZ RF[7] -4			-- pula -4 instruct
+	 -- MOV RF[12] D[10]		-- salva iterador na memoria 5
+	 
+  
+  
   -- endereços que receberão valores iniciais
-  constant ADDR1 : integer := 0;  
+  constant ADDR1 : integer := 0;
   constant ADDR2 : integer := 1;
   constant ADDR3 : integer := 2;
   constant ADDR4 : integer := 3;
   constant ADDR5 : integer := 4;
   constant ADDR6 : integer := 5;
   constant ADDR7 : integer := 6;
-  
-  constant VAL1 : std_logic_vector := "0000000000000000";
-  constant VAL2 : std_logic_vector := "0000000100000001";
-  constant VAL3 : std_logic_vector := "0010001000000001";
-  constant VAL4 : std_logic_vector := "0001001000001001";
-  constant VAL5 : std_logic_vector := "0011000100001001";--rf[1]=9
-  constant VAL6 : std_logic_vector := "0100010001000001";--rf[4]=(4 - 1)
-  constant VAL7 : std_logic_vector := "0101000100001001";--salta
+  constant ADDR8 : integer := 7;
+  constant ADDR9 : integer := 8;
+  constant ADDR10 : integer := 9;
+  constant ADDR11 : integer := 10;
+  constant ADDR12 : integer := 11;
+  constant ADDR13 : integer := 12;
+
+  constant INST1 : std_logic_vector := "0011000000000010";
+  constant INST2 : std_logic_vector := "0011000100010000";
+  constant INST3 : std_logic_vector := "0111XXXX00000001";
+  constant INST4 : std_logic_vector := "0001000000000101";
+  constant INST5 : std_logic_vector := "0011101000000001";--rf[1]=9
+  constant INST6 : std_logic_vector := "0011101100001010";--rf[4]=(4 - 1)
+  constant INST7 : std_logic_vector := "0011110000000000";--salta  
+  constant INST8 : std_logic_vector := "0100110110111100";
+  constant INST9 : std_logic_vector := "0101110100000100";
+  constant INST10 : std_logic_vector := "0010110010101100";
+  constant INST11 : std_logic_vector := "0011011100000000";
+  constant INST12 : std_logic_vector := "0101011111111100";
+  constant INST13 : std_logic_vector := "0001110000001010";  
 
   -- Build a 2-D array type for the RoM
   subtype word_t is std_logic_vector(D_Width-1 downto 0);
@@ -50,32 +79,46 @@ architecture rtl of single_port_rom is
   -- essa função gera um arquivo .mif de inicialização da rom
   function init_rom
     return memory_t is
-	 variable tmp : memory_t := (others => (others => '0'));
-	 begin
-		for addr_pos in 0 to 2**A_Width-1 loop
+     variable tmp : memory_t := (others => (others => '0'));
+     begin
+        for addr_pos in 0 to 2**A_Width-1 loop
          case (addr_pos) is
            when  ADDR1 => 
-			    tmp(addr_pos) := VAL1;
+                tmp(addr_pos) := INST1;
            when  ADDR2 => 
-			    tmp(addr_pos) := VAL2;
+                tmp(addr_pos) := INST2;
            when  ADDR3 => 
-			    tmp(addr_pos) := VAL3;
+                tmp(addr_pos) := INST3;
            when  ADDR4 => 
-			    tmp(addr_pos) := VAL4;
+                tmp(addr_pos) := INST4;
            when  ADDR5 => 
-			    tmp(addr_pos) := VAL5;
+                tmp(addr_pos) := INST5;
            when  ADDR6 => 
-			    tmp(addr_pos) := VAL6;
+                tmp(addr_pos) := INST6;
            when  ADDR7 => 
-			    tmp(addr_pos) := VAL7;				 
-		     when others =>
-			    tmp(addr_pos) := "1111111111111111"; 
-			end case;
-		end loop;
+                tmp(addr_pos) := INST7;
+           when  ADDR8 => 
+                tmp(addr_pos) := INST8;
+           when  ADDR9 => 
+                tmp(addr_pos) := INST9;
+           when  ADDR10 => 
+                tmp(addr_pos) := INST10;
+           when  ADDR11 => 
+                tmp(addr_pos) := INST11;
+           when  ADDR12 => 
+                tmp(addr_pos) := INST12;
+           when  ADDR13 => 
+                tmp(addr_pos) := INST13;					 
+             when others =>
+                tmp(addr_pos) := "1111111111111111"; 
+            end case;
+        end loop;
     return tmp;
   end init_rom;
-  
+
   signal rom : memory_t := init_rom;
+  
+  
 			
 begin	
 	

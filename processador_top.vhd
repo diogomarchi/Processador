@@ -84,9 +84,7 @@ architecture rtl of processador_top is
   component instruction_memory is 
   generic (D_Width : integer := 16; -- data width
            A_Width : integer := 16); -- address width
-  port ( i_CLK   : in std_logic;       
-         i_CLR_n   : in std_logic;   
-         i_IR_RD   : in  std_logic;  -- enable read         		 
+  port ( i_IR_RD   : in  std_logic;  -- enable read         		 
 		   i_IR_ADDR : in  std_logic_Vector(A_Width-1 downto 0); -- address
          o_R_DATA  : out  std_logic_Vector(D_Width-1 downto 0)); -- data output
   end component instruction_memory;
@@ -160,8 +158,6 @@ u_control_unity : control_unity port map (
   );
 
   u_instruction_memory : instruction_memory port map( 
-	i_CLK     => i_CLK,
-        i_CLR_n   => i_CLR_n,
         i_IR_RD   => w_O_RD,
 	     i_IR_ADDR => w_O_ADDR,
         o_R_DATA  => w_IR_DATA

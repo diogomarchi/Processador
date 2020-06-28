@@ -23,9 +23,9 @@ Vb4[HobQJ00bm?e@@;@Qo82
 !s100 XNIXi_755MlTY@X7EdZm00
 Z8 OV;C;10.5b;63
 32
-Z9 !s110 1593288888
+Z9 !s110 1593312927
 !i10b 1
-Z10 !s108 1593288888.000000
+Z10 !s108 1593312927.000000
 Z11 !s90 -reportprogress|300|ALU.vhd|RAM.vhd|control_block.vhd|control_unity.vhd|data_memo.vhd|decoder4x16.vhd|demux1x16.vhd|instruction_memory.vhd|instruction_register.vhd|mux16x1.vhd|mux2x1.vhd|mux3x1.vhd|operational_block.vhd|processador_top.vhd|program_counter.vhd|register_16bit.vhd|register_file.vhd|single_port_rom.vhd|tri_state_buffer.vhd|
 Z12 !s107 tri_state_buffer.vhd|single_port_rom.vhd|register_file.vhd|register_16bit.vhd|program_counter.vhd|processador_top.vhd|operational_block.vhd|mux3x1.vhd|mux2x1.vhd|mux16x1.vhd|instruction_register.vhd|instruction_memory.vhd|demux1x16.vhd|decoder4x16.vhd|data_memo.vhd|control_unity.vhd|control_block.vhd|RAM.vhd|ALU.vhd|
 !i113 1
@@ -50,7 +50,7 @@ R12
 !i113 1
 R13
 Econtrol_block
-Z14 w1593228565
+Z14 w1593294462
 R4
 R5
 R0
@@ -75,8 +75,8 @@ R5
 DEx4 work 13 control_block 0 22 ]og>aaiM1bdH>N;?G?TFm0
 l58
 L41
-VdiiH]eo[mf<f`b6QPSJ_]0
-!s100 SFBY3k1aT41RQ_<j@I2dA1
+VXEcKQhf]L1[TU]Kf@Nh<Z2
+!s100 ;:_ePiZVEDQlm23_DgcSV2
 R8
 32
 R9
@@ -87,7 +87,7 @@ R12
 !i113 1
 R13
 Econtrol_unity
-Z17 w1593226183
+Z17 w1593311354
 R2
 R3
 R4
@@ -114,10 +114,10 @@ R3
 R4
 R5
 DEx4 work 13 control_unity 0 22 `XbAVfmffe9kBmcED[J5h1
-l94
+l93
 L39
-VY=K70L4Y3S=a7@i@ZBD350
-!s100 FkY7k2lo@6cgI^bCj3XmG3
+VR^QKko0>;9n7ENSIcEGzE1
+!s100 PgdMfLl9mEN:>hA8c3EX]2
 R8
 32
 R9
@@ -128,7 +128,7 @@ R12
 !i113 1
 R13
 Edata_memo
-Z20 w1593050536
+Z20 w1593293691
 R2
 R3
 R4
@@ -157,8 +157,8 @@ R5
 DEx4 work 9 data_memo 0 22 IHY9haFTaDaA>BI3WdI7i2
 l56
 L31
-VloEJeN>gI@VF5NXF`nL4j2
-!s100 oFE4Ad0Zh:RUH2zKd]:;z0
+VY:cLQ7]^:=nRVCB3kOILU2
+!s100 2g7dLSe@;;g1ON7Sl`o_62
 R8
 32
 R9
@@ -243,7 +243,7 @@ R12
 !i113 1
 R13
 Einstruction_memory
-Z29 w1593279714
+Z29 w1593291541
 R2
 R3
 R4
@@ -253,8 +253,8 @@ Z30 8instruction_memory.vhd
 Z31 Finstruction_memory.vhd
 l0
 L15
-V:?f6VIb@FMKCoo;9]DoY71
-!s100 3ZXS]LK^MJS^1VFENCha92
+VTz=CXdA[a=2j>N:Mho2lM3
+!s100 N5heTPOn>;3ecJkzLD=N<2
 R8
 32
 R9
@@ -269,11 +269,11 @@ R2
 R3
 R4
 R5
-DEx4 work 18 instruction_memory 0 22 :?f6VIb@FMKCoo;9]DoY71
-l48
-L28
-Vl^fEfof;m9W[G7PT[l8N>0
-!s100 :5d98Td=Y6M?n;e0MGHF]1
+DEx4 work 18 instruction_memory 0 22 Tz=CXdA[a=2j>N:Mho2lM3
+l38
+L26
+VA7i5_RS3XdL4?JQU1MN@^3
+!s100 KGz;0l:<D2IGHVHlM6CAO2
 R8
 32
 R9
@@ -473,7 +473,7 @@ R12
 !i113 1
 R13
 Eprocessador_top
-Z52 w1593226297
+Z52 w1593294427
 R4
 R5
 R0
@@ -496,10 +496,10 @@ Artl
 R4
 R5
 DEx4 work 15 processador_top 0 22 `?2=Zl]eKHC8D7oVl8QES0
-l102
+l100
 L19
-Vo]Q1FjD7VBSYlm9m^6XbK1
-!s100 W8b>GO>ObkVY58dnRbhSJ0
+VAc5mfCNTYEFS9oB1RK<RI1
+!s100 ?P^Q6DQ_>nSFFLEL876Je1
 R8
 32
 R9
@@ -522,9 +522,9 @@ VR2LHmm;2<51?=9Zz7zmkA3
 !s100 WOYz4dTKX3JT8PNGM;YZX0
 R8
 32
-Z58 !s110 1593288893
+Z58 !s110 1593312930
 !i10b 1
-Z59 !s108 1593288893.000000
+Z59 !s108 1593312930.000000
 Z60 !s90 -reportprogress|300|processador_top_tb|
 Z61 !s107 processador_top_tb|
 !i113 1
@@ -588,13 +588,13 @@ R12
 !i113 1
 R13
 Eram
-R20
-Z68 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z68 w1593050536
+Z69 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 R4
 R5
 R0
-Z69 8RAM.vhd
-Z70 FRAM.vhd
+Z70 8RAM.vhd
+Z71 FRAM.vhd
 l0
 L16
 VLR02[KVLHoBUR<67eMJkV2
@@ -609,7 +609,7 @@ R12
 !i113 1
 R13
 Aram_arch
-R68
+R69
 R4
 R5
 DEx4 work 3 ram 0 22 LR02[KVLHoBUR<67eMJkV2
@@ -627,46 +627,46 @@ R12
 !i113 1
 R13
 Eram_tb
-Z71 w1592928081
+Z72 w1592928081
 R4
 R5
 R0
-Z72 8RAM_tb
-Z73 FRAM_tb
+Z73 8RAM_tb
+Z74 FRAM_tb
 l0
 L14
 VR^Sd@[ULTo5B0MI8fUVe;3
 !s100 FcG^c?=7MbEGPa=KkVo`^3
 R8
 32
-Z74 !s110 1592928099
+Z75 !s110 1592928099
 !i10b 1
-Z75 !s108 1592928099.000000
-Z76 !s90 -reportprogress|300|RAM_tb|
-Z77 !s107 RAM_tb|
+Z76 !s108 1592928099.000000
+Z77 !s90 -reportprogress|300|RAM_tb|
+Z78 !s107 RAM_tb|
 !i113 1
 R13
 Artl
 R4
 R5
-Z78 DEx4 work 6 ram_tb 0 22 R^Sd@[ULTo5B0MI8fUVe;3
+Z79 DEx4 work 6 ram_tb 0 22 R^Sd@[ULTo5B0MI8fUVe;3
 l37
 L20
 VROPNFAimMnP3jU=;m4>e?1
 !s100 8IWdlLBdLTChSkVa^F]FO2
 R8
 32
-R74
-!i10b 1
 R75
+!i10b 1
 R76
 R77
+R78
 !i113 1
 R13
 Aram_arch
 R4
 R5
-R78
+R79
 l37
 L20
 VAPhRaFOk7]biGR]Oohc=G1
@@ -676,18 +676,18 @@ R8
 !s110 1592926414
 !i10b 1
 !s108 1592926414.000000
-R76
 R77
+R78
 !i113 1
 R13
 w1592924385
 Eregister_16bit
-Z79 w1593288856
+Z80 w1593288856
 R4
 R5
 R0
-Z80 8register_16bit.vhd
-Z81 Fregister_16bit.vhd
+Z81 8register_16bit.vhd
+Z82 Fregister_16bit.vhd
 l0
 L13
 V^e1oTco^[5BjJbFheHM8l0
@@ -719,13 +719,13 @@ R12
 !i113 1
 R13
 Eregister_file
-Z82 w1593225825
-R68
+Z83 w1593225825
+R69
 R4
 R5
 R0
-Z83 8register_file.vhd
-Z84 Fregister_file.vhd
+Z84 8register_file.vhd
+Z85 Fregister_file.vhd
 l0
 L15
 Vc^S@IK:WCF[k@ahkCen`z2
@@ -740,7 +740,7 @@ R12
 !i113 1
 R13
 Aarch1
-R68
+R69
 R4
 R5
 DEx4 work 13 register_file 0 22 c^S@IK:WCF[k@ahkCen`z2
@@ -758,16 +758,16 @@ R12
 !i113 1
 R13
 Esingle_port_rom
-Z85 w1593279622
+Z86 w1593312917
 R2
 R3
-Z86 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
-R68
+Z87 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+R69
 R4
 R5
 R0
-Z87 8single_port_rom.vhd
-Z88 Fsingle_port_rom.vhd
+Z88 8single_port_rom.vhd
+Z89 Fsingle_port_rom.vhd
 l0
 L17
 VgAG[hbbl@HD`cS<nPP6L=2
@@ -784,15 +784,15 @@ R13
 Artl
 R2
 R3
-R86
-R68
+R87
+R69
 R4
 R5
 DEx4 work 15 single_port_rom 0 22 gAG[hbbl@HD`cS<nPP6L=2
-l80
+l123
 L28
-VE2f[YUW3_1WC;jAniAS7[0
-!s100 cM_GYRUT@YYAaFhC;5CY[0
+V];^ZlMM0>NHKm^Ml;B]nc3
+!s100 0k`:F3`C_3d>zABU_BQ9M3
 R8
 32
 R9
@@ -803,12 +803,12 @@ R12
 !i113 1
 R13
 Etri_state_buffer
-Z89 w1593003813
+Z90 w1593293587
 R4
 R5
 R0
-Z90 8tri_state_buffer.vhd
-Z91 Ftri_state_buffer.vhd
+Z91 8tri_state_buffer.vhd
+Z92 Ftri_state_buffer.vhd
 l0
 L4
 V1IEMmIXRn7moM0Bd;gC9g0

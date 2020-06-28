@@ -1,5 +1,5 @@
 EDA Netlist Writer report for processador_top
-Mon Jun 22 12:55:06 2020
+Sat Jun 27 19:41:50 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Jun 22 12:55:06 2020 ;
+; EDA Netlist Writer Status ; Successful - Sat Jun 27 19:41:50 2020 ;
 ; Revision Name             ; processador_top                       ;
 ; Top-level Entity Name     ; processador_top                       ;
 ; Family                    ; Cyclone V                             ;
@@ -66,13 +66,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------------------------+-----------------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                             ;
-+--------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                        ;
-+--------------------------------------------------------------------------------------------------------+
-; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/simulation/modelsim/processador_top.vho ;
-+--------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                           ;
++--------------------------------------------------------------------------------------+
+; Generated Files                                                                      ;
++--------------------------------------------------------------------------------------+
+; C:/intelFPGA_lite/19.1/workspace/Processador/simulation/modelsim/processador_top.vho ;
++--------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -81,14 +81,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Mon Jun 22 12:55:02 2020
+    Info: Processing started: Sat Jun 27 19:41:49 2020
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off processador -c processador_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file processador_top.vho in folder "C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file processador_top.vho in folder "C:/intelFPGA_lite/19.1/workspace/Processador/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4735 megabytes
-    Info: Processing ended: Mon Jun 22 12:55:07 2020
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 4742 megabytes
+    Info: Processing ended: Sat Jun 27 19:41:50 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 
