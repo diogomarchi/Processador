@@ -37,20 +37,19 @@ port ( i_CLK       : in std_logic;  -- input clock
 end control_block;
 
 architecture rtl of control_block is
-  -- s_0 inicio
-  -- s_1 busca
-  -- s_2 decodificação
-  -- s_3 carregar
-  -- s_4 armazenar
-  -- s_5 somar
-  -- S_6 carrega constante
-  -- S_7 substrair
-  -- S_8 saltar se zero
-  -- S_9 saltar
-  -- s_10 verifica se RP = RQ
-  -- s_11 verifica se RP < RQ
+  -- s_INIT inicio
+  -- s_FETCH busca
+  -- s_DECODE decodificação
+  -- s_LOAD carregar
+  -- s_STORE armazenar
+  -- s_ADD somar
+  -- s_LD_CONST carrega constante
+  -- s_SUB substrair
+  -- s_JUMPZ saltar se zero
+  -- s_JUMPZ_1 saltar
+  -- s_LT verifica se RP < RQ
   
-  type t_STATE is (s_0, s_1, s_2, s_3, s_4, s_5, S_6, S_7, S_8, S_9, s_10, s_11);
+  type t_STATE is (s_INIT, s_FETCH, s_DECODE, s_LOAD, s_STORE, s_ADD, s_LD_CONST, s_SUB, s_JUMPZ, s_JUMPZ_1, s_LT);
   signal r_STATE: t_STATE;  -- state register
   signal w_NEXT : t_STATE;  -- next state  
   signal w_OP, w_RA, w_RB, w_RC:std_logic_vector(3 downto 0);
@@ -62,7 +61,7 @@ begin
   begin
   
     if (i_CLR_n ='0') then
-      r_STATE <= s_0;     --initial state
+      r_STATE <= s_INIT;     --initial state
     elsif (rising_edge(i_CLK)) then
       r_STATE <= w_NEXT;  --next state
     end if;
@@ -72,62 +71,62 @@ begin
   p_NEXT : process(r_STATE, w_OP, i_RF_RP_zero)    
   begin
     case (r_STATE) is
-      when s_0 =>        					 
-              w_NEXT  <= s_1; --vai para o proximo passando clear em 1  
+      when s_INIT =>        					 
+              w_NEXT  <= s_FETCH; --vai para o proximo passando clear em 1  
 				  
-		when s_1 =>         
-				  w_NEXT  <= s_2;
+		when s_FETCH =>         
+				  w_NEXT  <= s_DECODE;
 				  
-      when s_2 => 
+      when s_DECODE => 
 				  if (w_OP = "0000") then    -- caso op = load next state = carregar
-					 w_NEXT <= s_3;
+					 w_NEXT <= s_LOAD;
 				  elsif(w_OP = "0001") then  -- caso op = armazenar next state = armazenar
-					 w_NEXT <= s_4;
+					 w_NEXT <= s_STORE;
 				  elsif(w_OP = "0010") then   -- caso op = somar next state = somar
-					 w_NEXT <= s_5;
+					 w_NEXT <= s_ADD;
 				  elsif(w_OP = "0011") then   -- caso op = carregaconst next state = carregaconst
-					 w_NEXT <= s_6;
+					 w_NEXT <= s_LD_CONST;
 				  elsif(w_OP = "0100") then   -- caso op = sub A-B next state = sub A - B
-					 w_NEXT <= s_7;
+					 w_NEXT <= s_SUB;
 				  elsif(w_OP = "0101") then   -- caso op = Jump next state = Jump
-					 w_NEXT <= s_8;
+					 w_NEXT <= s_JUMPZ;
 				  elsif(w_OP = "0110") then   -- caso op = if RP < RQ 	0110 RW RP RQ
-				    w_NEXT <= s_10;
+				    w_NEXT <= s_LT;
 				  else
-				    w_NEXT <= S_2;
+				    w_NEXT <= s_DECODE;
 				  end if;       
 						
-      when s_3 =>	
-               w_NEXT <= s_1;		
+      when s_LOAD =>	
+               w_NEXT <= s_FETCH;		
 						
-      when s_4 => 
-               w_NEXT <= s_1;	
+      when s_STORE => 
+               w_NEXT <= s_FETCH;	
 					
-		when s_5 =>
-					w_NEXT <= s_1;
+		when s_ADD =>
+					w_NEXT <= s_FETCH;
 					
-		when s_6 =>
-					w_NEXT <= s_1;
+		when s_LD_CONST =>
+					w_NEXT <= s_FETCH;
 					
-	   when s_7 =>
-					w_NEXT <= s_1;
+	   when s_SUB =>
+					w_NEXT <= s_FETCH;
 					
-		when s_8 =>
+		when s_JUMPZ =>
 		         if (i_RF_RP_zero = '1') then    -- caso 1, vai para saltar
-					  w_NEXT <= s_9;
+					  w_NEXT <= s_JUMPZ_1;
 					else
-					  w_NEXT <= s_1;
+					  w_NEXT <= s_FETCH;
 					end if;
 					
-		when s_9 =>
-               w_NEXT <= s_1;
+		when s_JUMPZ_1 =>
+               w_NEXT <= s_FETCH;
 		
 		
-		when s_10 => -- RP < RQ
-					  w_NEXT <= s_1;
+		when s_LT => -- RP < RQ
+					  w_NEXT <= s_FETCH;
 					  
       when others => 
-               w_NEXT <= s_0;
+               w_NEXT <= s_INIT;
     end case;   		
   end process;
 
@@ -151,45 +150,45 @@ begin
   --atribuição do valor de constante
   o_RF_W_DATA <= i_DATA(7 downto 0);
 	
-  o_PC_CLR <= '1' when (r_STATE = s_0) else '0';  
+  o_PC_CLR <= '1' when (r_STATE = s_INIT) else '0';  
   
-  o_I_RD   <= '1' when (r_STATE = s_1) else '0';  
+  o_I_RD   <= '1' when (r_STATE = s_FETCH) else '0';  
   
-  o_IR_LD  <= '1' when (r_STATE = s_1) else '0';  
+  o_IR_LD  <= '1' when (r_STATE = s_FETCH) else '0';  
   
-  o_PC_INC  <= '1' when (r_STATE = s_1) else '0';  
+  o_PC_INC  <= '1' when (r_STATE = s_FETCH) else '0';  
   
-  o_D_ADDR  <=  w_D when ((r_STATE = s_3) or (r_STATE = s_4)) else "ZZZZZZZZ"; 
+  o_D_ADDR  <=  w_D when ((r_STATE = s_LOAD) or (r_STATE = s_STORE)) else "ZZZZZZZZ"; 
   
-  o_D_RD    <= '1' when (r_STATE = s_3) else '0'; 
+  o_D_RD    <= '1' when (r_STATE = s_LOAD) else '0'; 
 
-  o_D_WR    <= '1' when (r_STATE = s_4) else '0';    
+  o_D_WR    <= '1' when (r_STATE = s_STORE) else '0';    
   
-  o_RF_S0   <= '1' when (r_STATE = s_3) else 
-               'X' when (r_STATE = s_4) else '0';  
+  o_RF_S0   <= '1' when (r_STATE = s_LOAD) else 
+               'X' when (r_STATE = s_STORE) else '0';  
   
-  o_RF_S1   <= '1' when (r_STATE = s_6) else
-               'X' when (r_STATE = s_4) else '0';
+  o_RF_S1   <= '1' when (r_STATE = s_LD_CONST) else
+               'X' when (r_STATE = s_STORE) else '0';
   
-  o_RF_W_ADDR  <= w_RA when ((r_STATE = s_3) or (r_STATE = s_5) or (r_STATE = s_6) or (r_STATE = s_7) or (r_STATE = s_10)) else	"ZZZZ";  
+  o_RF_W_ADDR  <= w_RA when ((r_STATE = s_LOAD) or (r_STATE = s_ADD) or (r_STATE = s_LD_CONST) or (r_STATE = s_SUB) or (r_STATE = s_LT)) else	"ZZZZ";  
   
-  o_RF_W_WR    <= '1' when ((r_STATE = s_3) or (r_STATE = s_5) or (r_STATE = s_6) or (r_STATE = s_7) or (r_STATE = s_10)) else '0'; 
+  o_RF_W_WR    <= '1' when ((r_STATE = s_LOAD) or (r_STATE = s_ADD) or (r_STATE = s_LD_CONST) or (r_STATE = s_SUB) or (r_STATE = s_LT)) else '0'; 
  
   
-  o_RF_RP_ADDR <= w_RA when ((r_STATE = s_4) or (r_STATE = s_8)) else
-                  w_RB when ((r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_10)) else "ZZZZ"; 
+  o_RF_RP_ADDR <= w_RA when ((r_STATE = s_STORE) or (r_STATE = s_JUMPZ)) else
+                  w_RB when ((r_STATE = s_ADD) or (r_STATE = s_SUB) or (r_STATE = s_LT)) else "ZZZZ"; 
   
-  o_RF_RP_RD   <= '1' when ((r_STATE = s_4) or (r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_8) or (r_STATE = s_10)) else '0';
+  o_RF_RP_RD   <= '1' when ((r_STATE = s_STORE) or (r_STATE = s_ADD) or (r_STATE = s_SUB) or (r_STATE = s_JUMPZ) or (r_STATE = s_LT)) else '0';
   
-  o_RF_RQ_ADDR <= w_RC when ((r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_10)) else "ZZZZ";
+  o_RF_RQ_ADDR <= w_RC when ((r_STATE = s_ADD) or (r_STATE = s_SUB) or (r_STATE = s_LT)) else "ZZZZ";
   
-  o_RF_RQ_RD   <= '1' when ((r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_10)) else '0';
+  o_RF_RQ_RD   <= '1' when ((r_STATE = s_ADD) or (r_STATE = s_SUB) or (r_STATE = s_LT)) else '0';
   
-  o_ALU_S0     <= '1' when ((r_STATE = s_5) or (r_STATE = s_10)) else '0';
+  o_ALU_S0     <= '1' when ((r_STATE = s_ADD) or (r_STATE = s_LT)) else '0';
   
-  o_ALU_S1     <= '1' when ((r_STATE = s_7) or (r_STATE = s_10)) else '0';
+  o_ALU_S1     <= '1' when ((r_STATE = s_SUB) or (r_STATE = s_LT)) else '0';
   
-  o_PC_LD      <= '1' when (r_STATE = s_9) else '0';
+  o_PC_LD      <= '1' when (r_STATE = s_JUMPZ_1) else '0';
   
    
 end rtl;
