@@ -22,8 +22,6 @@ architecture rtl of processador_top is
   port ( i_CLK   : in std_logic;  -- input clock
        i_CLR_n     : in std_logic;  -- input clear/reset
 		 i_DATA      : in std_logic_vector(15 downto 0); -- input instruction register
-		 i_RP_LT_RQ  : in std_logic;
-		 i_RP_EQ_RQ  : in std_logic;
 		 i_RF_RP_zero: in std_logic;  -- output RF_RP zero
 		 o_I_RD      : out std_logic;  -- output instruction read 
        o_D_ADDR    : out std_logic_vector(7 downto 0);  -- output data address
@@ -73,8 +71,6 @@ architecture rtl of processador_top is
 		 i_RF_RQ_addr : in  std_logic_Vector(3 downto 0);  -- RP read address
 		 i_RF_W_DATA  : in  std_logic_Vector(7 downto 0);  -- RP read address
 		 i_R_DATA     : in  std_logic_Vector(15 downto 0);    -- W input data
-		 o_RP_LT_RQ : out std_logic;
-		 o_RP_EQ_RQ : out std_logic;
 		 o_RF_RP_ZERO : out std_logic;
 		 o_W_DATA     : out  std_logic_Vector(15 downto 0)   -- W output data
          ); 
@@ -104,8 +100,6 @@ u_control_unity : control_unity port map (
                i_CLK     => i_CLK,
 					i_CLR_n  => i_CLR_n,
 					i_DATA   => w_IR_DATA,
-					i_RP_LT_RQ => w_o_RP_LT_RQ,
-		         i_RP_EQ_RQ => w_o_RP_EQ_RQ,
 					i_RF_RP_zero=>w_i_RF_RP_zero,
 					o_ADDR   => w_O_ADDR,
 					o_I_RD     => w_O_RD,
@@ -151,8 +145,6 @@ u_control_unity : control_unity port map (
        i_RF_RP_addr => w_O_RF_RP_addr,
        i_RF_RQ_addr => w_O_RF_RQ_addr,
        i_R_DATA  => w_R_DATA,
-		 o_RP_LT_RQ => w_o_RP_LT_RQ,
-		 o_RP_EQ_RQ => w_o_RP_EQ_RQ,
 		 o_RF_RP_ZERO=>w_i_RF_RP_zero,
        o_W_DATA => w_MEMO_DATA
   );

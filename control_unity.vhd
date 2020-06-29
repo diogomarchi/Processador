@@ -14,8 +14,6 @@ entity control_unity is
 port ( i_CLK   : in std_logic;  -- input clock
        i_CLR_n     : in std_logic;  -- input clear/reset
 		 i_DATA      : in std_logic_vector(15 downto 0); -- input instruction register
-		 i_RP_LT_RQ  : in std_logic;
-		 i_RP_EQ_RQ  : in std_logic;
 		 i_RF_RP_zero: in std_logic;  -- output RF_RP zero		 
 		 o_I_RD      : out std_logic;  -- output instruction read
        o_D_ADDR    : out std_logic_vector(7 downto 0);  -- output data address
@@ -60,8 +58,6 @@ architecture rtl of control_unity is
   port ( i_CLK       : in std_logic;  -- input clock
        i_CLR_n     : in std_logic;  -- input clear/reset
 		 i_DATA      : in std_logic_vector(15 downto 0); -- input instruction register
-		 i_RP_LT_RQ  : in std_logic;
-       i_RP_EQ_RQ  : in std_logic;
 		 i_RF_RP_zero: in std_logic;  -- output RF_RP zero		 		 
 		 o_PC_CLR    : out std_logic;  -- output clear
 		 o_I_RD      : out std_logic;  -- output instruction read
@@ -120,8 +116,6 @@ begin
 														i_CLR_n  => i_CLR_n,
 														i_DATA   => W_IR,
 														i_RF_RP_zero=>i_RF_RP_zero,
-														i_RP_LT_RQ  => i_RP_LT_RQ,
-														i_RP_EQ_RQ  => i_RP_EQ_RQ,
 														o_PC_CLR => w_PC_CLR,
 														o_I_RD   => o_I_RD,
 														o_IR_LD  => w_IR_LD,

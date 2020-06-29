@@ -65,11 +65,14 @@ architecture arch_1 of operational_block is
   end component;
   
   component ALU is
-  port ( 
+  port ( i_CLK   : in std_logic;
+         i_CLR_N : in std_logic;
          i_S0    : in  std_logic;  -- selector
 			i_S1    : in  std_logic;  -- selector
          i_A     : in  std_logic_Vector(15 downto 0);  -- data input
          i_B     : in  std_logic_Vector(15 downto 0);  -- data input
+         o_A_LT_B : out std_logic; -- A menor q B
+         o_A_EQ_B : out std_logic; -- A == B
          o_Q     : out  std_logic_Vector(15 downto 0)); -- data output
   end component;
 
@@ -102,10 +105,14 @@ begin
 
   
   u_ALU : ALU port map ( 
+         i_CLK   => i_CLK,
+         i_CLR_N => i_CLR_N,
          i_S0    => i_ALU_s0,  -- selector
 			i_S1    => i_ALU_s1,  -- selector
          i_A     => w_o_RP_DATA,  -- data input
          i_B     => w_o_RQ_DATA,  -- data input
+         o_A_LT_B => o_RP_LT_RQ,  -- a < b
+			o_A_EQ_B => o_RP_EQ_RQ,  -- a == b
 			o_Q     => w_o_ALU  -- data output
 			); 
 

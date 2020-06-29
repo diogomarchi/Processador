@@ -13,8 +13,6 @@ entity control_block is
 port ( i_CLK       : in std_logic;  -- input clock
        i_CLR_n     : in std_logic;  -- input clear/reset
 		 i_DATA      : in std_logic_vector(15 downto 0); -- input instruction register
-		 i_RP_LT_RQ  : in std_logic;
-		 i_RP_EQ_RQ  : in std_logic;	
 		 i_RF_RP_zero: in std_logic;  -- output RF_RP zero
 		 o_PC_CLR    : out std_logic;  -- output clear
 		 o_I_RD      : out std_logic;  -- output instruction read
@@ -71,7 +69,7 @@ begin
   end process;
   
   
-  p_NEXT : process(r_STATE, w_OP, i_RF_RP_zero, i_RP_LT_RQ, i_RP_EQ_RQ)    
+  p_NEXT : process(r_STATE, w_OP, i_RF_RP_zero)    
   begin
     case (r_STATE) is
       when s_0 =>        					 
@@ -93,10 +91,8 @@ begin
 					 w_NEXT <= s_7;
 				  elsif(w_OP = "0101") then   -- caso op = Jump next state = Jump
 					 w_NEXT <= s_8;
-				  elsif(w_OP = "0110") then   -- caso op = jump if RP igual RQ		0110 XXXX OFFSET
+				  elsif(w_OP = "0110") then   -- caso op = if RP < RQ 	0110 RW RP RQ
 				    w_NEXT <= s_10;
-              elsif(w_OP = "0111") then   -- caso op = jump if RP < RQ 			0111 XXXX OFFSET
-				    w_NEXT <= s_11;
 				  else
 				    w_NEXT <= S_2;
 				  end if;       
@@ -126,18 +122,10 @@ begin
 		when s_9 =>
                w_NEXT <= s_1;
 		
-		when s_10 => -- RP = RQ
-               if (i_RP_EQ_RQ = '1') then
-                 w_NEXT <= s_9;		
-               else
-                 w_NEXT <= s_1;	
-               end if;		
-		when s_11 => -- RP < RQ
-               if(i_RP_LT_RQ = '1') then
-					  w_NEXT <= s_9;					
-					else 
+		
+		when s_10 => -- RP < RQ
 					  w_NEXT <= s_1;
-		         end if;			  
+					  
       when others => 
                w_NEXT <= s_0;
     end case;   		
@@ -183,25 +171,23 @@ begin
   o_RF_S1   <= '1' when (r_STATE = s_6) else
                'X' when (r_STATE = s_4) else '0';
   
-  o_RF_W_ADDR  <= w_RA when ((r_STATE = s_3) or (r_STATE = s_5) or (r_STATE = s_6) or (r_STATE = s_7)) else
-                  w_RB when (r_STATE = s_13) else
-					   w_RC when (r_STATE = s_12) else	"ZZZZ";  
+  o_RF_W_ADDR  <= w_RA when ((r_STATE = s_3) or (r_STATE = s_5) or (r_STATE = s_6) or (r_STATE = s_7) or (r_STATE = s_10)) else	"ZZZZ";  
   
-  o_RF_W_WR    <= '1' when ((r_STATE = s_3) or (r_STATE = s_5) or (r_STATE = s_6) or (r_STATE = s_7) or (r_STATE = s_12) or(r_STATE = s_13)) else '0'; 
+  o_RF_W_WR    <= '1' when ((r_STATE = s_3) or (r_STATE = s_5) or (r_STATE = s_6) or (r_STATE = s_7) or (r_STATE = s_10)) else '0'; 
  
   
   o_RF_RP_ADDR <= w_RA when ((r_STATE = s_4) or (r_STATE = s_8)) else
-                  w_RB when ((r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_11) or (r_STATE = s_12) or(r_STATE = s_13) ) else "ZZZZ"; 
+                  w_RB when ((r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_10)) else "ZZZZ"; 
   
-  o_RF_RP_RD   <= '1' when ((r_STATE = s_4) or (r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_8) or (r_STATE = s_11) or (r_STATE = s_12) or(r_STATE = s_13)) else '0';
+  o_RF_RP_RD   <= '1' when ((r_STATE = s_4) or (r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_8) or (r_STATE = s_10)) else '0';
   
-  o_RF_RQ_ADDR <= w_RC when ((r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_11) or (r_STATE = s_12) or(r_STATE = s_13) ) else "ZZZZ";
+  o_RF_RQ_ADDR <= w_RC when ((r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_10)) else "ZZZZ";
   
-  o_RF_RQ_RD   <= '1' when ((r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_11) or (r_STATE = s_12) or(r_STATE = s_13)) else '0';
+  o_RF_RQ_RD   <= '1' when ((r_STATE = s_5) or (r_STATE = s_7) or (r_STATE = s_10)) else '0';
   
-  o_ALU_S0     <= '1' when (r_STATE = s_5 or r_STATE = s_12) else '0';
+  o_ALU_S0     <= '1' when ((r_STATE = s_5) or (r_STATE = s_10)) else '0';
   
-  o_ALU_S1     <= '1' when (r_STATE = s_7 or r_STATE = s_12 or r_STATE = s_13) else '0';
+  o_ALU_S1     <= '1' when ((r_STATE = s_7) or (r_STATE = s_10)) else '0';
   
   o_PC_LD      <= '1' when (r_STATE = s_9) else '0';
   
