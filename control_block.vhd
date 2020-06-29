@@ -49,7 +49,10 @@ architecture rtl of control_block is
   -- S_7 substrair
   -- S_8 saltar se zero
   -- S_9 saltar
-  type t_STATE is (s_0, s_1, s_2, s_3, s_4, s_5, S_6, S_7, S_8, S_9, s_10, s_11, s_12, s_13, s_14);
+  -- s_10 verifica se RP = RQ
+  -- s_11 verifica se RP < RQ
+  
+  type t_STATE is (s_0, s_1, s_2, s_3, s_4, s_5, S_6, S_7, S_8, S_9, s_10, s_11);
   signal r_STATE: t_STATE;  -- state register
   signal w_NEXT : t_STATE;  -- next state  
   signal w_OP, w_RA, w_RB, w_RC:std_logic_vector(3 downto 0);
@@ -90,8 +93,10 @@ begin
 					 w_NEXT <= s_7;
 				  elsif(w_OP = "0101") then   -- caso op = Jump next state = Jump
 					 w_NEXT <= s_8;
-				  elsif(w_OP = "0111") then   -- caso op = MDC
+				  elsif(w_OP = "0110") then   -- caso op = jump if RP igual RQ		0110 XXXX OFFSET
 				    w_NEXT <= s_10;
+              elsif(w_OP = "0111") then   -- caso op = jump if RP < RQ 			0111 XXXX OFFSET
+				    w_NEXT <= s_11;
 				  else
 				    w_NEXT <= S_2;
 				  end if;       
@@ -121,28 +126,18 @@ begin
 		when s_9 =>
                w_NEXT <= s_1;
 		
-		when s_10 => -- inicio mdc
-               w_NEXT <= s_11;		
-		
-		when s_11 => -- estado decisao
+		when s_10 => -- RP = RQ
+               if (i_RP_EQ_RQ = '1') then
+                 w_NEXT <= s_9;		
+               else
+                 w_NEXT <= s_1;	
+               end if;		
+		when s_11 => -- RP < RQ
                if(i_RP_LT_RQ = '1') then
-					  w_NEXT <= s_12;					
-					elsif(i_RP_EQ_RQ = '1') then
-		 		     w_NEXT <= s_14;
+					  w_NEXT <= s_9;					
 					else 
-					  w_NEXT <= s_13;
+					  w_NEXT <= s_1;
 		         end if;			  
-									
-		
-		when s_12 => -- caso a
-               w_NEXT <= s_11;
-		
-		when s_13 =>
-               w_NEXT <= s_11;
-		
-		when s_14 =>
-               w_NEXT <= s_1;		
-					
       when others => 
                w_NEXT <= s_0;
     end case;   		
