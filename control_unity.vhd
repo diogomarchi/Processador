@@ -31,7 +31,7 @@ ENTITY control_unity IS
 		o_RF_RQ_RD : OUT std_logic; -- output RF_RQ lread
 		o_ALU_S0 : OUT std_logic; -- output soma ULA
 		o_ALU_S1 : OUT std_logic; -- output soma ULA 
-		o_ADDR : OUT std_logic_vector(15 DOWNTO 0)
+		o_I_ADDR : OUT std_logic_vector(15 DOWNTO 0)
 	);
 END control_unity;
 
@@ -97,7 +97,7 @@ BEGIN
 		i_ADDITION => w_ADDITION_INTRUCTION,
 		o_PC => w_O_PC
 	);
-	o_ADDR <= w_O_PC;
+	o_I_ADDR <= w_O_PC;
 
 	w_AUX_SOMA(15 DOWNTO 8) <= "00000000" WHEN (w_IR(7) = '0') ELSE
 	"11111111";

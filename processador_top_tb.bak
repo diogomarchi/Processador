@@ -63,7 +63,9 @@ begin
        
     wait  until w_O_SAIDA_RF="0000000000000110";
     assert(w_O_SAIDA_RF/="0000000000000110") report "Fail @ 000" severity error;
-           
+    
+    
+   
     wait  for c_CLK_PERIOD;
 
     assert false report "Test done." severity note;    
