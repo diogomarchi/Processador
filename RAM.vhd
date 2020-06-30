@@ -27,10 +27,10 @@ END ENTITY RAM;
 ARCHITECTURE RAM_Arch OF RAM IS
   -- endereços que receberão valores 
   CONSTANT ADDR1 : INTEGER := 0;
-  CONSTANT ADDR2 : INTEGER := 1;
+  CONSTANT ADDR2 : INTEGER := 12;
 
   CONSTANT VAL1 : std_logic_vector := "0000000000000001";
-  CONSTANT VAL2 : std_logic_vector := "0000000000000001";
+  CONSTANT VAL2 : std_logic_vector := "0000000000001010";
 
   TYPE ram_type IS ARRAY (0 TO 2 ** A_Width - 1) OF std_logic_vector(D_Width - 1 DOWNTO 0);
   -- essa função gera um arquivo .mif de inicialização da rom
