@@ -25,8 +25,6 @@ port ( i_CLK   : in std_logic;
 		 i_RF_RQ_addr : in  std_logic_Vector(3 downto 0);  -- RP read address
 		 i_RF_W_DATA  : in  std_logic_Vector(7 downto 0);  -- RP read address
 		 i_R_DATA     : in  std_logic_Vector(15 downto 0);    -- W input data
-		 o_RP_LT_RQ   : out std_logic; -- a < b
-		 o_RP_EQ_RQ   : out std_logic; -- a == b
 		 o_RF_RP_ZERO : out std_logic; -- a == 0
 		 o_W_DATA     : out  std_logic_Vector(15 downto 0)   -- W output data
        ); 

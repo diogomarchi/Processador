@@ -5,74 +5,66 @@
 -- Rev.  : 1.0
 -- Date  : 06/19/2020
 ------------------------------------------------
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
 
+ENTITY RAM IS
+  GENERIC (
+    D_Width : INTEGER := 16; -- data width
+    A_Width : INTEGER := 8); -- address width
 
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.ALL;
+  PORT (
+    i_CLK : IN std_logic;
+    i_CLR_n : IN std_logic;
+    i_WE : IN std_logic; -- enable       
+    i_ADDR : IN std_logic_Vector(A_Width - 1 DOWNTO 0); -- address
+    i_DATA : IN std_logic_Vector(D_Width - 1 DOWNTO 0); -- data input
+    o_DATA : OUT std_logic_Vector(D_Width - 1 DOWNTO 0)); -- data output
 
+END ENTITY RAM;
 
-
-entity RAM is 
-  generic (D_Width : integer := 16; -- data width
-           A_Width : integer := 8); -- address width
-  
-  port ( i_CLK   : in std_logic;       
-       i_CLR_n   : in std_logic;   
-       i_WE  : in  std_logic;  -- enable       
-		 i_ADDR : in  std_logic_Vector(A_Width-1 downto 0); -- address
-		 i_DATA : in  std_logic_Vector(D_Width-1 downto 0); -- data input
-       o_DATA : out  std_logic_Vector(D_Width-1 downto 0)); -- data output
-
-end entity RAM;
-
-
-
-architecture RAM_Arch of RAM is
+ARCHITECTURE RAM_Arch OF RAM IS
   -- endereços que receberão valores 
-  constant ADDR1 : integer := 0;  
-  constant ADDR2 : integer := 1;
-  
-  constant VAL1 : std_logic_vector := "0000000000000001";
-  constant VAL2 : std_logic_vector := "0000000000000001";
-  
-  type ram_type is array (0 to 2**A_Width-1) of std_logic_vector(D_Width-1 downto 0);
-      
+  CONSTANT ADDR1 : INTEGER := 0;
+  CONSTANT ADDR2 : INTEGER := 1;
 
+  CONSTANT VAL1 : std_logic_vector := "0000000000000001";
+  CONSTANT VAL2 : std_logic_vector := "0000000000000001";
+
+  TYPE ram_type IS ARRAY (0 TO 2 ** A_Width - 1) OF std_logic_vector(D_Width - 1 DOWNTO 0);
   -- essa função gera um arquivo .mif de inicialização da rom
-  function init_ram
-    return ram_type is
-    variable tmp : ram_type := (others => (others => '0'));
-  begin
-    for addr_pos in 0 to 2**A_Width-1 loop
-      case (addr_pos) is
-        when  ADDR1 => 
+  FUNCTION init_ram
+    RETURN ram_type IS
+    VARIABLE tmp : ram_type := (OTHERS => (OTHERS => '0'));
+  BEGIN
+    FOR addr_pos IN 0 TO 2 ** A_Width - 1 LOOP
+      CASE (addr_pos) IS
+        WHEN ADDR1 =>
           tmp(addr_pos) := VAL1;
-        when  ADDR2 => 
+        WHEN ADDR2 =>
           tmp(addr_pos) := VAL2;
-        when others =>
-          tmp(addr_pos) := "0000000000000000"; 
-      end case;
-    end loop;
-  return tmp;
-  end init_ram;
-		
-  signal ram : ram_type := init_ram;
-   
-begin
+        WHEN OTHERS =>
+          tmp(addr_pos) := "0000000000000000";
+      END CASE;
+    END LOOP;
+    RETURN tmp;
+  END init_ram;
 
-  p_RAM : process (i_CLK)
-  begin
-  
-    if(rising_edge(i_CLK)) then 
-	   if(i_WE = '1') then -- write enable
-		  ram(to_integer(unsigned(i_ADDR))) <= i_DATA;
-		end if;		  
-	 end if;
-  end process p_RAM;
-  
+  SIGNAL ram : ram_type := init_ram;
+
+BEGIN
+
+  p_RAM : PROCESS (i_CLK)
+  BEGIN
+
+    IF (rising_edge(i_CLK)) THEN
+      IF (i_WE = '1') THEN -- write enable
+        ram(to_integer(unsigned(i_ADDR))) <= i_DATA;
+      END IF;
+    END IF;
+  END PROCESS p_RAM;
+
   o_DATA <= ram(to_integer(unsigned(i_ADDR)));
 
-end RAM_Arch;
-
-
+END RAM_Arch;

@@ -5,43 +5,40 @@
 -- Rev.  : 1.0
 -- Date  : 06/19/2020
 ------------------------------------------------
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.STD_LOGIC_UNSIGNED.ALL;
 
+ENTITY instruction_memory IS
+  GENERIC (
+    D_Width : INTEGER := 16; -- data width
+    A_Width : INTEGER := 16); -- address width
+  PORT (
+    i_IR_RD : IN std_logic; -- enable read         		 
+    i_IR_ADDR : IN std_logic_Vector(A_Width - 1 DOWNTO 0); -- address
+    o_R_DATA : OUT std_logic_Vector(D_Width - 1 DOWNTO 0)); -- data output
 
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.STD_LOGIC_UNSIGNED.all;
+END ENTITY instruction_memory;
 
+ARCHITECTURE rtl OF instruction_memory IS
+  COMPONENT single_port_rom IS
+    GENERIC (
+      D_Width : INTEGER := 16; -- data width
+      A_Width : INTEGER := 16); -- address width
 
-entity instruction_memory is 
-  generic (D_Width : integer := 16; -- data width
-           A_Width : integer := 16); -- address width
-  port(i_IR_RD   : in  std_logic;  -- enable read         		 
-		 i_IR_ADDR : in  std_logic_Vector(A_Width-1 downto 0); -- address
-       o_R_DATA  : out  std_logic_Vector(D_Width-1 downto 0)); -- data output
+    PORT (
+      addr : IN std_logic_vector(15 DOWNTO 0);
+      q : OUT std_logic_vector(15 DOWNTO 0));
+  END COMPONENT single_port_rom;
 
-end entity instruction_memory;
+  SIGNAL w_O_ROM : std_logic_vector(15 DOWNTO 0);
 
+BEGIN
+  u_single_port_rom : single_port_rom PORT MAP(
+    addr => i_IR_ADDR,
+    q => w_O_ROM);
 
+  o_R_DATA <= w_O_ROM WHEN (i_IR_RD = '1') ELSE
+    "ZZZZZZZZZZZZZZZZ";
 
-architecture rtl of instruction_memory is
-  
-  component single_port_rom is
-    generic (D_Width : integer := 16; -- data width
-             A_Width : integer := 16); -- address width
-			  
-  port(addr	: in std_logic_vector(15 downto 0);		
-		q		: out std_logic_vector(15 downto 0));	
-  end component single_port_rom;
-  
-signal w_O_ROM: std_logic_vector(15 downto 0);
-  
-begin  
-  	
-  u_single_port_rom: single_port_rom port map(
-      addr	=> i_IR_ADDR,	   
-	   q		=> w_O_ROM);
-		
-  o_R_DATA <= w_O_ROM when (i_IR_RD = '1') else "ZZZZZZZZZZZZZZZZ";
-
-end rtl;
-
+END rtl;

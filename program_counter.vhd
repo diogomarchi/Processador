@@ -6,40 +6,39 @@
 -- Date  : 06/19/2020
 ------------------------------------------------
 
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.STD_LOGIC_UNSIGNED.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.STD_LOGIC_UNSIGNED.ALL;
 
-entity program_counter is
-port ( i_PC_CLR : in  std_logic;  -- clear/reset
-       i_CLK    : in  std_logic;  -- clock
-       i_PC_INC : in  std_logic;  -- enable 
-       i_PC_LD  : in  std_logic;  -- input load program counter
-       i_ADDITION: in std_logic_vector(15 downto 0);--input addition instruction		 
-       o_PC     : out std_logic_vector(15 downto 0) -- data output
-		 ); 
-end program_counter;
+ENTITY program_counter IS
+  PORT (
+    i_PC_CLR : IN std_logic; -- clear/reset
+    i_CLK : IN std_logic; -- clock
+    i_PC_INC : IN std_logic; -- enable 
+    i_PC_LD : IN std_logic; -- input load program counter
+    i_ADDITION : IN std_logic_vector(15 DOWNTO 0);--input addition instruction		 
+    o_PC : OUT std_logic_vector(15 DOWNTO 0) -- data output
+  );
+END program_counter;
+ARCHITECTURE rtl OF program_counter IS
 
+  SIGNAL w_COUNTER : std_logic_vector(15 DOWNTO 0);
 
-architecture rtl of program_counter is
+BEGIN
 
-signal w_COUNTER:std_logic_vector(15 downto 0);
+  PROCESS (i_PC_CLR, i_CLK)
+  BEGIN
+    IF (i_PC_CLR = '1') THEN
+      w_COUNTER <= "0000000000000000";
+    ELSIF (rising_edge(i_CLK)) THEN
+      IF (i_PC_LD = '1') THEN
+        w_COUNTER <= i_ADDITION;
+      ELSIF (i_PC_INC = '1') THEN
+        w_COUNTER <= w_COUNTER + "1";
+      END IF;
+    END IF;
+  END PROCESS;
 
-begin
-
-  process(i_PC_CLR,i_CLK) 
-  begin
-    if (i_PC_CLR = '1') then
-      w_COUNTER <= "0000000000000000";		
-	 elsif (rising_edge(i_CLK)) then
-	   if(i_PC_LD = '1') then
-		  w_COUNTER <= i_ADDITION;
-      elsif(i_PC_INC = '1') then
-		  w_COUNTER <= w_COUNTER + "1"; 		  
-      end if;
-    end if;
-  end process;
-  
   o_PC <= w_COUNTER;
-  
-end rtl;
+
+END rtl;
