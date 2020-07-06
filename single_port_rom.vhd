@@ -43,8 +43,8 @@ ARCHITECTURE rtl OF single_port_rom IS
   CONSTANT ADDR15 : INTEGER := 14;
   CONSTANT ADDR16 : INTEGER := 15;
 
-  CONSTANT INST1 : std_logic_vector := "0011000000000110"; -- MOV 	RF[0]     6           -- Salva 10 registrador 0
-  CONSTANT INST2 : std_logic_vector := "0011000100010010"; -- MOV 	RF[1]     18          -- Salva 16 registrador 1
+  CONSTANT INST1 : std_logic_vector := "0011000000001100"; -- MOV 	RF[0]     12          -- Salva 12 registrador 0
+  CONSTANT INST2 : std_logic_vector := "0011000100010100"; -- MOV 	RF[1]     20          -- Salva 20 registrador 1
   CONSTANT INST3 : std_logic_vector := "0100001000000001"; -- SUB 	RF[2] RF[O] RF[1]     -- grava no registrador 2 o resultado da subtração
   CONSTANT INST4 : std_logic_vector := "0101001000001001"; -- JMPZ  RF[2]     +9          -- pula se o resultado da subtracao anterior = 0
   CONSTANT INST5 : std_logic_vector := "0110001000000001"; -- LT    RF[2] RF[0] RF[1]     -- verifica se rp é menor que rq e salva resultado 

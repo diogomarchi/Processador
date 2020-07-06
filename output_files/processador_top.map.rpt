@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador_top
-Mon Jun 29 17:12:08 2020
+Sun Jul 05 19:27:19 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -23,10 +23,9 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
  15. Parameter Settings for User Entity Instance: operational_block:u_operational_block|register_file:u_REGISTER_FILE
  16. Parameter Settings for User Entity Instance: instruction_memory:u_instruction_memory
  17. Parameter Settings for User Entity Instance: instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom
- 18. Port Connectivity Checks: "operational_block:u_operational_block"
- 19. Post-Synthesis Netlist Statistics for Top Partition
- 20. Elapsed Time Per Partition
- 21. Analysis & Synthesis Messages
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -53,7 +52,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Jun 29 17:12:08 2020       ;
+; Analysis & Synthesis Status     ; Successful - Sun Jul 05 19:27:19 2020       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; processador_top                             ;
 ; Top-level Entity Name           ; processador_top                             ;
@@ -166,36 +165,38 @@ https://fpgasoftware.intel.com/eula.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                   ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                            ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
-; single_port_rom.vhd              ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/single_port_rom.vhd      ;         ;
-; control_unity.vhd                ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd        ;         ;
-; control_block.vhd                ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd        ;         ;
-; processador_top.vhd              ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd      ;         ;
-; ALU.vhd                          ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/ALU.vhd                  ;         ;
-; instruction_register.vhd         ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_register.vhd ;         ;
-; program_counter.vhd              ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/program_counter.vhd      ;         ;
-; register_file.vhd                ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd        ;         ;
-; operational_block.vhd            ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd    ;         ;
-; RAM.vhd                          ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/RAM.vhd                  ;         ;
-; data_memo.vhd                    ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd            ;         ;
-; instruction_memory.vhd           ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd   ;         ;
-; mux3x1.vhd                       ; yes             ; User VHDL File  ; C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux3x1.vhd               ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                 ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                          ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
+; single_port_rom.vhd              ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/single_port_rom.vhd      ;         ;
+; control_unity.vhd                ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd        ;         ;
+; control_block.vhd                ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/control_block.vhd        ;         ;
+; processador_top.vhd              ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd      ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/ALU.vhd                  ;         ;
+; instruction_register.vhd         ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/instruction_register.vhd ;         ;
+; program_counter.vhd              ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/program_counter.vhd      ;         ;
+; register_file.vhd                ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd        ;         ;
+; operational_block.vhd            ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd    ;         ;
+; RAM.vhd                          ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/RAM.vhd                  ;         ;
+; data_memo.vhd                    ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd            ;         ;
+; instruction_memory.vhd           ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd   ;         ;
+; mux3x1.vhd                       ; yes             ; User VHDL File  ; C:/intelFPGA_lite/19.1/workspace/Processador/mux3x1.vhd               ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -203,14 +204,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 1684        ;
+; Estimate of Logic utilization (ALMs needed) ; 1685        ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 1199        ;
+; Combinational ALUT usage for logic          ; 1214        ;
 ;     -- 7 input functions                    ; 8           ;
-;     -- 6 input functions                    ; 923         ;
-;     -- 5 input functions                    ; 60          ;
-;     -- 4 input functions                    ; 138         ;
-;     -- <=3 input functions                  ; 70          ;
+;     -- 6 input functions                    ; 928         ;
+;     -- 5 input functions                    ; 52          ;
+;     -- 4 input functions                    ; 146         ;
+;     -- <=3 input functions                  ; 80          ;
 ;                                             ;             ;
 ; Dedicated logic registers                   ; 2345        ;
 ;                                             ;             ;
@@ -220,7 +221,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; i_CLK~input ;
 ; Maximum fan-out                             ; 2345        ;
-; Total fan-out                               ; 14032       ;
+; Total fan-out                               ; 14083       ;
 ; Average fan-out                             ; 3.92        ;
 +---------------------------------------------+-------------+
 
@@ -230,42 +231,41 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                        ; Entity Name          ; Library Name ;
 +-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------+----------------------+--------------+
-; |processador_top                                    ; 1199 (0)            ; 2345 (0)                  ; 0                 ; 0          ; 18   ; 0            ; |processador_top                                                                           ; processador_top      ; work         ;
-;    |control_unity:u_control_unity|                  ; 49 (16)             ; 41 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity                                             ; control_unity        ; work         ;
-;       |control_block:u_CONTROLE|                    ; 16 (16)             ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE                    ; control_block        ; work         ;
+; |processador_top                                    ; 1214 (0)            ; 2345 (0)                  ; 0                 ; 0          ; 18   ; 0            ; |processador_top                                                                           ; processador_top      ; work         ;
+;    |control_unity:u_control_unity|                  ; 61 (16)             ; 41 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity                                             ; control_unity        ; work         ;
+;       |control_block:u_CONTROLE|                    ; 28 (28)             ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE                    ; control_block        ; work         ;
 ;       |instruction_register:u_instruction_register| ; 0 (0)               ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity|instruction_register:u_instruction_register ; instruction_register ; work         ;
 ;       |program_counter:u_program_counter|           ; 17 (17)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|control_unity:u_control_unity|program_counter:u_program_counter           ; program_counter      ; work         ;
-;    |data_memo:u_data_memo|                          ; 866 (0)             ; 2048 (0)                  ; 0                 ; 0          ; 0    ; 0            ; |processador_top|data_memo:u_data_memo                                                     ; data_memo            ; work         ;
-;       |RAM:u_RAM|                                   ; 866 (866)           ; 2048 (2048)               ; 0                 ; 0          ; 0    ; 0            ; |processador_top|data_memo:u_data_memo|RAM:u_RAM                                           ; RAM                  ; work         ;
-;    |instruction_memory:u_instruction_memory|        ; 19 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|instruction_memory:u_instruction_memory                                   ; instruction_memory   ; work         ;
-;       |single_port_rom:u_single_port_rom|           ; 19 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom ; single_port_rom      ; work         ;
-;    |operational_block:u_operational_block|          ; 265 (3)             ; 256 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block                                     ; operational_block    ; work         ;
-;       |ALU:u_ALU|                                   ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block|ALU:u_ALU                           ; ALU                  ; work         ;
+;    |data_memo:u_data_memo|                          ; 867 (0)             ; 2048 (0)                  ; 0                 ; 0          ; 0    ; 0            ; |processador_top|data_memo:u_data_memo                                                     ; data_memo            ; work         ;
+;       |RAM:u_RAM|                                   ; 867 (867)           ; 2048 (2048)               ; 0                 ; 0          ; 0    ; 0            ; |processador_top|data_memo:u_data_memo|RAM:u_RAM                                           ; RAM                  ; work         ;
+;    |instruction_memory:u_instruction_memory|        ; 18 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|instruction_memory:u_instruction_memory                                   ; instruction_memory   ; work         ;
+;       |single_port_rom:u_single_port_rom|           ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom ; single_port_rom      ; work         ;
+;    |operational_block:u_operational_block|          ; 268 (3)             ; 256 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block                                     ; operational_block    ; work         ;
+;       |ALU:u_ALU|                                   ; 33 (33)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block|ALU:u_ALU                           ; ALU                  ; work         ;
 ;       |mux3x1:u_MUX|                                ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block|mux3x1:u_MUX                        ; mux3x1               ; work         ;
-;       |register_file:u_REGISTER_FILE|               ; 192 (192)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block|register_file:u_REGISTER_FILE       ; register_file        ; work         ;
+;       |register_file:u_REGISTER_FILE|               ; 193 (193)           ; 256 (256)                 ; 0                 ; 0          ; 0    ; 0            ; |processador_top|operational_block:u_operational_block|register_file:u_REGISTER_FILE       ; register_file        ; work         ;
 +-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE                                                                                        ;
-+--------------+--------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-; Name         ; r_STATE.s_11 ; r_STATE.s_10 ; r_STATE.S_9 ; r_STATE.S_8 ; r_STATE.S_7 ; r_STATE.S_6 ; r_STATE.s_5 ; r_STATE.s_4 ; r_STATE.s_3 ; r_STATE.s_2 ; r_STATE.s_1 ; r_STATE.s_0 ;
-+--------------+--------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-; r_STATE.s_0  ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ;
-; r_STATE.s_1  ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1           ;
-; r_STATE.s_2  ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 1           ;
-; r_STATE.s_3  ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 1           ;
-; r_STATE.s_4  ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 1           ;
-; r_STATE.s_5  ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 1           ;
-; r_STATE.S_6  ; 0            ; 0            ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
-; r_STATE.S_7  ; 0            ; 0            ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
-; r_STATE.S_8  ; 0            ; 0            ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
-; r_STATE.S_9  ; 0            ; 0            ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
-; r_STATE.s_10 ; 0            ; 1            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
-; r_STATE.s_11 ; 1            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
-+--------------+--------------+--------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE                                                                                                                    ;
++--------------------+--------------+----------------+-----------------+---------------+--------------------+---------------+-----------------+----------------+------------------+-----------------+----------------+
+; Name               ; r_STATE.s_LT ; r_STATE.s_JUMP ; r_STATE.s_JUMPZ ; r_STATE.s_SUB ; r_STATE.s_LD_CONST ; r_STATE.s_ADD ; r_STATE.s_STORE ; r_STATE.s_LOAD ; r_STATE.s_DECODE ; r_STATE.s_FETCH ; r_STATE.s_INIT ;
++--------------------+--------------+----------------+-----------------+---------------+--------------------+---------------+-----------------+----------------+------------------+-----------------+----------------+
+; r_STATE.s_INIT     ; 0            ; 0              ; 0               ; 0             ; 0                  ; 0             ; 0               ; 0              ; 0                ; 0               ; 0              ;
+; r_STATE.s_FETCH    ; 0            ; 0              ; 0               ; 0             ; 0                  ; 0             ; 0               ; 0              ; 0                ; 1               ; 1              ;
+; r_STATE.s_DECODE   ; 0            ; 0              ; 0               ; 0             ; 0                  ; 0             ; 0               ; 0              ; 1                ; 0               ; 1              ;
+; r_STATE.s_LOAD     ; 0            ; 0              ; 0               ; 0             ; 0                  ; 0             ; 0               ; 1              ; 0                ; 0               ; 1              ;
+; r_STATE.s_STORE    ; 0            ; 0              ; 0               ; 0             ; 0                  ; 0             ; 1               ; 0              ; 0                ; 0               ; 1              ;
+; r_STATE.s_ADD      ; 0            ; 0              ; 0               ; 0             ; 0                  ; 1             ; 0               ; 0              ; 0                ; 0               ; 1              ;
+; r_STATE.s_LD_CONST ; 0            ; 0              ; 0               ; 0             ; 1                  ; 0             ; 0               ; 0              ; 0                ; 0               ; 1              ;
+; r_STATE.s_SUB      ; 0            ; 0              ; 0               ; 1             ; 0                  ; 0             ; 0               ; 0              ; 0                ; 0               ; 1              ;
+; r_STATE.s_JUMPZ    ; 0            ; 0              ; 1               ; 0             ; 0                  ; 0             ; 0               ; 0              ; 0                ; 0               ; 1              ;
+; r_STATE.s_JUMP     ; 0            ; 1              ; 0               ; 0             ; 0                  ; 0             ; 0               ; 0              ; 0                ; 0               ; 1              ;
+; r_STATE.s_LT       ; 1            ; 0              ; 0               ; 0             ; 0                  ; 0             ; 0               ; 0              ; 0                ; 0               ; 1              ;
++--------------------+--------------+----------------+-----------------+---------------+--------------------+---------------+-----------------+----------------+------------------+-----------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -275,7 +275,6 @@ Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 ; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[11] ; Merged with control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[15] ;
 ; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[5]  ; Merged with control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[7]  ;
-; control_unity:u_control_unity|control_block:u_CONTROLE|r_STATE.s_11                ; Lost fanout                                                                                    ;
 ; data_memo:u_data_memo|RAM:u_RAM|ram~537                                            ; Lost fanout                                                                                    ;
 ; data_memo:u_data_memo|RAM:u_RAM|ram~553                                            ; Lost fanout                                                                                    ;
 ; data_memo:u_data_memo|RAM:u_RAM|ram~569                                            ; Lost fanout                                                                                    ;
@@ -2324,7 +2323,7 @@ Encoding Type:  One-Hot
 ; data_memo:u_data_memo|RAM:u_RAM|ram~3576                                           ; Lost fanout                                                                                    ;
 ; data_memo:u_data_memo|RAM:u_RAM|ram~3592                                           ; Lost fanout                                                                                    ;
 ; data_memo:u_data_memo|RAM:u_RAM|ram~3608                                           ; Lost fanout                                                                                    ;
-; Total Number of Removed Registers = 2051                                           ;                                                                                                ;
+; Total Number of Removed Registers = 2050                                           ;                                                                                                ;
 +------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 
 
@@ -2349,19 +2348,19 @@ Encoding Type:  One-Hot
 ; Inverted Register                                                                  ; Fan out ;
 +------------------------------------------------------------------------------------+---------+
 ; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[8]  ; 17      ;
-; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[4]  ; 345     ;
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[4]  ; 4       ;
 ; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[9]  ; 17      ;
-; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[7]  ; 221     ;
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[7]  ; 150     ;
 ; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[10] ; 17      ;
-; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[6]  ; 178     ;
-; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[15] ; 25      ;
-; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[2]  ; 477     ;
-; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[3]  ; 381     ;
-; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[0]  ; 228     ;
-; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[1]  ; 357     ;
-; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[12] ; 8       ;
-; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[13] ; 8       ;
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[6]  ; 132     ;
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[15] ; 19      ;
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[2]  ; 4       ;
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[3]  ; 4       ;
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[0]  ; 4       ;
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[1]  ; 4       ;
 ; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[14] ; 8       ;
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[13] ; 8       ;
+; control_unity:u_control_unity|instruction_register:u_instruction_register|o_IR[12] ; 8       ;
 ; Total number of inverted registers = 14                                            ;         ;
 +------------------------------------------------------------------------------------+---------+
 
@@ -2371,10 +2370,12 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------+
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|register_file:u_REGISTER_FILE|Mux13 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RP_ADDR[0]    ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|register_file:u_REGISTER_FILE|Mux5  ;
 ; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|register_file:u_REGISTER_FILE|Mux19 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|mux3x1:u_MUX|o_Q[15]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|mux3x1:u_MUX|o_Q[8]                 ;
 ; 5:1                ; 7 bits    ; 21 LEs        ; 21 LEs               ; 0 LEs                  ; No         ; |processador_top|operational_block:u_operational_block|mux3x1:u_MUX|o_Q[7]                 ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |processador_top|control_unity:u_control_unity|control_block:u_CONTROLE|w_NEXT             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------+
 
 
@@ -2433,16 +2434,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "operational_block:u_operational_block"                                                                         ;
-+------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                                                  ;
-+------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; o_rp_lt_rq ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; o_rp_eq_rq ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
@@ -2453,24 +2444,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA               ; 2048                        ;
 ;     ENA CLR           ; 286                         ;
 ; arriav_io_obuf        ; 16                          ;
-; arriav_lcell_comb     ; 1199                        ;
+; arriav_lcell_comb     ; 1214                        ;
 ;     arith             ; 49                          ;
 ;         2 data inputs ; 16                          ;
 ;         3 data inputs ; 17                          ;
 ;         5 data inputs ; 16                          ;
 ;     extend            ; 8                           ;
 ;         7 data inputs ; 8                           ;
-;     normal            ; 1142                        ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 20                          ;
-;         3 data inputs ; 15                          ;
-;         4 data inputs ; 138                         ;
-;         5 data inputs ; 44                          ;
-;         6 data inputs ; 923                         ;
+;     normal            ; 1157                        ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 19                          ;
+;         3 data inputs ; 25                          ;
+;         4 data inputs ; 146                         ;
+;         5 data inputs ; 36                          ;
+;         6 data inputs ; 928                         ;
 ; boundary_port         ; 18                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.50                        ;
-; Average LUT depth     ; 4.87                        ;
+; Max LUT depth         ; 8.50                        ;
+; Average LUT depth     ; 5.20                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2479,7 +2470,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:14     ;
+; Top            ; 00:00:06     ;
 +----------------+--------------+
 
 
@@ -2489,177 +2480,155 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Mon Jun 29 17:11:21 2020
+    Info: Processing started: Sun Jul 05 19:26:57 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file single_port_rom.vhd
-    Info (12022): Found design unit 1: single_port_rom-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/single_port_rom.vhd Line: 28
-    Info (12023): Found entity 1: single_port_rom File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/single_port_rom.vhd Line: 17
+    Info (12022): Found design unit 1: single_port_rom-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/single_port_rom.vhd Line: 26
+    Info (12023): Found entity 1: single_port_rom File: C:/intelFPGA_lite/19.1/workspace/Processador/single_port_rom.vhd Line: 15
 Info (12021): Found 2 design units, including 1 entities, in source file control_unity.vhd
-    Info (12022): Found design unit 1: control_unity-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 37
-    Info (12023): Found entity 1: control_unity File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 13
+    Info (12022): Found design unit 1: control_unity-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd Line: 38
+    Info (12023): Found entity 1: control_unity File: C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file control_block.vhd
-    Info (12022): Found design unit 1: control_block-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 39
-    Info (12023): Found entity 1: control_block File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 12
+    Info (12022): Found design unit 1: control_block-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/control_block.vhd Line: 40
+    Info (12023): Found entity 1: control_block File: C:/intelFPGA_lite/19.1/workspace/Processador/control_block.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file processador_top.vhd
-    Info (12022): Found design unit 1: processador_top-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 19
-    Info (12023): Found entity 1: processador_top File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 12
+    Info (12022): Found design unit 1: processador_top-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 20
+    Info (12023): Found entity 1: processador_top File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file register_16bit.vhd
-    Info (12022): Found design unit 1: register_16bit-arch1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_16bit.vhd Line: 22
-    Info (12023): Found entity 1: register_16bit File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_16bit.vhd Line: 13
+    Info (12022): Found design unit 1: register_16bit-arch1 File: C:/intelFPGA_lite/19.1/workspace/Processador/register_16bit.vhd Line: 19
+    Info (12023): Found entity 1: register_16bit File: C:/intelFPGA_lite/19.1/workspace/Processador/register_16bit.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
-    Info (12022): Found design unit 1: ALU-arch_1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/ALU.vhd Line: 23
-    Info (12023): Found entity 1: ALU File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/ALU.vhd Line: 13
+    Info (12022): Found design unit 1: ALU-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/ALU.vhd Line: 23
+    Info (12023): Found entity 1: ALU File: C:/intelFPGA_lite/19.1/workspace/Processador/ALU.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file instruction_register.vhd
-    Info (12022): Found design unit 1: instruction_register-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_register.vhd Line: 22
-    Info (12023): Found entity 1: instruction_register File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_register.vhd Line: 13
+    Info (12022): Found design unit 1: instruction_register-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_register.vhd Line: 21
+    Info (12023): Found entity 1: instruction_register File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_register.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file program_counter.vhd
-    Info (12022): Found design unit 1: program_counter-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/program_counter.vhd Line: 24
-    Info (12023): Found entity 1: program_counter File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/program_counter.vhd Line: 13
+    Info (12022): Found design unit 1: program_counter-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/program_counter.vhd Line: 23
+    Info (12023): Found entity 1: program_counter File: C:/intelFPGA_lite/19.1/workspace/Processador/program_counter.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file register_file.vhd
-    Info (12022): Found design unit 1: register_file-arch1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 33
-    Info (12023): Found entity 1: register_file File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 15
+    Info (12022): Found design unit 1: register_file-arch1 File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 31
+    Info (12023): Found entity 1: register_file File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file demux1x16.vhd
-    Info (12022): Found design unit 1: demux1x16-arch_1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/demux1x16.vhd Line: 36
-    Info (12023): Found entity 1: demux1x16 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/demux1x16.vhd Line: 13
+    Info (12022): Found design unit 1: demux1x16-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/demux1x16.vhd Line: 33
+    Info (12023): Found entity 1: demux1x16 File: C:/intelFPGA_lite/19.1/workspace/Processador/demux1x16.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file mux16x1.vhd
-    Info (12022): Found design unit 1: mux16x1-arch_1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux16x1.vhd Line: 36
-    Info (12023): Found entity 1: mux16x1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux16x1.vhd Line: 13
+    Info (12022): Found design unit 1: mux16x1-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/mux16x1.vhd Line: 33
+    Info (12023): Found entity 1: mux16x1 File: C:/intelFPGA_lite/19.1/workspace/Processador/mux16x1.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file operational_block.vhd
-    Info (12022): Found design unit 1: operational_block-arch_1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 36
-    Info (12023): Found entity 1: operational_block File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 13
+    Info (12022): Found design unit 1: operational_block-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd Line: 34
+    Info (12023): Found entity 1: operational_block File: C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd Line: 13
 Info (12021): Found 2 design units, including 1 entities, in source file ram.vhd
-    Info (12022): Found design unit 1: RAM-RAM_Arch File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/RAM.vhd Line: 31
-    Info (12023): Found entity 1: RAM File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/RAM.vhd Line: 16
+    Info (12022): Found design unit 1: RAM-RAM_Arch File: C:/intelFPGA_lite/19.1/workspace/Processador/RAM.vhd Line: 27
+    Info (12023): Found entity 1: RAM File: C:/intelFPGA_lite/19.1/workspace/Processador/RAM.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file data_memo.vhd
-    Info (12022): Found design unit 1: data_memo-data_memo_Arch File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 31
-    Info (12023): Found entity 1: data_memo File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 15
+    Info (12022): Found design unit 1: data_memo-data_memo_Arch File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 27
+    Info (12023): Found entity 1: data_memo File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file instruction_memory.vhd
-    Info (12022): Found design unit 1: instruction_memory-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 26
-    Info (12023): Found entity 1: instruction_memory File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 15
+    Info (12022): Found design unit 1: instruction_memory-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 23
+    Info (12023): Found entity 1: instruction_memory File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 12
 Info (12021): Found 2 design units, including 1 entities, in source file decoder4x16.vhd
-    Info (12022): Found design unit 1: decoder4x16-rtl File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/decoder4x16.vhd Line: 36
-    Info (12023): Found entity 1: decoder4x16 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/decoder4x16.vhd Line: 13
+    Info (12022): Found design unit 1: decoder4x16-rtl File: C:/intelFPGA_lite/19.1/workspace/Processador/decoder4x16.vhd Line: 33
+    Info (12023): Found entity 1: decoder4x16 File: C:/intelFPGA_lite/19.1/workspace/Processador/decoder4x16.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file mux3x1.vhd
-    Info (12022): Found design unit 1: mux3x1-arch_1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux3x1.vhd Line: 22
-    Info (12023): Found entity 1: mux3x1 File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/mux3x1.vhd Line: 13
+    Info (12022): Found design unit 1: mux3x1-arch_1 File: C:/intelFPGA_lite/19.1/workspace/Processador/mux3x1.vhd Line: 21
+    Info (12023): Found entity 1: mux3x1 File: C:/intelFPGA_lite/19.1/workspace/Processador/mux3x1.vhd Line: 11
 Info (12127): Elaborating entity "processador_top" for the top level hierarchy
-Info (12128): Elaborating entity "control_unity" for hierarchy "control_unity:u_control_unity" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 99
-Info (12128): Elaborating entity "program_counter" for hierarchy "control_unity:u_control_unity|program_counter:u_program_counter" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 92
-Info (12128): Elaborating entity "instruction_register" for hierarchy "control_unity:u_control_unity|instruction_register:u_instruction_register" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 107
-Info (12128): Elaborating entity "control_block" for hierarchy "control_unity:u_control_unity|control_block:u_CONTROLE" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_unity.vhd Line: 115
-Info (12128): Elaborating entity "data_memo" for hierarchy "data_memo:u_data_memo" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 122
-Info (12128): Elaborating entity "RAM" for hierarchy "data_memo:u_data_memo|RAM:u_RAM" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 58
-Info (12128): Elaborating entity "operational_block" for hierarchy "operational_block:u_operational_block" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 133
-Warning (10541): VHDL Signal Declaration warning at operational_block.vhd(28): used implicit default value for signal "o_RP_LT_RQ" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 28
-Warning (10541): VHDL Signal Declaration warning at operational_block.vhd(29): used implicit default value for signal "o_RP_EQ_RQ" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 29
-Info (12128): Elaborating entity "mux3x1" for hierarchy "operational_block:u_operational_block|mux3x1:u_MUX" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 78
-Info (12128): Elaborating entity "register_file" for hierarchy "operational_block:u_operational_block|register_file:u_REGISTER_FILE" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 86
-Info (12128): Elaborating entity "ALU" for hierarchy "operational_block:u_operational_block|ALU:u_ALU" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/operational_block.vhd Line: 104
-Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:u_instruction_memory" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/processador_top.vhd Line: 152
-Info (12128): Elaborating entity "single_port_rom" for hierarchy "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom" File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 40
+Info (12128): Elaborating entity "control_unity" for hierarchy "control_unity:u_control_unity" File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 96
+Info (12128): Elaborating entity "program_counter" for hierarchy "control_unity:u_control_unity|program_counter:u_program_counter" File: C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd Line: 92
+Info (12128): Elaborating entity "instruction_register" for hierarchy "control_unity:u_control_unity|instruction_register:u_instruction_register" File: C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd Line: 109
+Info (12128): Elaborating entity "control_block" for hierarchy "control_unity:u_control_unity|control_block:u_CONTROLE" File: C:/intelFPGA_lite/19.1/workspace/Processador/control_unity.vhd Line: 117
+Info (12128): Elaborating entity "data_memo" for hierarchy "data_memo:u_data_memo" File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 119
+Info (12128): Elaborating entity "RAM" for hierarchy "data_memo:u_data_memo|RAM:u_RAM" File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 57
+Info (12128): Elaborating entity "operational_block" for hierarchy "operational_block:u_operational_block" File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 128
+Info (12128): Elaborating entity "mux3x1" for hierarchy "operational_block:u_operational_block|mux3x1:u_MUX" File: C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd Line: 76
+Info (12128): Elaborating entity "register_file" for hierarchy "operational_block:u_operational_block|register_file:u_REGISTER_FILE" File: C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd Line: 84
+Info (12128): Elaborating entity "ALU" for hierarchy "operational_block:u_operational_block|ALU:u_ALU" File: C:/intelFPGA_lite/19.1/workspace/Processador/operational_block.vhd Line: 102
+Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:u_instruction_memory" File: C:/intelFPGA_lite/19.1/workspace/Processador/processador_top.vhd Line: 147
+Info (12128): Elaborating entity "single_port_rom" for hierarchy "instruction_memory:u_instruction_memory|single_port_rom:u_single_port_rom" File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 37
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "data_memo:u_data_memo|RAM:u_RAM|ram" is uninferred due to asynchronous read logic File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/RAM.vhd Line: 60
+    Info (276007): RAM logic "data_memo:u_data_memo|RAM:u_RAM|ram" is uninferred due to asynchronous read logic File: C:/intelFPGA_lite/19.1/workspace/Processador/RAM.vhd Line: 54
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/intelFPGA_lite/19.1/workspace/Processador/db/processador_top.ram0_single_port_rom_ee80a174.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[0]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[1]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[2]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[3]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[4]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[5]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[6]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[7]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[8]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[9]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[10]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[11]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[12]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[13]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[14]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[15]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/instruction_memory.vhd Line: 20
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[0]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[1]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[2]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[3]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[4]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[5]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[6]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[7]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[8]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[9]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[10]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[11]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[12]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[13]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[14]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[15]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 28
-    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[0]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[1]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[2]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[3]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[4]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[5]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[6]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[7]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[8]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[9]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[10]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[11]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[12]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[13]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[14]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[15]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/data_memo.vhd Line: 25
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_D_ADDR[7]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 22
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_D_ADDR[6]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 22
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_D_ADDR[5]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 22
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_D_ADDR[4]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 22
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_D_ADDR[3]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 22
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_D_ADDR[2]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 22
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_D_ADDR[1]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 22
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_D_ADDR[0]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 22
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_W_ADDR[3]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 27
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_W_ADDR[2]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 27
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_W_ADDR[1]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 27
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_W_ADDR[0]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 27
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RP_ADDR[3]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 30
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RP_ADDR[2]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 30
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RP_ADDR[1]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 30
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RP_ADDR[0]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 30
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RQ_ADDR[3]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 32
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RQ_ADDR[2]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 32
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RQ_ADDR[1]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 32
-    Warning (13049): Converted tri-state buffer "control_unity:u_control_unity|control_block:u_CONTROLE|o_RF_RQ_ADDR[0]" feeding internal logic into a wire File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/control_block.vhd Line: 32
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[0]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[1]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[2]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[3]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[4]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[5]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[6]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[7]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[8]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[9]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[10]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[11]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[12]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[13]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[14]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "instruction_memory:u_instruction_memory|o_R_DATA[15]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/instruction_memory.vhd Line: 19
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[0]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[1]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[2]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[3]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[4]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[5]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[6]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[7]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[8]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[9]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[10]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[11]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[12]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[13]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[14]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RQ_DATA[15]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 28
+    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[0]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 23
+    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[1]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 23
+    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[2]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 23
+    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[3]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 23
+    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[4]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 23
+    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[5]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 23
+    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[6]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 23
+    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[7]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 23
+    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[8]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 23
+    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[9]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 23
+    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[10]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 23
+    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[11]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 23
+    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[12]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 23
+    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[13]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 23
+    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[14]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 23
+    Warning (13049): Converted tri-state buffer "data_memo:u_data_memo|o_R_DATA[15]" feeding internal logic into a wire File: C:/intelFPGA_lite/19.1/workspace/Processador/data_memo.vhd Line: 23
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[0]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[1]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[2]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[3]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[4]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[5]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[6]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[7]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[8]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[9]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[10]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[11]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[12]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[13]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[14]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
-    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[15]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/Users/Diogo/Documents/FACULDADE-MATERIAS/PSD/m3/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[0]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[1]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[2]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[3]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[4]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[5]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[6]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[7]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[8]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[9]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[10]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[11]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[12]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[13]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[14]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
+    Warning (13047): Converted the fan-out from the tri-state buffer "operational_block:u_operational_block|register_file:u_REGISTER_FILE|o_RP_DATA[15]" to the node "operational_block:u_operational_block|Equal0" into an OR gate File: C:/intelFPGA_lite/19.1/workspace/Processador/register_file.vhd Line: 27
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2049 registers lost all their fanouts during netlist optimizations.
+Info (17049): 2048 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3520 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3534 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 3502 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 90 warnings
-    Info: Peak virtual memory: 5095 megabytes
-    Info: Processing ended: Mon Jun 29 17:12:08 2020
-    Info: Elapsed time: 00:00:47
-    Info: Total CPU time (on all processors): 00:01:10
+    Info (21061): Implemented 3516 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 68 warnings
+    Info: Peak virtual memory: 4965 megabytes
+    Info: Processing ended: Sun Jul 05 19:27:19 2020
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:25
 
 

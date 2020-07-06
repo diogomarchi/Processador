@@ -20,12 +20,13 @@ architecture RTL of processador_top_tb is
 component processador_top is 
 port ( i_CLK   : in std_logic;  -- input clock
        i_CLR_n : in std_logic;  -- input clear/reset
-       o_SAIDA_RF: out std_logic_vector(15 downto 0)
+       o_WR_MEMO : OUT std_logic; -- escrita RAM
+       o_SAIDA_W: out std_logic_vector(15 downto 0)
        ); 
 end component processador_top;
 
-signal w_CLK, w_CLR_N: std_logic;
-signal w_O_SAIDA_RF: std_logic_vector(15 downto 0);
+signal w_CLK, w_CLR_N, w_WR_MEMO: std_logic;
+signal w_O_SAIDA_W: std_logic_vector(15 downto 0);
 
 constant c_CLK_period : time := 2 ns;
 begin
@@ -34,7 +35,8 @@ begin
   u_DUT: processador_top port map(
        i_CLK      => w_CLK,
        i_CLR_n    => w_CLR_n,
-       o_SAIDA_RF => w_O_SAIDA_RF
+       o_WR_MEMO  => w_WR_MEMO,
+       o_SAIDA_W => w_O_SAIDA_W
   ); 
                         
   p_CLK: process
@@ -61,13 +63,12 @@ begin
     -- aguarda processo reset
    
        
-    wait  until w_O_SAIDA_RF="0000000000000110";
-    assert(w_O_SAIDA_RF/="0000000000000110") report "Fail @ 000" severity error;
-           
-    wait  for c_CLK_PERIOD;
+    wait  until (w_WR_MEMO = '1');
+    wait  for c_CLK_PERIOD/2;  
+    assert(w_O_SAIDA_W="0000000000000100") report "Fail @ 000" severity error;
+
 
     assert false report "Test done." severity note;    
     wait;
-    
   end process p_INPUT;
 end RTL;

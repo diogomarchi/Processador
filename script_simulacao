@@ -1,0 +1,16 @@
+vcom *.vhd
+vcom processador_top_tb
+vsim processador_top_tb
+
+
+add wave -position insertpoint sim:/processador_top_tb/u_DUT/u_operational_block/u_REGISTER_FILE/*
+add wave -position insertpoint sim:/processador_top_tb/u_DUT/u_operational_block/u_ALU/*
+add wave -position insertpoint sim:/processador_top_tb/u_DUT/u_operational_block/u_MUX/*
+add wave -position insertpoint sim:/processador_top_tb/u_DUT/u_control_unity/u_CONTROLE/*
+add wave -position insertpoint sim:/processador_top_tb/u_DUT/u_data_memo/u_RAM/*
+add wave -position insertpoint sim:/processador_top_tb/u_DUT/u_control_unity/u_program_counter/*
+add wave -position insertpoint sim:/processador_top_tb/u_DUT/u_control_unity/u_instruction_register/*
+
+
+run 500 ns
+

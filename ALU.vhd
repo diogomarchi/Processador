@@ -21,7 +21,7 @@ end ALU;
 
 
 architecture arch_1 of ALU is
-  signal w_o_ADD, w_O_SUB_AB, w_O_SUB_BA : std_logic_Vector(15 downto 0);
+  signal w_o_ADD, w_O_SUB_AB: std_logic_Vector(15 downto 0);
 
 begin
    	      

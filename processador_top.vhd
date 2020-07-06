@@ -13,7 +13,8 @@ ENTITY processador_top IS
 	PORT (
 		i_CLK : IN std_logic; -- input clock
 		i_CLR_n : IN std_logic; -- input clear/reset
-		o_SAIDA_RF : OUT std_logic_vector(15 DOWNTO 0)
+		o_WR_MEMO : OUT std_logic; -- escrita RAM
+		o_SAIDA_W : OUT std_logic_vector(15 DOWNTO 0) -- resultado a ser escrito na memoria
 	);
 END processador_top;
 
@@ -149,6 +150,7 @@ BEGIN
 		i_IR_ADDR => w_o_I_ADDR,
 		o_R_DATA => w_IR_DATA
 	);
-
-	o_SAIDA_RF <= w_MEMO_DATA;
+	
+	o_WR_MEMO  <= w_O_D_WR;
+	o_SAIDA_W <= w_MEMO_DATA;
 END rtl;

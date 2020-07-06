@@ -22,8 +22,8 @@ port ( i_CLK   : in std_logic;
 		 i_RF_RQ_rd : in  std_logic;  -- enable RQ read
        i_RF_W_addr  : in  std_logic_Vector(3 downto 0);  -- W write address
 		 i_RF_RP_addr : in  std_logic_Vector(3 downto 0);  -- RP read address   
-		 i_RF_RQ_addr : in  std_logic_Vector(3 downto 0);  -- RP read address
-		 i_RF_W_DATA  : in  std_logic_Vector(7 downto 0);  -- RP read address
+		 i_RF_RQ_addr : in  std_logic_Vector(3 downto 0);  -- RQ read address
+		 i_RF_W_DATA  : in  std_logic_Vector(7 downto 0);  -- datamemo read address
 		 i_R_DATA     : in  std_logic_Vector(15 downto 0);    -- W input data
 		 o_RF_RP_ZERO : out std_logic; -- a == 0
 		 o_W_DATA     : out  std_logic_Vector(15 downto 0)   -- W output data
@@ -74,12 +74,12 @@ architecture arch_1 of operational_block is
 begin
   
   u_MUX : mux3x1 port map ( 
-         i_SEL0 => i_RF_s0,  -- selector
-			i_SEL1 => i_RF_s1,  -- selector
-         i_A   => i_R_DATA,  -- data input
-         i_B   => w_o_ALU,  -- data input
-			i_C   => i_RF_W_DATA,
-         o_Q   => w_o_MUX);  -- data output
+         i_SEL0 => i_RF_s0,    -- selector
+			i_SEL1 => i_RF_s1,    -- selector
+         i_A   => i_R_DATA,  	 -- entrada memoria de dados
+         i_B   => w_o_ALU,  	 -- entrada ULA
+			i_C   => i_RF_W_DATA, -- entrada bloco de controle
+         o_Q   => w_o_MUX);    -- data output
 			
   u_REGISTER_FILE : register_file port map  ( 
          i_CLK   => i_CLK,
