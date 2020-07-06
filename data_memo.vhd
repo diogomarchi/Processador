@@ -63,5 +63,5 @@ BEGIN
     o_DATA => w_o_RAM); -- data output
 
   o_R_DATA <= w_o_RAM WHEN(i_D_rd = '1') ELSE
-    "ZZZZZZZZZZZZZZZZ";
+    "0000000000000000";
 END data_memo_Arch;

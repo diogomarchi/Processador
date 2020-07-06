@@ -48,8 +48,8 @@ BEGIN
   END PROCESS;
 
   o_RP_DATA <= reg_file(to_integer(unsigned(i_RF_RP_addr))) WHEN(i_RF_RP_rd = '1') ELSE
-    "ZZZZZZZZZZZZZZZZ";
+    "0000000000000000";
   o_RQ_DATA <= reg_file(to_integer(unsigned(i_RF_RQ_addr))) WHEN(i_RF_RQ_rd = '1') ELSE
-    "ZZZZZZZZZZZZZZZZ";
+    "0000000000000000";
 
 END arch1;

@@ -39,6 +39,6 @@ BEGIN
     q => w_O_ROM);
 
   o_R_DATA <= w_O_ROM WHEN (i_IR_RD = '1') ELSE
-    "ZZZZZZZZZZZZZZZZ";
+    "0000000000000000";
 
 END rtl;
