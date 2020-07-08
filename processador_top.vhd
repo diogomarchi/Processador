@@ -22,25 +22,25 @@ ARCHITECTURE rtl OF processador_top IS
 
 	COMPONENT control_unity IS
 		PORT (
-			i_CLK : IN std_logic; -- input clock
-			i_CLR_n : IN std_logic; -- input clear/reset
+			i_CLK : IN std_logic; 					-- input clock
+			i_CLR_n : IN std_logic; 				-- input clear/reset
 			i_DATA : IN std_logic_vector(15 DOWNTO 0); -- input instruction register
-			i_RF_RP_zero : IN std_logic; -- output RF_RP zero
-			o_I_RD : OUT std_logic; -- output instruction read 
+			i_RF_RP_zero : IN std_logic; 			-- output RF_RP zero
+			o_I_RD : OUT std_logic; 				-- output instruction read 
 			o_D_ADDR : OUT std_logic_vector(7 DOWNTO 0); -- output data address
-			o_D_RD : OUT std_logic; -- output data read
-			o_D_WR : OUT std_logic; -- output data write
-			o_RF_S0 : OUT std_logic; -- output mux selector 0
-			o_RF_S1 : OUT std_logic; -- output mux selector 1
+			o_D_RD : OUT std_logic; 				-- output data read
+			o_D_WR : OUT std_logic; 				-- output data write
+			o_RF_S0 : OUT std_logic;				-- output mux selector 0
+			o_RF_S1 : OUT std_logic; 				-- output mux selector 1
 			o_RF_W_ADDR : OUT std_logic_vector(3 DOWNTO 0); -- output RF write address
-			o_RF_W_WR : OUT std_logic; -- output RF write enable
+			o_RF_W_WR : OUT std_logic; 			-- output RF write enable
 			o_RF_W_DATA : OUT std_logic_vector(7 DOWNTO 0); -- output data for mux 3x1
 			o_RF_RP_ADDR : OUT std_logic_vector(3 DOWNTO 0); -- output RF_RP read address
-			o_RF_RP_RD : OUT std_logic; -- output RF_RP read enable
+			o_RF_RP_RD : OUT std_logic; 			-- output RF_RP read enable
 			o_RF_RQ_ADDR : OUT std_logic_vector(3 DOWNTO 0); -- output RF_RQ read adress
-			o_RF_RQ_RD : OUT std_logic; -- output RF_RQ read enable
-			o_ALU_S0 : OUT std_logic; -- output ULA operation selector 0
-			o_ALU_S1 : OUT std_logic; -- output ULA operation selector 1
+			o_RF_RQ_RD : OUT std_logic; 			-- output RF_RQ read enable
+			o_ALU_S0 : OUT std_logic; 				-- output ULA operation selector 0
+			o_ALU_S1 : OUT std_logic; 				-- output ULA operation selector 1
 			o_I_ADDR : OUT std_logic_vector(15 DOWNTO 0) -- instruction memory address
 		);
 	END COMPONENT control_unity;
@@ -151,6 +151,7 @@ BEGIN
 		o_R_DATA => w_IR_DATA
 	);
 	
+	-- saidas para o testbench
 	o_WR_MEMO  <= w_O_D_WR;
 	o_SAIDA_W <= w_MEMO_DATA;
 END rtl;

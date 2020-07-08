@@ -25,9 +25,13 @@ architecture arch_1 of ALU is
 
 begin
    	      
+  -- A + B
   w_o_ADD <= i_A + i_B;
+  
+  -- A - B
   w_O_SUB_AB <= i_A - i_B;
   
+  -- SAIDA
   o_Q <= i_A        when (i_S0 = '0' and i_S1 = '0') else
          w_O_SUB_AB when (i_S0 = '0' and i_S1 = '1') else
 			w_o_ADD    when (i_S0 = '1' and i_S1 = '0') else

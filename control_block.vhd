@@ -146,60 +146,77 @@ BEGIN
 
   --atribuição do valor de constante
   o_RF_W_DATA <= i_DATA(7 DOWNTO 0);
-
+  
+  --clear pc counter
   o_PC_CLR <= '1' WHEN (r_STATE = s_INIT) ELSE
     '0';
 
+  -- instruction read enable
   o_I_RD <= '1' WHEN (r_STATE = s_FETCH) ELSE
     '0';
 
+  -- instruction load
   o_IR_LD <= '1' WHEN (r_STATE = s_FETCH) ELSE
     '0';
 
+  -- pc increment
   o_PC_INC <= '1' WHEN (r_STATE = s_FETCH) ELSE
     '0';
 
+  -- data address
   o_D_ADDR <= w_D WHEN ((r_STATE = s_LOAD) OR (r_STATE = s_STORE)) ELSE
     "00000000";
 
+  -- data read
   o_D_RD <= '1' WHEN (r_STATE = s_LOAD) ELSE
     '0';
 
+  -- data write
   o_D_WR <= '1' WHEN (r_STATE = s_STORE) ELSE
     '0';
 
+  -- mux selector
   o_RF_S0 <= '1' WHEN (r_STATE = s_LOAD) ELSE
-    'X' WHEN (r_STATE = s_STORE) ELSE
     '0';
 
+  -- mux selector
   o_RF_S1 <= '1' WHEN (r_STATE = s_LD_CONST) ELSE
-    'X' WHEN (r_STATE = s_STORE) ELSE
     '0';
-
+	 
+  -- RF write address
   o_RF_W_ADDR <= w_RA WHEN ((r_STATE = s_LOAD) OR (r_STATE = s_ADD) OR (r_STATE = s_LD_CONST) OR (r_STATE = s_SUB) OR (r_STATE = s_LT)) ELSE
     "0000";
 
+  -- RF write enable
   o_RF_W_WR <= '1' WHEN ((r_STATE = s_LOAD) OR (r_STATE = s_ADD) OR (r_STATE = s_LD_CONST) OR (r_STATE = s_SUB) OR (r_STATE = s_LT)) ELSE
     '0';
+	 
+  -- RP read address
   o_RF_RP_ADDR <= w_RA WHEN ((r_STATE = s_STORE) OR (r_STATE = s_JUMPZ)) ELSE
     w_RB WHEN ((r_STATE = s_ADD) OR (r_STATE = s_SUB) OR (r_STATE = s_LT)) ELSE
     "0000";
 
+  -- RP read enable
   o_RF_RP_RD <= '1' WHEN ((r_STATE = s_STORE) OR (r_STATE = s_ADD) OR (r_STATE = s_SUB) OR (r_STATE = s_JUMPZ) OR (r_STATE = s_LT)) ELSE
     '0';
 
+  -- RQ read address 
   o_RF_RQ_ADDR <= w_RC WHEN ((r_STATE = s_ADD) OR (r_STATE = s_SUB) OR (r_STATE = s_LT)) ELSE
     "0000";
 
+  -- RQ read enable
   o_RF_RQ_RD <= '1' WHEN ((r_STATE = s_ADD) OR (r_STATE = s_SUB) OR (r_STATE = s_LT)) ELSE
     '0';
 
+  -- ULA selector
   o_ALU_S0 <= '1' WHEN ((r_STATE = s_ADD) OR (r_STATE = s_LT)) ELSE
     '0';
 
+  -- ULA selector
   o_ALU_S1 <= '1' WHEN ((r_STATE = s_SUB) OR (r_STATE = s_LT)) ELSE
     '0';
 
+  -- program counter load
   o_PC_LD <= '1' WHEN (r_STATE = s_JUMP) ELSE
     '0';
 END rtl;

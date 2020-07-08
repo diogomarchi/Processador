@@ -107,6 +107,7 @@ begin
 			o_Q     => w_o_ALU  -- data output
 			); 
 
+  -- comparador de igual a zero
   o_RF_RP_ZERO <= '1' when (w_o_RP_DATA = "0000000000000000") else '0';
 
 end arch_1;

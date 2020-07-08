@@ -1,6 +1,6 @@
 ------------------------------------------------
--- Design: mux2x1 16bits
--- Entity: mux2x1
+-- Design: mux3x1 16bits
+-- Entity: mux3x1
 -- Author: Diogo & George
 -- Rev.  : 1.0
 -- Date  : 06/19/2020
